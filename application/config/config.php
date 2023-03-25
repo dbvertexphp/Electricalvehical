@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://dbvertex.com/Electricalvehical/';
-///test
+///test111111111111
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -220,7 +220,7 @@ legend.scheduler-border {
     <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Report</h1>
+<h1 class="h3 mb-2 text-gray-800">Mobile Report</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -248,8 +248,8 @@ legend.scheduler-border {
                                     <td><?php echo  $i;?></td>             
                                     <td><?php echo $row->policy_numbers;?></td>
                                     <td><?php echo $row->name_policy_holder;?></td>
-                                    <td><a  href="<?php echo site_url("Welcome/pdf/".$row->id);?>">Downlod</a></td>
-                                    <td><a  href="<?php echo site_url("Welcome/viewpdf/".$row->id);?>">View</a></td>
+                                    <td><a  href="<?php echo site_url("Welcome/mobile_pdf/".$row->id);?>">Downlod</a></td>
+                                    <td><a  href="<?php echo site_url("Welcome/mobile_viewpdf/".$row->id);?>">View</a></td>
                                     <td ><?php echo $row->policy_start;?></td>
                                     
                                 </tr>

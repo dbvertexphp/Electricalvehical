@@ -148,20 +148,7 @@ input::-webkit-inner-spin-button {
                 </div>
             </li>
             
-                <a class="nav-link   collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-					<i class="fa-sharp fa-solid fa-bookmark"></i>
-                    <span style ="font-size:18px;">Report</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                   
-                        <a class="collapse-item " style ="font-size:15px;" href="<?php echo site_url("Welcome/report");?>">Report</a>
-                     
-                    </div>
-                </div>
-            </li>
+               
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -423,7 +410,7 @@ input::-webkit-inner-spin-button {
 	 </fieldset>
 
 	 <fieldset class="scheduler-border">
-		<legend class="scheduler-border borders w-50 border ">Risk Details To Be Changer to Vehicle Details</Details></Details></legend>
+		<legend class="scheduler-border borders w-50 border ">Risk Details To Be Mobile Maker And Dealils</Details></Details></legend>
 		<div class="control-group General bg-white shadow-sm p-4 ">
 		   
 			<div class="row ">
@@ -442,6 +429,7 @@ input::-webkit-inner-spin-button {
 					<p id="Modellocation" style="color:red"></p>
 				</div>
 				</div>
+
 				<div class="row mt-3">
 					<div class ="col-2">
 					<lebel style="font-size: 14px; color:black;">Tear Of Manufacturing<sup class="text-danger">*</sup></lebel> 
@@ -450,28 +438,11 @@ input::-webkit-inner-spin-button {
 					<input class ="bank_name" name="Tear_Manufacturing"   id="Tear_Manufacturing" value="" type="text" >
 					<p id="Tear_Manufacturinglocation" style="color:red"></p>
 				</div>
+				
+				
+					
 				<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Type Of Body <sup class="text-danger ml-1 mt-2">*</sup></lebel>
-					</div>
-					<div class ="col-4">
-					<select class ="bank_name h-20"  id="Type_Body" name="Type_Body"  style=" border-opacity: 0.7; height:30px;" >
-					    <option value="">None </option>
-					    <option value="METALLIC ">METALLIC </option>
-						<option value="NON METALLIC  ">NON METALLIC  </option>
-					</select>
-					<p id="Type_Bodylocation" style="color:red"></p>
-				</div>
-				</div>
-				<div class="row mt-3">
-					<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Seting Capicity<sup class="text-danger">*</sup></lebel> 
-					</div>
-					<div class ="col-4">
-					<input class ="bank_name" name="Seting_Capicity" value="2" type="number" >
-					<p id="Seting_Capicitylocation" style="color:red"></p>
-				</div>
-				<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Battery No <sup class="text-danger ml-1 mt-2">*</sup></lebel>
+					<lebel style="font-size: 14px; color:black;">IMEI No <sup class="text-danger ml-1 mt-2">*</sup></lebel>
 					</div>
 					<div class ="col-4">
 					<input class ="bank_name" name="Battery_No" id="Battery_No" value="" type="text" >
@@ -480,14 +451,14 @@ input::-webkit-inner-spin-button {
 				</div>   
 				<div class="row mt-3">
 					<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Chassis No<sup class="text-danger">*</sup></lebel> 
+					<lebel style="font-size: 14px; color:black;">Model No<sup class="text-danger">*</sup></lebel> 
 					</div>
 					<div class ="col-4">
 					<input class ="bank_name" value=""  name="Chassis_No" id="Chassis_No" type="text" >
 					<p id="Chassis_Nolocation" style="color:red"></p>
 				    </div>
 					<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Battery KW<sup class="text-danger">*</sup></lebel> 
+					<lebel style="font-size: 14px; color:black;">Serial KW<sup class="text-danger">*</sup></lebel> 
 					</div>
 					<div class ="col-4">
 					<input class ="bank_name" value=""   id="Battery_kw" name="Battery_kw" type="text" >
@@ -500,7 +471,7 @@ input::-webkit-inner-spin-button {
 
 
 	 <fieldset class="scheduler-border">
-		<legend class="scheduler-border borders w-25 border ">Vehicle Location Address</legend>
+		<legend class="scheduler-border borders w-25 border ">Mobile Location Address</legend>
 		<div class="control-group General bg-white shadow-sm p-4 ">
            <input type="checkbox" id="same" name="same" onchange="billingFunction()" style=" width:15px; height:15px;" />
                     <label for="same" style=" color:black;">Is the communication here the same as the address?</label>
@@ -588,47 +559,7 @@ input::-webkit-inner-spin-button {
 			</div>
 	 </fieldset>
 
-	 <fieldset class="scheduler-border">
-		<legend class="scheduler-border borders w-25 border ">Nominee  Details</legend>
-		<div class="control-group General bg-white shadow-sm p-4 ">
-		   
-			<div class="row ">
-					<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Nominee Name<sup class="text-danger ">*</sup></lebel> 
-					</div>
-					<div class ="col-4">
-					<input class ="bank_name" name="Nominee_Name" id="Nominee_Name" value="" type="text" >
-				</div>
-				<div class ="col-2">
-				<lebel style="font-size: 14px; color:black;">Relation <sup class="text-danger ml-1 mt-2">*</sup></lebel>
-					</div>
-					<div class ="col-4">
-					<input class ="bank_name" name="Relation" id="Relation" value="" type="text" >
-				</div>
-				</div>
-				<div class="row mt-3">
-					<div class ="col-2">
-					<lebel style="font-size: 14px; color:black;">Date Of Birth<sup class="text-danger">*</sup></lebel> 
-					</div> 
-					<div class ="col-4">
-					<input class ="bank_name" name="Date_Of_Birth" id="Date_Of_Birth" value="" type="date" >
-				</div>
-				<div class ="col-2">
-				<lebel style="font-size: 14px; color:black;">Gender<sup class="text-danger ml-1 mt-2">*</sup></lebel> 
-					</div>
-					<div class ="col-4">
-					<select class ="bank_name h-20"   id="Genders" name="Genders"  style=" border-opacity: 0.7; height:30px;">
-						<option value="MALE">MALE</option>
-						<option value="FEMALE ">FEMALE </option>
-						<option value="TRANSGENDER MALE ">TRANSGENDER MALE </option>
-						<option value="TRANSGENDER FEMALE ">TRANSGENDER FEMALE </option>
-					</select>
-				</div>
-				</div>
-			  
-		   
-			</div>
-	 </fieldset>
+	 
 	 
 	 <fieldset class="scheduler-border">
 		<legend class="scheduler-border borders w-25 border ">Financer Details</legend>
@@ -669,7 +600,7 @@ input::-webkit-inner-spin-button {
 	  </fieldset>
 
 	 <center>
-	 <button  class="bg-gradient-primary Calculate Next mr-3"  style="width:150px; font-size:15px" ><a  class ="text-white" href="<?php echo site_url("Welcome/product");?>">previous</a></button>
+	 <button  class="bg-gradient-primary Calculate Next mr-3"  style="width:150px; font-size:15px" ><a  class ="text-white" href="<?php echo site_url("Welcome/mobile_product");?>">previous</a></button>
 	 <button class ="Calculate bg-gradient-primary" id="submit"  style=" font-size:15px">submit</button>            
 	 </center> 
 </form>
@@ -745,8 +676,7 @@ var Email=  document.myform.Email.value;
 var Make=  document.myform.Make.value;
 var Model=  document.myform.Model.value;  
 var Tear_Manufacturing= document.myform.Tear_Manufacturing.value;
-var Type_Body=  document.myform.Type_Body.value;  
-var Seting_Capicity= document.myform.Seting_Capicity.value;  
+
 var Battery_No=  document.myform.Battery_No.value; 
 var Chassis_No=  document.myform.Chassis_No.value;
 var Battery_kw=  document.myform.Battery_kw.value; 
@@ -894,23 +824,8 @@ document.getElementById("Tear_Manufacturinglocation").innerHTML=" ";
 status=true;
 } 
 
-if(Type_Body == ""){  
-document.getElementById("Type_Bodylocation").innerHTML=  
-"Please select Type Body";  
-status=false;
-}else{  
-document.getElementById("Type_Bodylocation").innerHTML=" ";  
-status=true;
-}  
 
-if(Seting_Capicity == ""){  
-document.getElementById("Seting_Capicitylocation").innerHTML=  
-"Please select your plan name";  
-status=false;
-}else{  
-document.getElementById("Seting_Capicitylocation").innerHTML=" ";  
-status=true;
-}  
+
 
 if(Battery_No == ""){  
 document.getElementById("Battery_Nolocation").innerHTML=  
@@ -978,6 +893,7 @@ status=false;
 document.getElementById("Cityslocation").innerHTML=" ";  
 status=true;
 }    
+
 if(Financer_Type == "HYPOTHECATED" ){  
 if(Financer_Name == ""){  
 document.getElementById("Financer_Namelocation").innerHTML=  
@@ -1014,7 +930,7 @@ status=false;
 document.getElementById("Financer_Typelocation").innerHTML=" ";  
 status=true;
 }  
-  
+
 
           var Salutation_id = $("#Salutation").val();
           var Policy_Holder_id = $("#Policy_Holder").val();
@@ -1031,7 +947,7 @@ status=true;
           var Model_id = $("#Model").val();
           var Tear_Manufacturing_id = $("#Tear_Manufacturing").val();
           var Battery_No_id = $("#Battery_No").val();
-		  var Type_Body_id = $("#Type_Body").val();
+		  
 		  var Chassis_No_id = $("#Chassis_No").val();
 		  var Battery_kw_id = $("#Battery_kw").val();
           var Addresss_Line_1_id = $("#Addresss_Line_1").val();
@@ -1039,10 +955,7 @@ status=true;
           var Pincodes_id = $("#Pincodes").val();
           var States_id = $("#States").val();
 		  var Citys_id = $("#Citys").val();
-		  var Nominee_Name_id = $("#Nominee_Name").val();
-          var Relation_id = $("#Relation").val();
-          var Date_Of_Birth_id = $("#Date_Of_Birth").val();
-          var Genders_id = $("#Genders").val();
+		
           var Financer_Name_id = $("#Financer_Name").val();
 		  var Address_id = $("#Address").val();
           var Financer_Type_id = $("#Financer_Type").val();
@@ -1051,7 +964,7 @@ status=true;
           
           $.ajax({
 			  
-            url:"<?php echo site_url();?>/Welcome/user",
+            url:"<?php echo site_url();?>/Welcome/mobile_user",
             type: 'POST',
             dataType: 'text',
 			 
@@ -1059,21 +972,21 @@ status=true;
                 Date_Birth:  Date_Birth_id, Address_Line_1: Address_Line_1_id,
 				Address_Line_2: Address_Line_2_id, Pincode: Pincode_id, State:State_id,
                 City:  City_id, Mobile: Mobile_id,
-				email: email_id, Make: Make_id, Model: Model_id, Type_Body: Type_Body_id, Tear_Manufacturing: Tear_Manufacturing_id, Battery_No:Battery_No_id,
+				email: email_id, Make: Make_id, Model: Model_id,  Tear_Manufacturing: Tear_Manufacturing_id, Battery_No:Battery_No_id,
                 Chassis_No:  Chassis_No_id, Battery_kw: Battery_kw_id,
 				Addresss_Line_1: Addresss_Line_1_id, Addresss_Line_2: Addresss_Line_2_id, Pincodes:Pincodes_id,
                 States:  States_id, Citys: Citys_id,
-				Nominee_Name: Nominee_Name_id, Relation: Relation_id, Financer_Name:Financer_Name_id,
-				Date_Of_Birth: Date_Of_Birth_id, Genders:Genders_id,
+				 Financer_Name:Financer_Name_id,
                 Address: Address_id, Financer_Type: Financer_Type_id,
             },
            success: function(data){
 			if(data==""){
-			window.location = "<?php echo site_url();?>/Welcome/report";
+			window.location = "<?php echo site_url();?>/Welcome/Mobile_report";
 			}
             }
+			
             });
-
+            console.log(status);
 			return status;
           });
 

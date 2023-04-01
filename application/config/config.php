@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Electricalvehical/';
+$config['base_url'] = 'https://dbvertex.com/Electricalvehical/';
 ///test111111111111
 /*
 |--------------------------------------------------------------------------

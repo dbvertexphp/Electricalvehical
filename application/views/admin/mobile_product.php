@@ -332,7 +332,7 @@ leble{
                  <p id="SumInsuredlocation" style="color:red; font-size:13px;"></p>
                </div>
              </div>
-             <input class ="bank_name" type="text" value="" id ="results" name= "premium" >
+             <input class ="bank_name" type="text" value="" id ="results" name= "premium" hidden>
        
         </div>
 </fieldset>

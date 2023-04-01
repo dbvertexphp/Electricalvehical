@@ -91,7 +91,7 @@
       <p></p>
       <table class = "heading_logo" style="width:100%;">
         <tr>          
-          <td style="width:10%;" ><img src="https://dbvertex.com/Electricalvehical/uplode/images/logo.jpg" style="height:60px; width:60px;" class="img-fluid"></td>
+          <td style="width:10%;" ><img src="https://dbvertex.com/Electricalvehical/uplode/images/mobile.png" style="height:60px; width:60px;" class="img-fluid"></td>
           <td class ="heading_text">MOBI PROTECT</td>
           <td class ="heading_text"  style=" text-align: right; font-size:13px;">7974641726 <span style="font-size:10px; margin-top:10px;" >(Whatsapp)  <img src="https://dbvertex.com/Electricalvehical/uplode/images/whatsaap.jpg" style="height:15px; width:15px;  margin-top:10px;  padding-left:5px;" class="img-fluid"></span></td>
         </tr>
@@ -383,7 +383,7 @@
           <div>
           <table class = "heading_logo">
               <tr>
-              <td><img src="https://dbvertex.com/Electricalvehical/uplode/images/logo.jpg" style="height:60px; width:60px;" class="img-fluid"></td>
+              <td><img src="https://dbvertex.com/Electricalvehical/uplode/images/mobile.png" style="height:60px; width:60px;" class="img-fluid"></td>
               <td class ="heading_text">MOBI PROTECT</td>
               <td></td>
               </tr>

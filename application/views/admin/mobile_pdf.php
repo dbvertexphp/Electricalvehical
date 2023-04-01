@@ -266,7 +266,7 @@
          <table class="td_th" style="width:100%" >
           <tr style=" ">
             <th style="  width:30%;  text-align: left;" class="Agency_Code">Risk Covered</th>
-            <th style="  text-align: left; font-weight:200;" class="td_th">Electric Vehicle</th> 
+            <th style="  text-align: left; font-weight:200;" class="td_th">MOBILE PROTECTION </th> 
           </tr>
          </table>
        </div>  
@@ -288,8 +288,7 @@
           <tr style="padding-bottom:8px;">
             <th style="  width:30%; padding-bottom:8px; text-align: left;" class="Agency_Code">Year of Manufacturing</th>
             <th style="  text-align: left;padding-bottom:8px; font-weight:200;" class="td_th"><?php {echo $report->tear_manufacturing;}?></th> 
-            <th style="  text-align: left;padding-bottom:8px; " class="td_th">Type of Body</th> 
-            <th style="  text-align: left; padding-bottom:8px; font-weight:200;" class="td_th"><?php {echo $report->type_body;}?></th> 
+           
           </tr>
          </table>
        </div>  

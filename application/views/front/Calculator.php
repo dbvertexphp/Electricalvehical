@@ -86,7 +86,7 @@
 
                     </div>
                 </form>
-                <div class="d-grid gap-2 col-4 mx-auto" style="justify-items: center; " id="final_amount">
+                <div class="d-grid gap-2 col-6 mx-auto" style="justify-items: center; " id="final_amount">
                     <p class="mt-3 post_input_lable" style="font-size: 15px; color:black; text-align-last: center;">
                         Final Premium: - <span id="Final_Premium"></span> /- Rs</p>
                     <a href="<?php echo base_url();?>Fornt/buy_Premium"><button class="btn rounded-5" type="submit"

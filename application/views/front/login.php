@@ -51,7 +51,7 @@
                 <h5>Login</h5>
               <?php  if($error=$this->session->flashdata('login_error')){  ?>
                         <div class="row  text-center" style="justify-content: center;">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="alert alert-danger ">
                                     <?= $error; 
 

@@ -186,10 +186,10 @@ class Fornt extends CI_Controller {
         	     
                 }
              	else{
-             $this->session->set_flashdata('login_error', 'Email is not exit'); 
+             $this->session->set_flashdata('login_error', 'Email is not exist'); 
 	      	 $this->session->set_flashdata('msg_class','alert-success');
 	         	return redirect('Fornt/login');
-                 $msg = "Email is not exit";
+                 $msg = "Email is not exist";
                     echo $msg;
         	     }        
         	         
@@ -251,14 +251,14 @@ class Fornt extends CI_Controller {
 		 return redirect('Fornt/Otp');
          }
         else{
-		       $this->session->set_flashdata('singup_error', 'Phone Number is Alerdy exit'); 
+		       $this->session->set_flashdata('singup_error', 'Phone Number is Already exist'); 
 	      	 $this->session->set_flashdata('msg_class','alert-success');
 	         	return redirect('Fornt/singup');
               } 
 		 
       }
               else{
-		       $this->session->set_flashdata('singup_error', 'Email is Alerdy exit'); 
+		       $this->session->set_flashdata('singup_error', 'Email is Already exist'); 
 	      	 $this->session->set_flashdata('msg_class','alert-success');
 	         	return redirect('Fornt/singup');
               }
@@ -491,6 +491,14 @@ class Fornt extends CI_Controller {
 		$Battery_kw = $this->input->post('Battery_kw');
 
 		$user_id= $this->session->userdata('vehical'); 
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+              $randomString = '';
+		$n = 30;
+         for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+         $randomString .= $characters[$index];
+        }
+		$Tokan = $randomString;
 
 
 
@@ -569,7 +577,8 @@ class Fornt extends CI_Controller {
 			'business_type ' => $Business_Type,
 			'bank_name'  =>$bank_name,
 			'Battery_kw'  =>$Battery_kw,
-			'user_id'  =>$user_id
+			'user_id'  =>$user_id, 
+			'token'  =>$Tokan
 		
 		); 
 		
@@ -583,6 +592,7 @@ class Fornt extends CI_Controller {
     }	
 
 	function website_mobile_pdf($id=0){
+	
 		
 		$data['report'] = $this->Website_user->website_Mobile_selectquery($id); 
 		foreach($data as $inv);

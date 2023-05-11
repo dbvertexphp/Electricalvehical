@@ -59,7 +59,7 @@
     }
 
     .tablehead {
-        width: 70%;
+        width: 100%;
         background: #F8FBFF;
         box-shadow: 0px 0px 12.4835px rgba(0, 0, 0, 0.25);
         border-radius: 7.8022px;
@@ -77,6 +77,7 @@
         display: flex;
         align-items: center;
         color: #000000;
+        place-content: center;
     }
 
     .tablehead_text_content {
@@ -89,7 +90,7 @@
         line-height: 23px;
         display: flex;
         align-items: center;
-
+        place-content: center;
         color: #000000;
     }
 
@@ -100,7 +101,7 @@
     }
 
     .bodyhead {
-        width: 70%;
+        width: 100%;
         height: 37.45px;
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -109,7 +110,7 @@
         background: #F8FBFF;
         box-shadow: 0px 0px 12.4835px rgba(0, 0, 0, 0.25);
     }
-
+/* 
     .footer {
         position: fixed;
         left: 0;
@@ -118,7 +119,7 @@
         background-color: red;
         color: white;
         text-align: center;
-    }
+    } */
     .no_found {
   display: flex;
   justify-content: center;
@@ -142,7 +143,7 @@
 
     <?php  if($error=$this->session->flashdata('policy_form')){  ?>
     <div class="row  text-center" style="justify-content: center;">
-        <div class="col-lg-6">
+        <div class="col-lg-6 mt-4">
             <div class="alert alert-success ">
                 <?= $error; 
 
@@ -162,14 +163,14 @@
         $datas = get_user_policy_count($user_id); 
       if($datas !== NULL){
     ?>
-    <div class="container">
+    <div class="container" style="height:600px;">
         <div class="my-policy_div">
             <div class="my-policy">My Policy</div>
         </div>
 
         <div class="container container_pocliy">
             <div class="row tablehead">
-                <div class="col-2">
+                <div class="col-1">
                     <p class="tablehead_text">S. No</p>
                 </div>
                 <div class="col-3">
@@ -184,6 +185,9 @@
                 <div class="col-2">
                     <p class="tablehead_text">Download Pdf</p>
                 </div>
+                <div class="col-2">
+                    <p class="tablehead_text">Status</p>
+                </div>
             </div>
             <div class="mt-4"></div>
             <?php
@@ -195,24 +199,45 @@
                 foreach($data as $user){
                 ?>
             <div class="row bodyhead">
-                <div class="col-2">
+                <div class="col-1">
                     <p class="tablehead_text_content"><?php echo $counter ?></p>
                 </div>
                 <div class="col-3">
-                    <p class="tablehead_text_content"><?php echo $user->customer_id ?></p>
+                    <p class="tablehead_text_content"><?php echo $user->policy_numbers ?></p>
                 </div>
                 <div class="col-2">
-                    <p class="tablehead_text_content"><?php echo $user->policy_start ?></p>
+                    <p class="tablehead_text_content"><?php 
+                    $start = $user->policy_start;
+                    $date=date_create($start);
+                    echo date_format($date,"d-m-Y");
+                    ?></p>
                 </div>
                 <div class="col-2">
-                    <p class="tablehead_text_content"><?php echo $user->exprie_date ?></p>
+                    <p class="tablehead_text_content"><?php
+                     $exprie = $user->exprie_date;
+                     $date=date_create($exprie);
+                     echo date_format($date,"d-m-Y");
+                 ?></p>
                 </div>
                 <div class="col-2">
-                    <p class="tablehead_text_content" style="place-content: center;">
-                    <a  href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->id);?>">
+                <?php if($user->pay_type == 0){ ?>
+                <p class="mt-2">NAN</p>
+               <?php  }  else {?> 
+                <p class="tablehead_text_content" style="place-content: center;">
+                    <a  href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->token);?>">
                      <img src="<?php echo base_url();?>/image/download-pdf.png" class="img-fluid" alt="" width="20"  height="20"></p>
                 </a>
-                    </div>
+                <?php } ?> 
+
+                </div>
+                <div class="col-2">
+                <?php if($user->pay_type == 0){ ?>
+                 <button type="button" class="btn btn-danger" style="padding-top: 1px; padding-bottom: 1px; margin-top: 5px">Unpaid</button>
+               <?php  }  else {?> 
+                <p class="mt-2 text-success font-weight-bold">Paid</p>
+                <?php } ?> 
+               
+                </div>
             </div>
             <?php   $counter++; } ?>
         </div>

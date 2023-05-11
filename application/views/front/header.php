@@ -108,7 +108,7 @@ a:hover{
   font-family: 'Plus Jakarta Sans';
 font-style: normal;
 font-weight: 400;
-font-size: 22.515px;
+font-size: 18.515px;
 line-height: 17px;
 color: #313131;
 flex: none;

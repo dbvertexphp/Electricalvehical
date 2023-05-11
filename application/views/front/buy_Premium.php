@@ -139,10 +139,10 @@ legend.scheduler-border {
                 <div class="col-md-12 col-lg-12">
                     <h4 class="mb-3 text-center Policy_Form">Policy Form</h4>
                     <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/policy_form"
-                        novalidate>
+                        novalidate autocomplete="off">
                         <div class=" g-3">
 
-                            <fieldset class="border rounded-3 p-3">
+                            <fieldset class="border rounded-3 p-3 mt-2">
                                 <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                     General Details</legend>
                                 <div class="row ">
@@ -180,7 +180,7 @@ legend.scheduler-border {
                         </div>
                         </fieldset>
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Tenure</legend>
                             <div class="row ">
@@ -208,7 +208,7 @@ legend.scheduler-border {
                             </div>
                         </fieldset>
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 ALL RISK </legend>
                             <div class="row ">
@@ -267,7 +267,7 @@ legend.scheduler-border {
                         </fieldset>
 
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Customer Information </legend>
                             <div class="row ">
@@ -322,7 +322,7 @@ legend.scheduler-border {
                             </div>
                         </fieldset>
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Communication Address </legend>
                             <div class="row ">
@@ -416,13 +416,15 @@ legend.scheduler-border {
 
                                 <div class="col-sm-4">
                                     <label for="lastName" class="form-label">Mobile Number</label>
-                                    <input type="number" class="form-control" name="Mobile" id="Mobile"
+                                    <input type="tel" class="form-control" name="Mobile" id="Mobile"
                                         placeholder="Mobile Number" value="" maxlength="10"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                        required>
+                                        required pattern="[0-9]{10}">
                                     <div class="invalid-feedback">
                                         Valid Mobile Number is required.
                                     </div>
+                                    <p id="Mobilelocation" style="color:red"></p>
+
                                 </div>
 
                                 <div class="col-sm-4">
@@ -438,7 +440,7 @@ legend.scheduler-border {
                         </fieldset>
 
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Risk Details To Be Mobile Maker And Dealils</legend>
                             <div class="row ">
@@ -496,7 +498,7 @@ legend.scheduler-border {
                                 </div>
 
                                 <div class="col-sm-4">
-                                    <label for="lastName" class="form-label">Serial KW</label>
+                                    <label for="lastName" class="forborder rounded-3 p-3 mt-2m-label">Serial KW</label>
                                     <input type="text" class="form-control" id="Battery_kw" name="Battery_kw"
                                         placeholder="Serial KW" value="" required>
                                     <div class="invalid-feedback">
@@ -508,7 +510,7 @@ legend.scheduler-border {
                         </fieldset>
 
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Mobile Location Address </legend>
                             <div class="row ">
@@ -607,7 +609,7 @@ legend.scheduler-border {
                             </div>
                         </fieldset>
 
-                        <fieldset class="border rounded-3 p-3">
+                        <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
                                 Financer Details </legend>
                             <div class="row ">
@@ -620,8 +622,8 @@ legend.scheduler-border {
                                     <label for="state" class="form-label">Financer Type*</label>
                                     <select class="form-select" id="Financer_Type" name="Financer_Type" required>
                                         <option value="">Choose...</option>
-                                        <option value="HYPOTHECATED">HYPOTHECATED</option>
-                                        <option value="NOT HYPOTHECATED">NOT HYPOTHECATED </option>
+                                        <option value="YES">YES</option>
+                                        <option value="NO">NO</option>
                                     </select>
                                     <div class="invalid-feedback">
                                         Please provide a valid Financer Type*.
@@ -745,21 +747,20 @@ legend.scheduler-border {
                 if (!form.checkValidity()) {
 
                     var Financer_Type = document.getElementById("Financer_Type").value;
-                    if (Financer_Type == "HYPOTHECATED") {
+                  
+                    if (Financer_Type == "YES") {
                         document.getElementById("Financer_Name").required = true;
                         document.getElementById("Address").required = true;
-                    } else {
+                    } 
+                    
+                    
+                    else {
                         document.getElementById("Financer_Name").required = false;
                         document.getElementById("Address").required = false;
                     }
-
-
                     event.preventDefault()
                     event.stopPropagation()
-
                 }
-
-
                 form.classList.add('was-validated')
             }, false)
         })

@@ -41,7 +41,7 @@ function insert($data){
 public function website_Mobile_selectquery($id){
       $q=$this->db->select('*')
       ->from('website_mobile_report')
-      ->where('id',$id)
+      ->where('token',$id)
       ->get();
       
       return $q->row();

@@ -30,6 +30,9 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.header_option{
+  text-decoration: none;
+}
 </style>
    
     <title>Login form</title>

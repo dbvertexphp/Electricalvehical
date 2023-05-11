@@ -13,5 +13,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.dbvertex.com
-        username: celnow_git@dbvertex.com
+        username: Electricalvehical@dbvertex.com
         password: ${{ secrets.vehical_ftp_password }}

@@ -18,3 +18,16 @@ function get_user($user_id)
   else
   return null;
 }
+
+
+function get_user_policy($user_id)
+{
+  $ci =& get_instance();
+  //load databse library
+       $ci->load->database();
+ $query="SELECT * FROM website_mobile_report WHERE user_id=".$user_id;
+
+  $category_data = $ci->db->query($query);        
+  return $category_data->result(); 
+
+}

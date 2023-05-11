@@ -36,9 +36,10 @@ class Fornt extends CI_Controller {
         $this->load->library('email');
         /* $this->load->library('csvimport');*/ 
         $this->load->helper('file');
-        $this->load->helper('user_helper');
+        $this->load->helper('user_helper'); 
         /* $this->load->helper('pdf2text');*/
 		$this->load->model('User_model');
+		$this->load->model('Website_user');
 		$this->load->library('pagination');
 		$this->load->helper('cookie');
 
@@ -430,8 +431,6 @@ class Fornt extends CI_Controller {
 	  
 	}
 
-
-	
 	public function buy_Premium(){
 		$id = $this->session->userdata('vehical'); 
 		if(isset($id) == ''){
@@ -443,7 +442,138 @@ class Fornt extends CI_Controller {
 	       	$this->load->view('front/buy_Premium'); 
 		}
 	}
+
+	public function policy_form(){
+
+		$SumInsured = $this->input->post('SumInsured');
+		$Business = $this->input->post('Business');
+		$date = $this->input->post('date');
+		$Business_Type = $this->input->post('Business_Type');
+		$bank_name = $this->input->post('bank_name');
+		$premium = $this->input->post('premium'); 
+     
+		$Salutation = $this->input->post('Salutation');
+		$Policy_Holder = $this->input->post('Policy_Holder');
+		$Gender = $this->input->post('Gender');
+		$Date_Birth = $this->input->post('Date_Birth');
+		$Customer_iD = $this->input->post('Customer_iD');
+		$Address_Line_1 = $this->input->post('Address_Line_1');
+		$Address_Line_2 = $this->input->post('Address_Line_2');
+		$Pincode = $this->input->post('Pincode');
+		$State = $this->input->post('State');
+		$City = $this->input->post('City');
+		$Mobile = $this->input->post('Mobile');
+		$Email = $this->input->post('email');
+		$Make = $this->input->post('Make');
+		$Model = $this->input->post('Model');
+		$Tear_Manufacturing = $this->input->post('Tear_Manufacturing');
+		$Battery_No = $this->input->post('Battery_No');
+		$Chassis_No = $this->input->post('Chassis_No');
+		$Addresss_Line_1 = $this->input->post('Addresss_Line_1');
+		$Addresss_Line_2 = $this->input->post('Addresss_Line_2');
+		$Pincodes = $this->input->post('Pincodes');
+		$States = $this->input->post('States');
+		$Citys = $this->input->post('Citys');
+		$Nominee_Name = $this->input->post('Nominee_Name');
+		$Relation = $this->input->post('Relation');
+		$Date_Of_Birth = $this->input->post('Date_Of_Birth');
+		$Genders = $this->input->post('Genders');
+		$Financer_Name = $this->input->post('Financer_Name');
+		$Address = $this->input->post('Address');
+		$Financer_Type = $this->input->post('Financer_Type');
+		$Battery_kw = $this->input->post('Battery_kw');
+
+		$user_id= $this->session->userdata('vehical'); 
+
+
+
+        $ODAmount = $premium;
+		$GST = 0;
+		$Final = $premium;
+
+        $dateString =$date;
+		$dt = new DateTime($dateString);
+		$dt->modify('1 year');
+		$exprie_date = $dt->format('Y-m-d');		
+
+		$data['report'] = $this->Website_user->Mobile_invoice_number();  
+		foreach($data as $policy_number);
+		$last = $policy_number;
+	     // This is fetched from database
+		$last++;
+		$policy_numbers = sprintf('%07d', $last);
+
+
+	     $data['report'] = $this->Website_user->Mobile_customer_id();  
+		foreach($data as $customer_id);
+
+		$lasts = $customer_id; // This is fetched from database
+		$lasts++;
+		$costumer_ids = sprintf('%07d', $lasts);
+
+		$data['report'] = $this->Website_user->Mobile_invoice_no();  
+		foreach($data as $inv);
+		$str = $inv;
+		$trim = trim($str, "MB/MP/");
 	
+		$invoice =$trim;
+	    $invoice++;
+		$invoice_number = "MB/MP/".sprintf('%07d', $invoice);
+
+		$data = array(
+			'salutation' => $Salutation,
+			'name_policy_holder' =>$Policy_Holder,
+			'policy_numbers' =>$policy_numbers,
+			'invoice_no' =>$invoice_number,
+			'gender' => $Gender,
+			'date_birth' =>$Date_Birth,
+			'customer_id' => $costumer_ids,
+			'address_line_1' =>$Address_Line_1,
+			'address_line_2' => $Address_Line_2,
+			'pincode' =>$Pincode,
+			'state' => $State,
+			'city' =>$City,
+			'mobile' => $Mobile,
+			'email' =>$Email,
+			'make' => $Make,
+			'model' =>$Model,
+			'tear_manufacturing' => $Tear_Manufacturing,
+		
+			'Battery_No' => $Battery_No,
+			'Chassis_No' =>$Chassis_No,
+			'Addresss_line_1' => $Addresss_Line_1,
+			'Addresss_line_2' =>$Addresss_Line_2,
+			'pincodes' => $Pincodes,
+			'states' =>$States,
+			'citys' => $Citys,
+			'nomine_name' =>$Nominee_Name,
+			'relation' => $Relation,
+			'date_of_birth' =>$Date_Of_Birth,
+			'genders' => $Genders,
+			'finacer_name' =>$Financer_Name,
+			'finacer_address' => $Address,
+			'financer_type' =>$Financer_Type,
+			'sum_insured' => $SumInsured,
+			'policy_start' => $date,
+			'GST' => $GST,
+			'premium ' => $Final,
+			'ODAmount ' => $ODAmount,
+			'exprie_date'  =>$exprie_date,
+			'business_type ' => $Business_Type,
+			'bank_name'  =>$bank_name,
+			'Battery_kw'  =>$Battery_kw,
+			'user_id'  =>$user_id
+		
+		); 
+		
+		$insert = $this->Website_user->insert($data);
+
+		$this->session->set_flashdata('policy_form', 'Thank you! Your policy form has been successfully submitted.'); 
+		$this->session->set_flashdata('msg_class','alert-success');
+		  return redirect('Fornt/products');
+
+
+    }	
 	
 	
 	

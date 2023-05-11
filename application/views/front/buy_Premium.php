@@ -92,11 +92,11 @@
             <div class="row g-5">
                 <div class="col-md-12 col-lg-12">
                     <h4 class="mb-3">Policy Form</h4>
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/policy_form" novalidate>
                         <div class="row g-3">
                             <div class="col-sm-4">
                                 <label for="firstName" class="form-label">Shop name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                <input type="text" class="form-control"name="bank_name"  id="bank" placeholder="Shop name" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Shop  name is required.
                                 </div>
@@ -104,7 +104,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Barnch Code</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="CG10" disabled>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="CG10" readonly>
                                 <div class="invalid-feedback">
                                     Valid Barnch Code is required.
                                 </div>
@@ -113,7 +113,7 @@
                             
                             <div class="col-sm-4">
                                 <label for="state" class="form-label">Business Type</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="Business_Type" name="Business_Type" required>
                                     <option value="">Choose...</option>
                                     <option value="NEW BUSINESS ">NEW</option>
                                     <option value="RENEWAL">RENEWAL</option>
@@ -125,7 +125,7 @@
                             
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Policy Start Date</label>
-                                <input  type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input  type="date" class="form-control" id="Policy_Start" name="date" placeholder="" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Policy Start Date is required.
                                 </div>
@@ -133,7 +133,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Policy Tenure</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="1"  disabled>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="1"  readonly>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -141,7 +141,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Master Policy Number</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="92029222932000001" disabled>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="92029222932000001" readonly>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -150,7 +150,7 @@
 
                             <div class="col-sm-4">
                                 <label for="state" class="form-label">Mobile Type</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="BUSINESS" value="" name="Business"  required>
                                     <option value="">Choose...</option>
                                     <option value="New">New</option>
                                     <option value="New + Theft">New + Theft</option>
@@ -163,7 +163,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Risk Covered</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="MOBILE" disabled>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="MOBILE" readonly>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -171,15 +171,25 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Price</label>
-                                <input type="Number" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input type="Number" class="form-control" value="" id ="SumInsured" name= "SumInsured"  placeholder="" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Price is required.
                                 </div>
                             </div>
+
+                            <div class="col-sm-4">
+                                <label for="lastName" class="form-label">Policy Premium</label>
+                                <input type="Number" class="form-control"   id="results" name="premium"  placeholder="" readonly >
+                                <div class="invalid-feedback">
+                                    Valid Price is required.
+                                </div>
+                            </div>
+
+                           
                               <p>Personal information</p>
                             <div class="col-sm-3">
                                 <label for="state" class="form-label">Salutation</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="Salutation" name="Salutation"  required>
                                     <option value="">Choose...</option>
                                     <option value="MR">MR</option>
                                     <option value="MRS">MRS</option>
@@ -194,7 +204,7 @@
 
                             <div class="col-sm-3">
                                 <label for="lastName" class="form-label">Name OF Policy Holder </label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Name OF Policy Holder " value="" required>
+                                <input type="text" class="form-control"  value="" id="Policy_Holder" name="Policy_Holder" placeholder="Name OF Policy Holder " value="" required>
                                 <div class="invalid-feedback">
                                     Valid Policy Holder is required.
                                 </div>
@@ -202,7 +212,7 @@
 
                             <div class="col-sm-3">
                                 <label for="state" class="form-label">Gender</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="Gender" name="Gender" required>
                                     <option value="">Choose...</option>
                                     <option value="MALE">MALE</option>
                                 <option value="FEMALE ">FEMALE </option>
@@ -216,7 +226,7 @@
 
                             <div class="col-sm-3">
                                 <label for="lastName" class="form-label">Date OF Birth</label>
-                                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input type="date" class="form-control"id="Date_Birth"  name="Date_Birth"  placeholder="" value="" required>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -224,7 +234,7 @@
 
                             <div class="col-sm-6">
                                 <label for="lastName" class="form-label">Address Line 1*</label>
-                                <textarea type="text" class="form-control" id="lastName" placeholder="Address" row="10" colume="50" value="" required></textarea>
+                                <textarea type="text" class="form-control" name="Address_Line_1" id="Address_Line_1" value="" placeholder="Address" row="10" colume="50" value="" required></textarea>
                                 <div class="invalid-feedback">
                                     Valid  Address is required.
                                 </div>
@@ -232,7 +242,7 @@
 
                             <div class="col-sm-6">
                                 <label for="lastName" class="form-label">Address Line 2*</label>
-                                <textarea type="text" class="form-control" id="lastName" placeholder="Address" row="10" colume="50" value="" required></textarea>
+                                <textarea type="text" class="form-control"  name="Address_Line_2" id="Address_Line_2" value="" placeholder="Address" row="10" colume="50" value="" required></textarea>
                                 <div class="invalid-feedback">
                                     Valid  Address is required.
                                 </div>
@@ -240,7 +250,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Pincode</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Pincode" value="" required>
+                                <input type="text" class="form-control" name="Pincode" id="Pincode" placeholder="Pincode" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Pincode is required.
                                 </div>
@@ -248,7 +258,7 @@
 
                             <div class="col-sm-4">
                                 <label for="state" class="form-label">State</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="State" name="State" required>
                                     <option value="">Choose...</option>
                                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -295,7 +305,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">City</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="City" value="" required>
+                                <input type="text" class="form-control" name="City" id="City" placeholder="City" value="" required>
                                 <div class="invalid-feedback">
                                     Valid City is required.
                                 </div>
@@ -304,7 +314,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Mobile Number</label>
-                                <input type="number" class="form-control" id="lastName" placeholder="Mobile Number"  value=""  maxlength="10"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                                <input type="number" class="form-control"name="Mobile" id="Mobile" placeholder="Mobile Number"  value=""  maxlength="10"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
                                 <div class="invalid-feedback">
                                     Valid Mobile Number is required.
                                 </div>
@@ -312,7 +322,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="lastName" placeholder="Email"  value="" required>
+                                <input type="email" class="form-control" name="email" type="email" placeholder="Email"  value="" required>
                                 <div class="invalid-feedback">
                                     Valid Email is required.
                                 </div>
@@ -322,7 +332,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Make</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Make" value="" required>
+                                <input type="text" class="form-control" name="Make"  value="" id="Make" placeholder="Make" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Make is required.
                                 </div>
@@ -330,7 +340,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Model</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Model " value="" required>
+                                <input type="text" class="form-control" name="Model" value=""  id="Model" placeholder="Model " value="" required>
                                 <div class="invalid-feedback">
                                     Valid Model is required.
                                 </div>
@@ -340,7 +350,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Year Of Manufacturing*</label>
-                                <input type="Number" class="form-control" id="lastName" placeholder="Manufacturing" value="" required>
+                                <input type="Number" class="form-control" name="Tear_Manufacturing"   id="Tear_Manufacturing" placeholder="Manufacturing" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Manufacturing is required.
                                 </div>
@@ -348,7 +358,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">IMEI No</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="IMEI No" value="" required>
+                                <input type="text" class="form-control" name="Battery_No" id="Battery_No" value="" placeholder="IMEI No" value="" required>
                                 <div class="invalid-feedback">
                                     Valid IMEI No is required.
                                 </div>
@@ -358,7 +368,7 @@
                           
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Model No</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Model No" value="" required>
+                                <input type="text" class="form-control" value=""  name="Chassis_No" id="Chassis_No" placeholder="Model No" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Model No is required.
                                 </div>
@@ -366,16 +376,17 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Serial KW</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Serial KW" value="" required>
+                                <input type="text" class="form-control"  id="Battery_kw" name="Battery_kw" placeholder="Serial KW" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Serial KW is required.
                                 </div>
                             </div>
 
-                            
+                            <input type="checkbox" id="same" name="same" onchange="billingFunction()" style=" width:15px; height:15px;" />
+                    <label for="same" style=" color:black;">Is the communication here the same as the address?</label>
                             <div class="col-sm-6">
                                 <label for="lastName" class="form-label">Address Line 1*</label>
-                                <textarea type="text" class="form-control" id="lastName" placeholder="Address" row="10" colume="50" value="" required></textarea>
+                                <textarea type="text" class="form-control" name="Addresss_Line_1" id="Addresss_Line_1" row="10" colume="50" value="" required></textarea>
                                 <div class="invalid-feedback">
                                     Valid  Address is required.
                                 </div>
@@ -383,7 +394,7 @@
 
                             <div class="col-sm-6">
                                 <label for="lastName" class="form-label">Address Line 2*</label>
-                                <textarea type="text" class="form-control" id="lastName" placeholder="Address" row="10" colume="50" value="" required></textarea>
+                                <textarea type="text" class="form-control"  name="Addresss_Line_2" id="Addresss_Line_2"  placeholder="Address" row="10" colume="50" value="" required></textarea>
                                 <div class="invalid-feedback">
                                     Valid  Address is required.
                                 </div>
@@ -391,7 +402,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Pincode</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Pincode" value="" required>
+                                <input type="text" class="form-control" value="" name="Pincodes" id="Pincodes" placeholder="Pincode" value="" required>
                                 <div class="invalid-feedback">
                                     Valid Pincode is required.
                                 </div>
@@ -399,7 +410,7 @@
 
                             <div class="col-sm-4">
                                 <label for="state" class="form-label">State</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="States" name="States"  required>
                                     <option value="">Choose...</option>
                                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -446,32 +457,16 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">City</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="City" value="" required>
+                                <input type="text" class="form-control" id="Citys" name="Citys" placeholder="City" value="" required>
                                 <div class="invalid-feedback">
                                     Valid City is required.
                                 </div>
                             </div>
 
 
-                            <div class="col-sm-3">
-                                <label for="lastName" class="form-label">Mobile Number</label>
-                                <input type="number" class="form-control" id="lastName" placeholder="Mobile Number"  value=""  maxlength="10"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
-                                <div class="invalid-feedback">
-                                    Valid Mobile Number is required.
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                                <label for="lastName" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="lastName" placeholder="Email"  value="" required>
-                                <div class="invalid-feedback">
-                                    Valid Email is required.
-                                </div>
-                            </div>
-
                             <div class="col-sm-6">
                                 <label for="state" class="form-label">Financer Type*</label>
-                                <select class="form-select" id="state" required>
+                                <select class="form-select" id="Financer_Type" name="Financer_Type"  required>
                                     <option value="">Choose...</option>
                                     <option value="HYPOTHECATED">HYPOTHECATED</option>
 					              	<option value="NOT HYPOTHECATED">NOT HYPOTHECATED </option>			
@@ -483,7 +478,7 @@
 
                             <div class="col-sm-6">
                                 <label for="lastName" class="form-label">Financer Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Financer Name" value="" required>
+                                <input type="text" class="form-control" id="Financer_Name" name="Financer_Name" value="" placeholder="Financer Name" value="" >
                                 <div class="invalid-feedback">
                                     Valid Financer Name is required.
                                 </div>
@@ -492,24 +487,17 @@
                             
                             <div class="col-sm-12">
                                 <label for="lastName" class="form-label">Address</label>
-                                <textarea type="text" class="form-control" id="lastName" placeholder="Address" row="10" colume="50" value="" required></textarea>
+                                <textarea type="text" class="form-control" id="Address" name="Address" placeholder="Address" row="10" colume="50" value="" ></textarea>
                                 <div class="invalid-feedback">
                                     Valid  Address is required.
                                 </div>
                             </div>
 
-
-
-
-
-                            
-
-                        
                             
                         </div>
 
                         <hr class="my-4">
-                        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                        <button class="w-100 btn btn-primary btn-lg" id="submit" type="submit">Continue to checkout</button>
                     </form>
                 </div>
             </div>
@@ -535,20 +523,20 @@
         document.getElementById("Citys").value = document.getElementById("City").value;
        }
       
-        else {
-  document.getElementById("Addresss_Line_1").value = "";
-  document.getElementById("Addresss_Line_2").value = "";
-  document.getElementById("Pincodes").value = "";
-  document.getElementById("States").value = "";
-  document.getElementById("Citys").value = "";
- 
-      }
-   }
-</script>
+                else {
+        document.getElementById("Addresss_Line_1").value = "";
+        document.getElementById("Addresss_Line_2").value = "";
+        document.getElementById("Pincodes").value = "";
+        document.getElementById("States").value = "";
+        document.getElementById("Citys").value = "";
+        
+            }
+     }
+    </script>
 
     <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (() => {
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+       (() => {
         'use strict'
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -558,14 +546,90 @@
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
                 if (!form.checkValidity()) {
+
+                        var Financer_Type=  document.getElementById("Financer_Type").value;   
+                       if(Financer_Type == "HYPOTHECATED" ){  
+                        document.getElementById("Financer_Name").required = true;
+                        document.getElementById("Address").required = true;
+                        } 
+                        else{
+                       document.getElementById("Financer_Name").required = false;
+                        document.getElementById("Address").required = false;
+                        } 
+                        
+
                     event.preventDefault()
                     event.stopPropagation()
+                   
                 }
+                
 
                 form.classList.add('was-validated')
             }, false)
         })
-    })()
+      })()
+    </script>
+
+<script>
+    $("#SumInsured, #BUSINESS").bind("change keyup", function(e){
+        num1 = document.getElementById("SumInsured").value;
+        num2 = document.getElementById("BUSINESS").value;
+
+
+        if (num1 !== '' && num2 !== '') {
+            if (num2 == 'New' || num2 == 'Old') {
+                if (num1 <= 10000) {
+                    num3 = 1000;
+                    num4 = 1000;
+
+                } else if (num1 >= 10001 && num1 <= 20000) {
+                    num3 = 1500;
+                    num4 = 1500;
+
+                } else if (num1 >= 20001 && num1 <= 30000) {
+                    num3 = 2000;
+                    num4 = 2000;
+
+                } else if (num1 >= 30001 && num1 <= 50000) {
+                    num3 = 2500;
+                    num4 = 2500;
+
+                } else if (num1 >= 50001 && num1 <= 100000) {
+                    num3 = 3000;
+                    num4 = 3000;
+
+                } else if (num1 >= 100001 && num1 <= 200000) {
+                    num3 = 5000;
+                    num4 = 5000;
+                }
+              
+                document.getElementById("results").value = Math.round(num4);
+
+            } else {
+                if (num1 <= 10000) {
+                    num3 = 1000 + 300;
+                    num4 = 1000 + 300;
+                } else if (num1 >= 10001 && num1 <= 20000) {
+                    num3 = 1500 + 500;
+                    num4 = 1500 + 500;
+                } else if (num1 >= 20001 && num1 <= 30000) {
+                    num3 = 2000 + 500;
+                    num4 = 2000 + 500;
+                } else if (num1 >= 30001 && num1 <= 50000) {
+                    num3 = 2500 + 700;
+                    num4 = 2500 + 700;
+                } else if (num1 >= 50001 && num1 <= 100000) {
+                    num3 = 3000 + 700;
+                    num4 = 3000 + 700;
+                } else if (num1 >= 100001 && num1 <= 200000) {
+                    num3 = 5000 + 1000;
+                    num4 = 5000 + 1000;
+                }
+               
+                document.getElementById("results").value = Math.round(num4);
+            }
+        }
+    });
     </script>
 </body>
 

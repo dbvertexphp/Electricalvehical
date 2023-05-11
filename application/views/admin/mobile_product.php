@@ -321,7 +321,7 @@ leble{
                 <lebel style="font-size: 15px; color:black;">Risk Covered</lebel> 
                 </div>
                  <div class ="col-4">
-                 <input class ="bank_name" value="ELECTRIC VEHICLE" type="text" >
+                 <input class ="bank_name" value="Mobile" type="text" >
 
                </div>
                <div class ="col-2">

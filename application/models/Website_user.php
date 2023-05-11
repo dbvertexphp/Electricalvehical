@@ -38,4 +38,14 @@ function insert($data){
     return true;
 }
 
+public function website_Mobile_selectquery($id){
+      $q=$this->db->select('*')
+      ->from('website_mobile_report')
+      ->where('id',$id)
+      ->get();
+      
+      return $q->row();
+      }
+      
+
 }

@@ -104,6 +104,29 @@ a:hover{
 .dropdown_hover_name:hover{
     cursor: pointer;
 }
+.header_option{
+  font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 22.515px;
+line-height: 17px;
+color: #313131;
+flex: none;
+order: 1;
+flex-grow: 0;
+margin-left:15px
+}
+.header_option:hover{
+  color: #FFB600;
+}
+.logo{
+  font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 30.03px;
+line-height: 34px;
+color: #FFB600;
+}
  </style>
 
   </head>
@@ -113,18 +136,20 @@ a:hover{
     <div class="container">
       <nav class="navbar navbar-expand-lg ">
           
-            <a class="navbar-brand" href="<?php echo base_url();?>">Mobile</a>
+            <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="<?php echo base_url();?>Fornt/Calculator">Products And Calculator</a>
+              <li class="nav-item">
+                  <a class=" header_option Policy active" aria-current="page" href="<?php echo base_url();?>Fornt/products">Policy</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Clam</a>
+                  <a class=" header_option Calculator active" aria-current="page" href="<?php echo base_url();?>Fornt/Calculator">Calculator</a>
+                </li>
+                <li class="nav-item">
+                  <a class=" header_option  Clam active" aria-current="page" href="#">Clam</a>
                 </li>
                 
                </ul>

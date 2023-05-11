@@ -31,3 +31,21 @@ function get_user_policy($user_id)
   return $category_data->result(); 
 
 }
+
+
+function get_user_policy_count($user_id)
+{
+  $ci =& get_instance();
+  //load databse library
+       $ci->load->database();
+ $query="SELECT * FROM website_mobile_report WHERE user_id=".$user_id;
+
+  $category_data = $ci->db->query($query);        
+  $category_data = $ci->db->query($query);        
+  if($category_data-> num_rows()>0)
+  return $category_data->row(); 
+  else
+  return null;
+}
+
+

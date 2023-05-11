@@ -19,6 +19,15 @@
     .post_input_lable {
         font-weight: bolder;
     }
+
+    #final_amount {
+        visibility: hidden;
+    }
+    .Calculator{
+    color:#FFB600;
+    border-bottom:6px solid #FFB600;
+    padding-bottom:3px;
+}
     </style>
 </head>
 
@@ -67,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <br>
 
@@ -76,11 +85,10 @@
                             style="background-color: #ffb600;color:white">View Price</button>
 
                     </div>
-
+                </form>
+                <div class="d-grid gap-2 col-4 mx-auto" style="justify-items: center; " id="final_amount">
                     <p class="mt-3 post_input_lable" style="font-size: 15px; color:black; text-align-last: center;">
                         Final Premium: - <span id="Final_Premium"></span> /- Rs</p>
-                </form>
-                <div class="d-grid gap-2 col-4 mx-auto" style="justify-items: center;">
                     <a href="<?php echo base_url();?>Fornt/buy_Premium"><button class="btn rounded-5" type="submit"
                             id="submit" style="background-color: #ffb600;color:white">Buy Premium</button></a>
                 </div>
@@ -441,8 +449,8 @@
                     num4 = 5000;
                 }
                 document.getElementById("Final_Premium").innerHTML = Math.round(num3);
-                document.getElementById("results").value = Math.round(num4);
-
+               
+                document.getElementById('final_amount').style.visibility="visible";
             } else {
                 if (num1 <= 10000) {
                     num3 = 1000 + 300;
@@ -464,7 +472,8 @@
                     num4 = 5000 + 1000;
                 }
                 document.getElementById("Final_Premium").innerHTML = Math.round(num3);
-                document.getElementById("results").value = Math.round(num4);
+               
+                document.getElementById('final_amount').style.visibility="visible";
             }
         }
     });

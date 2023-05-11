@@ -91,8 +91,15 @@ class Fornt extends CI_Controller {
 	}
 	
 	public function products(){
-	   $this->load->view('front/header'); 
-	  $this->load->view('front/Products'); 
+	  $id = $this->session->userdata('vehical'); 
+	  if(isset($id) == ''){
+		  $this->load->view('front/header'); 
+		 $this->load->view('front/login');    
+	  }
+	  else{
+		$this->load->view('front/header'); 
+		$this->load->view('front/Products'); 
+	  }
 	}
 	
 	
@@ -574,6 +581,20 @@ class Fornt extends CI_Controller {
 
 
     }	
+
+	function website_mobile_pdf($id=0){
+		
+		$data['report'] = $this->Website_user->website_Mobile_selectquery($id); 
+		foreach($data as $inv);
+		require_once BASEPATH.'../vendor/autoload.php';
+		
+		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp']);
+		
+		$this->load->view('admin/mobile_pdf',$data);
+		$hmt =  $this->output->get_output();
+		$mpdf->WriteHTML($hmt);
+		$mpdf->Output('Policy.pdf','D');
+    }
 	
 	
 	

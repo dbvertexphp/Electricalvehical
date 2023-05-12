@@ -85,46 +85,52 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    .embed-responsive-item{
+
+    .embed-responsive-item {
         width: 576px;
         height: 337px;
         border-radius: 28px;
     }
+
     @media screen and (max-width: 1200px) {
-        .embed-responsive-item{
-        width: 420px;
-        height: 237px;
-        border-radius: 10px;
+        .embed-responsive-item {
+            width: 420px;
+            height: 237px;
+            border-radius: 10px;
+        }
     }
-    }
+
     @media screen and (max-width: 500px) {
-        .embed-responsive-item{
-        width: 250px;
-        height: 137px;
-        border-radius: 10px;
+        .embed-responsive-item {
+            width: 250px;
+            height: 137px;
+            border-radius: 10px;
+        }
     }
+
+    .why_choose {
+        line-height: 23px;
+        font-weight: 900;
+        letter-spacing: 1px;
     }
-   .why_choose{
-    line-height: 23px;
-    font-weight:900;
-    letter-spacing: 1px;
-   }
-   .scroll-then-fix {
-  position: relative;
-}
 
-.scroll-then-fix img {
-  width: 100%;
-  height: auto;
-}
+    .scroll-then-fix {
+        position: relative;
+    }
 
-.scroll-then-fix.fixed {
-  position: fixed;
-  top: 50px; /* Adjust the desired position based on your needs */
-  width: 200px; /* Adjust the width of the fixed image */
-  height: auto;
-}
-  
+    .scroll-then-fix img {
+        width: 100%;
+        height: auto;
+    }
+
+    .scroll-then-fix.fixed {
+        position: fixed;
+        top: 50px;
+        /* Adjust the desired position based on your needs */
+        width: 200px;
+        /* Adjust the width of the fixed image */
+        height: auto;
+    }
     </style>
 
 </head>
@@ -194,7 +200,10 @@
             <div class="row " style="padding-top:15%; padding-bottom:15%">
                 <div class="col-lg-6" style="color: white;">
                     <h1><b>Who Are We ?</b></h1><br>
-                    <p>We are a team of dedicated professionals who understand the importance of protecting your valuable mobile devices. Our mission is to provide you with the best mobile protection plan coverage possible, giving you peace of mind and protection against any unexpected events like accidental damages, water damaged and theft.</p>
+                    <p>We are a team of dedicated professionals who understand the importance of protecting your
+                        valuable mobile devices. Our mission is to provide you with the best mobile protection plan
+                        coverage possible, giving you peace of mind and protection against any unexpected events like
+                        accidental damages, water damaged and theft.</p>
                 </div>
                 <div class="col-lg-6 text-center">
 
@@ -211,24 +220,16 @@
     </div>
 
     <br>
-    <div class="container">
-    <div class="scroll-then-fix">
-  <img src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png" alt="Image 1">
-</div>
+   
 
-<div class="scroll-then-fix">
-  <img src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png" alt="Image 2">
-</div>
-</div>
 
-          
     <div class="container-fluid" style="margin-top: -23px;">
         <section id="our_work_section">
 
             <div class="row out_work_sec_length" style="height: calc(100vh * 3);">
                 <div class="col our_work_iframe">
 
-         
+
 
                     <div class="our_work_section">
                         <div class="container" style="height:100vh">
@@ -236,7 +237,8 @@
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-6">
                                         <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png" alt="pahadiuncle_layout">
+                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                            alt="pahadiuncle_layout">
                                     </div>
                                     <div class="appdevcol col-md-6">
                                         <div class="appdetaildivider">
@@ -255,7 +257,10 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <p class="why_choose"> Buy Mobile protection plan that fits your pocket. our plans are affordable and easy to understand, so you won't be blindsided by hidden fees.</p>
+                                                            <p class="why_choose"> Buy Mobile protection plan that fits
+                                                                your pocket. our plans are affordable and easy to
+                                                                understand, so you won't be blindsided by hidden fees.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -283,7 +288,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                        <h3 style="font-weight:900;">Easy to buy</h3>
+                                                            <h3 style="font-weight:900;">Easy to buy</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -293,7 +298,9 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                        <p class="why_choose">Just head on over to the Buy Protection Plans section and follow the simple steps to get started.</p>
+                                                            <p class="why_choose">Just head on over to the Buy
+                                                                Protection Plans section and follow the simple steps to
+                                                                get started.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -322,7 +329,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                        <h3 style="font-weight:900;">Hassle Free claims</h3>
+                                                            <h3 style="font-weight:900;">Hassle Free claims</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -332,7 +339,9 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                        <p class="why_choose"> Claim settlement is just a call away. Just call on our toll-free number or drop a mail that’s it.</p>
+                                                            <p class="why_choose"> Claim settlement is just a call away.
+                                                                Just call on our toll-free number or drop a mail that’s
+                                                                it.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -481,24 +490,23 @@
     </script>
 
     <script>
-        
-        window.addEventListener('scroll', function() {
-  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  var elements = document.querySelectorAll('.scroll-then-fix');
+    window.addEventListener('scroll', function() {
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        var elements = document.querySelectorAll('.scroll-then-fix');
 
-  for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
 
-    if (scrollPosition >= 200) { // Adjust the scroll position as needed
-      element.classList.add('fixed');
-    } else {
-      element.classList.remove('fixed');
-    }
-  }
-}); 
-   </script>
+            if (scrollPosition >= 200) { // Adjust the scroll position as needed
+                element.classList.add('fixed');
+            } else {
+                element.classList.remove('fixed');
+            }
+        }
+    });
+    </script>
 
-  
+
 
 </body>
 

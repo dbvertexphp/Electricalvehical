@@ -114,7 +114,8 @@ color: #313131;
 flex: none;
 order: 1;
 flex-grow: 0;
-margin-left:15px
+margin-left:15px;
+text-decoration: none;
 }
 .header_option:hover{
   color: #FFB600;
@@ -126,6 +127,7 @@ font-weight: 700;
 font-size: 30.03px;
 line-height: 34px;
 color: #FFB600;
+text-decoration: none;
 }
  </style>
 
@@ -141,7 +143,7 @@ color: #FFB600;
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav m-auto ">
               <li class="nav-item">
                   <a class=" header_option Policy active" aria-current="page" href="<?php echo base_url();?>Fornt/products">Policy</a>
                 </li>
@@ -149,7 +151,7 @@ color: #FFB600;
                   <a class=" header_option Calculator active" aria-current="page" href="<?php echo base_url();?>Fornt/Calculator">Calculator</a>
                 </li>
                 <li class="nav-item">
-                  <a class=" header_option  Clam active" aria-current="page" href="#">Clam</a>
+                  <a class=" header_option  Clam active" aria-current="page" href="<?php echo base_url();?>Fornt/clam">Clam</a>
                 </li>
                 
                </ul>

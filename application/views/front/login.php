@@ -35,7 +35,6 @@
 }
 </style>
    
-    <title>Login form</title>
   </head>
   <body>
    
@@ -45,9 +44,9 @@
     <br>
     <div class="container">
         <div class="row">
-          <div class="col-md-6 mb-1" style="padding-right: 85px;">
+          <div class="col-md-6 mb-1" style="padding-right: 85px; align-self: center;">
             <form method="post"  action="<?php echo base_url();?>Fornt/userlogin"  >
-                <h3><b>Mobile</b></h3><br>
+              
                 <h5>Login</h5>
               <?php  if($error=$this->session->flashdata('login_error')){  ?>
                         <div class="row  text-center" style="justify-content: center;">
@@ -102,51 +101,6 @@
     
     
     
-      <!-- footer -->
-      <div class="container-fluid" style="background-color: black;">
-        <div class="container" style="padding: 25px 25px;">
-        <div class="row" style="color: white;">
-            <div class="col">
-                <h3>Company</h3>
-                <p style="font-size: 13px;">Mobi Protect Pvt Ltd. <br>
-                  Near old arpa bridge, Pratap chowk, <br>
-                   Bilaspur, Chhattisgarh-495001 .</p>
-            </div>
-            <div class="col">
-                <p>About Us</p> 
-                <p style="font-size: 13px;">Terms &
-                    Condition <br>
-                  Media & Low</p>
-            </div>
-            <div class="col">
-                <p>Products</p>
-                <p style="font-size: 13px;">Mobile Protection<br>
-                    Speed 
-                   Electric Vehicle
-                </p>
-            </div>
-            <div class="col">
-               <p> Contact Us</p>
-                <p style="font-size: 13px;">Help / Support</p>
-            </div>
-            <div class="col">
-                <p> Get Email Notifications</p>
-                <p style="font-size: 13px;">Generate outside the box thinking with
-                    the possibility to targtet the low</p>
-    
-                  <input type="email" name="submit"  value="Enter email...">submit 
-            </div>  <br>
-            <!-- <button style="color: white; background-color: #FFB600; ">Get The app-></button> -->
-           
-    
-           
-        </div><br>
-        <div class="text-center">
-        <button type="button" class="btn  " style="border-radius: 40px; background-color: #FFB600;color: white;">Get The app  <i class="fa fa-arrow-right"></i></button><br>
-    </div><br>
-       <p style="color: white; font-size: 13px;"> © 2023 Mobile. All Rights Reserved.</p>
-     </div>
-    </div>
      <script>
 $(function() {
     $('.logout').click(function(e) {

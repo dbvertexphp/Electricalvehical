@@ -46,6 +46,11 @@ public function website_Mobile_selectquery($id){
       
       return $q->row();
       }
-      
+
+      function Contact_us($data){
+            $this->db->insert('Contact_us',$data);
+            return true;
+        }
+
 
 }

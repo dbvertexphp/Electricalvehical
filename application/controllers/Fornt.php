@@ -46,7 +46,8 @@ class Fornt extends CI_Controller {
 	}
 	public function index(){
 	  $this->load->view('front/header'); 
-	  $this->load->view('front/insurance');   
+	  $this->load->view('front/insurance');  
+	  $this->load->view('front/footer');	 
 	}
 	
 	
@@ -54,7 +55,8 @@ class Fornt extends CI_Controller {
 	   $id = $this->session->userdata('vehical'); 
 	   if(isset($id) == ''){
 	    $this->load->view('front/header'); 
-	      $this->load->view('front/login');    
+	      $this->load->view('front/login'); 
+		  $this->load->view('front/footer');	   
 	   }
 	   else{
 	       return redirect('Fornt/index'); 
@@ -66,7 +68,8 @@ class Fornt extends CI_Controller {
 		$id = $this->session->userdata('vehical');
 		if(!empty($id)){
 			$this->load->view('front/header'); 
-			$this->load->view('front/change_password');    
+			$this->load->view('front/change_password');  
+			$this->load->view('front/footer');	  
 		}
 		else{
 			return redirect('Fornt/index'); 
@@ -77,28 +80,33 @@ class Fornt extends CI_Controller {
 	public function singup(){
 	  $this->load->view('front/header'); 
 	  $this->load->view('front/registration');  
+	  $this->load->view('front/footer');	
 	 
 	}
 	
 	public function Otp(){
 	   $this->load->view('front/header'); 
 	  $this->load->view('front/otp'); 
+	  $this->load->view('front/footer');	
 	}
 	
 	public function Calculator(){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/Calculator'); 
+	  $this->load->view('front/footer');	
 	}
 	
 	public function products(){
 	  $id = $this->session->userdata('vehical'); 
 	  if(isset($id) == ''){
 		  $this->load->view('front/header'); 
-		 $this->load->view('front/login');    
+		 $this->load->view('front/login'); 
+		 $this->load->view('front/footer');	   
 	  }
 	  else{
 		$this->load->view('front/header'); 
 		$this->load->view('front/Products'); 
+		$this->load->view('front/footer');	
 	  }
 	}
 	
@@ -106,6 +114,7 @@ class Fornt extends CI_Controller {
 	public function forgot(){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/forgot'); 
+	  $this->load->view('front/footer');	
 	}
 	
 	 public function userlogin(){
@@ -346,6 +355,7 @@ class Fornt extends CI_Controller {
   	public function forgot_password_mobile(){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/forgot_password_mobile'); 
+	  $this->load->view('front/footer');	
 		
 	}
 	
@@ -442,11 +452,13 @@ class Fornt extends CI_Controller {
 		$id = $this->session->userdata('vehical'); 
 		if(isset($id) == ''){
 		    $this->load->view('front/header'); 
-		   $this->load->view('front/login');    
+		   $this->load->view('front/login');  
+		   $this->load->view('front/footer');	  
 		}
 		else{
 			$this->load->view('front/header'); 
 	       	$this->load->view('front/buy_Premium'); 
+			   $this->load->view('front/footer');	
 		}
 	}
 
@@ -590,7 +602,7 @@ class Fornt extends CI_Controller {
 
 
     }	
-
+	
 	function website_mobile_pdf($id=0){
 	
 		
@@ -605,7 +617,52 @@ class Fornt extends CI_Controller {
 		$mpdf->WriteHTML($hmt);
 		$mpdf->Output('Policy.pdf','D');
     }
+
+	function clam(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/clam'); 
+		$this->load->view('front/footer');	
+	}
+
+	function about_us(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/about_us'); 
+		$this->load->view('front/footer');	 
+	}
+
+	function Terms_conditions(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/Terms_&_conditions'); 
+		$this->load->view('front/footer');	
+	}
+
+	function Contact_us(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/Contact_us'); 
+		$this->load->view('front/footer');	
+	}
+
+
+	function Contact_us_form(){
+		$Name = $this->input->post('Name');
+		$email = $this->input->post('email');
+		$Mobile = $this->input->post('Mobile');
+		$Message = $this->input->post('Message');
+
+		$data = array(
+			'name' => $Name,
+			'email' =>$email,
+			'mobile' =>$Mobile,
+			'message' =>$Message
+		);
+
+		$insert = $this->Website_user->Contact_us($data);
+
+		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+	      	return redirect('Fornt/Contact_us');
+	}
 	
+	}
 	
-	
-	}?>
+	?>

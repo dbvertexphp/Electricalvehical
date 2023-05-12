@@ -147,6 +147,25 @@ input::-webkit-inner-spin-button {
                     </div>
                 </div>
             </li>
+
+			<li class="nav-item">
+                <a class="nav-link   collapsed" href="#" data-toggle="collapse" data-target="#user_list"
+                    aria-expanded="true" aria-controls="user_list">
+                    <i class="fa fa-user"></i>
+                    <span>User</span>
+                </a>
+                <div id="user_list" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white collapse-inner rounded">
+                 
+                        <a class="collapse-item  " href="<?php echo site_url("Welcome/user_list");?>"><i class="fa fa-user  pr-1"></i>USER</a>
+                        
+                         <a class="collapse-item " href="<?php echo site_url("Welcome/user_report");?>"><i class="fa fa-mobile pr-2"  aria-hidden="true" ></i>USER REPORT</a>
+                     
+                    </div>
+                </div>
+            </li>
+
             
                
 

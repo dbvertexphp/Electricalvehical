@@ -61,7 +61,8 @@ class Welcome extends CI_Controller {
 			$this->session->set_userdata('password',$passwords);
 		}
 
-		$data['h']= $this->admin_model->Mobile_visitor_count();
+		$data['h']= $this->admin_model->Mobile_visitor_count(); 
+		$data['user']= $this->admin_model->website_user_count();
 		
 		if(@$this->session->userdata['admin_uid']){
 			$this->load->view('admin/dashbord',$data);
@@ -159,6 +160,7 @@ class Welcome extends CI_Controller {
         $session_id = $this->session->userdata('admin_uid');
 
 		$data['h']= $this->admin_model->visitor_count();
+		$data['user']= $this->admin_model->website_user_count();
 		if($session_id)
 		{
 		   $admin_detail = $this->admin_model->get_admin_data($session_id);
@@ -636,13 +638,80 @@ class Welcome extends CI_Controller {
 	
     }
 
-
-
-
 	function fetch(){
 		$this->load->view('admin/dashbord');
 		
 	}
+
+	public function user_report(){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->Website_get_user_report();   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/user_report',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+		
+	}
+
+	public function user_list(){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->Website_get_user_data();   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/user_list',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+		
+	}
+
+
+	function website_pdf($id=0){
+		
+		$data['report'] = $this->admin_model->website_selectquery($id); 
+		foreach($data as $inv);
+		require_once BASEPATH.'../vendor/autoload.php';
+		
+		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp']);
+		
+		$this->load->view('admin/mobile_pdf',$data);
+		$hmt =  $this->output->get_output();
+		$mpdf->WriteHTML($hmt);
+		$mpdf->Output('Policy.pdf','D');
+    }
+	
+	function website_viewpdf($id=0){
+		
+		$data['report'] = $this->admin_model->website_selectquery($id); 
+		foreach($data as $inv);
+	   
+
+		require_once BASEPATH.'../vendor/autoload.php';
+		
+		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp']);
+		
+		$this->load->view('admin/mobile_pdf',$data);
+		$hmt =  $this->output->get_output();
+		$mpdf->WriteHTML($hmt);
+		
+		$mpdf->Output();
+		exit();
+
+	
+    }
+
 
 
 

@@ -125,4 +125,33 @@ $query = $this->db->query("SELECT COUNT(*) FROM db_mobile_report");
 return $this->db->count_all('db_report');
 }
 
+function website_user_count() {
+  $query = $this->db->query("SELECT COUNT(*) FROM website_users");
+  return $this->db->count_all('website_users');
+  }
+
+
+
+public function Website_get_user_data(){
+  $query = $this->db->order_by('id', 'desc')->get_where('website_users');
+  return $query->result();
+  
+  }     
+
+
+  public function Website_get_user_report(){
+    $query = $this->db->order_by('id', 'desc')->where('pay_type', 1)->get('website_mobile_report');
+    return $query->result();
+    
+    } 
+    
+    public function website_selectquery($id){
+      $q=$this->db->select('*')
+      ->from('website_mobile_report')
+      ->where('id',$id)
+      ->get();
+      
+      return $q->row();
+      }
+
 }

@@ -239,7 +239,7 @@ legend.scheduler-border {
     <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Mobile Report</h1>
+<h1 class="h3 mb-2 text-gray-800">User List</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -252,11 +252,11 @@ legend.scheduler-border {
                 <thead>
                     <tr>
                         <th>S no</th>
-                        <th>Policy Numbers</th>
                         <th>Name</th>
-                        <th>Downlod</th>
-                        <th>View</th>
-                        <th>Policy start Date</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>cerated</th>
+                       
                     </tr>
                 </thead>
                
@@ -265,11 +265,11 @@ legend.scheduler-border {
                             {  $i++;?>
                                 <tr>         
                                     <td><?php echo  $i;?></td>             
-                                    <td><?php echo $row->policy_numbers;?></td>
-                                    <td><?php echo $row->name_policy_holder;?></td>
-                                    <td><a  href="<?php echo site_url("Welcome/mobile_pdf/".$row->id);?>">Downlod</a></td>
-                                    <td><a  href="<?php echo site_url("Welcome/mobile_viewpdf/".$row->id);?>">View</a></td>
-                                    <td ><?php echo $row->policy_start;?></td>
+                                    <td><?php echo $row->name;?></td>
+                                    <td><?php echo $row->email;?></td>
+                                    <td><?php echo $row->mobile;?></td>
+                                    <td><?php echo $row->cerated_at;?></td>
+                                   
                                     
                                 </tr>
                                 <?php } ?>

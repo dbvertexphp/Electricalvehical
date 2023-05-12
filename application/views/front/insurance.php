@@ -393,55 +393,7 @@ Low Pricing</h1>
     </div> <br><br>
 
 
-<div class="container-fluid" style="background-color: black;">
-    <div class="container" style="padding: 25px 25px;">
-    <div class="row" style="color: white;">
-        <div class="col">
-            <h3>Mobile</h3>
-            <p style="font-size: 13px;">Generate outside the box <br>
-                thinking with the possibility to 
-                targtet the low.</p>
-        </div>
-        <div class="col">
-            <p>About Us</p> 
-            <p style="font-size: 13px;">Terms &
-                Condition</p>
-        </div>
-        <div class="col">
-            <p>Products</p>
-            <p style="font-size: 13px;">Mobile <br>
-               Low Speed 
-               Electric Vehicle
-            </p>
-        </div>
-        <div class="col">
-           <p> Contact Us</p>
-            <p style="font-size: 13px;">Help / Support</p>
-        </div>
-        <div class="col-sm-3">
-            <p> Get Email Notifications</p>
-            <p style="font-size: 13px;">Generate outside the box thinking with
-                the possibility to targtet the low</p>
-<div class="row">
-    <div class="col-sm-8">  
-                    <input type="email" class="form-control" value="Enter email...">
-</div>
-<div class="col-sm-4">  
-<input style="color: white; background-color: #FFB600" type="Submit" class="form-control" value="Submit">
-</div>
-            </div>
-        </div>  <br>
-        <!-- <button style="color: white; background-color: #FFB600; ">Get The app-></button> -->
-       
 
-       
-    </div><br>
-    <div class="text-center">
-    <button type="button" class="btn  " style="border-radius: 40px; background-color: #FFB600;color: white;font-size:22px;">Get The app  <i class="fas fa-long-arrow-alt-right"></i></button><br>
-</div><br>
-   <p style="color: white; font-size: 13px;"> © 2023 Mobile. All Rights Reserved.</p>
- </div>
-</div>
 
 
  <script>

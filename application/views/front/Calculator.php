@@ -23,11 +23,16 @@
     #final_amount {
         visibility: hidden;
     }
-    .Calculator{
-    color:#FFB600;
-    border-bottom:6px solid #FFB600;
-    padding-bottom:3px;
-}
+
+    .Calculator {
+        color: #FFB600;
+        border-bottom: 6px solid #FFB600;
+        padding-bottom: 3px;
+    }
+
+    .culculetter_page {
+        align-self: center;
+    }
     </style>
 </head>
 
@@ -37,7 +42,7 @@
 
     <div class="container mt-3">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 culculetter_page">
 
                 <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
                     <div class="row">
@@ -365,55 +370,6 @@
     </div> <br><br>
 
 
-
-    <div class="container-fluid" style="background-color: black;">
-        <div class="container" style="padding: 25px 25px;">
-            <div class="row" style="color: white;">
-                <div class="col">
-                    <h3>Company</h3>
-                    <p style="font-size: 13px;">Mobi Protect Pvt Ltd. <br>
-                        Near old arpa bridge, Pratap chowk, <br>
-                        Bilaspur, Chhattisgarh-495001 .</p>
-                </div>
-                <div class="col">
-                    <p>About Us</p>
-                    <p style="font-size: 13px;">Terms &
-                        Condition <br>
-                        Media & Low</p>
-                </div>
-                <div class="col">
-                    <p>Products</p>
-                    <p style="font-size: 13px;">Mobile Protection<br>
-                        Speed
-                        Electric Vehicle
-                    </p>
-                </div>
-                <div class="col">
-                    <p> Contact Us</p>
-                    <p style="font-size: 13px;">Help / Support</p>
-                </div>
-                <div class="col">
-                    <p> Get Email Notifications</p>
-                    <p style="font-size: 13px;">Generate outside the box thinking with
-                        the possibility to targtet the low</p>
-
-                    <input type="email" name="submit" value="Enter email...">submit
-                </div> <br>
-                <!-- <button style="color: white; background-color: #FFB600; ">Get The app-></button> -->
-
-
-
-            </div><br>
-            <div class="text-center">
-                <button type="button" class="btn  "
-                    style="border-radius: 40px; background-color: #FFB600;color: white;">Get The app <i
-                        class="fa fa-arrow-right"></i></button><br>
-            </div><br>
-            <p style="color: white; font-size: 13px;"> © 2023 Mobile. All Rights Reserved.</p>
-        </div>
-    </div>
-
-
     <script>
     $("#submit").click(function(e) {
 
@@ -449,8 +405,8 @@
                     num4 = 5000;
                 }
                 document.getElementById("Final_Premium").innerHTML = Math.round(num3);
-               
-                document.getElementById('final_amount').style.visibility="visible";
+
+                document.getElementById('final_amount').style.visibility = "visible";
             } else {
                 if (num1 <= 10000) {
                     num3 = 1000 + 300;
@@ -472,8 +428,8 @@
                     num4 = 5000 + 1000;
                 }
                 document.getElementById("Final_Premium").innerHTML = Math.round(num3);
-               
-                document.getElementById('final_amount').style.visibility="visible";
+
+                document.getElementById('final_amount').style.visibility = "visible";
             }
         }
     });

@@ -72,7 +72,7 @@
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 400;
-        font-size: 17.1648px;
+        font-size: 1vw;
         line-height: 23px;
         display: flex;
         align-items: center;
@@ -86,7 +86,7 @@
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 400;
-        font-size: 17.1648px;
+        font-size: 1vw;
         line-height: 23px;
         display: flex;
         align-items: center;
@@ -110,7 +110,8 @@
         background: #F8FBFF;
         box-shadow: 0px 0px 12.4835px rgba(0, 0, 0, 0.25);
     }
-/* 
+
+    /* 
     .footer {
         position: fixed;
         left: 0;
@@ -121,19 +122,20 @@
         text-align: center;
     } */
     .no_found {
-  display: flex;
-  justify-content: center;
-}
+        display: flex;
+        justify-content: center;
+    }
 
-.no_found img {
-  max-width: 15%;
-  max-height: 15%;
-}
-.Policy{
-    color:#FFB600;
-    border-bottom:6px solid #FFB600;
-    padding-bottom:3px;
-}
+    .no_found img {
+        max-width: 15%;
+        max-height: 15%;
+    }
+
+    .Policy {
+        color: #FFB600;
+        border-bottom: 6px solid #FFB600;
+        padding-bottom: 3px;
+    }
     </style>
 
     <title>Login form</title>
@@ -220,37 +222,40 @@
                  ?></p>
                 </div>
                 <div class="col-2">
-                <?php if($user->pay_type == 0){ ?>
-                <p class="mt-2">NAN</p>
-               <?php  }  else {?> 
-                <p class="tablehead_text_content" style="place-content: center;">
-                    <a  href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->token);?>">
-                     <img src="<?php echo base_url();?>/image/download-pdf.png" class="img-fluid" alt="" width="20"  height="20"></p>
-                </a>
-                <?php } ?> 
+                    <?php if($user->pay_type == 0){ ?>
+                    <p class="mt-2">NAN</p>
+                    <?php  }  else {?>
+                    <p class="tablehead_text_content" style="place-content: center;">
+                        <a href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->token);?>">
+                            <img src="<?php echo base_url();?>/image/download-pdf.png" class="img-fluid" alt=""
+                                width="20" height="20">
+                    </p>
+                    </a>
+                    <?php } ?>
 
                 </div>
                 <div class="col-2">
-                <?php if($user->pay_type == 0){ ?>
-                 <button type="button" class="btn btn-danger" style="padding-top: 1px; padding-bottom: 1px; margin-top: 5px">Unpaid</button>
-               <?php  }  else {?> 
-                <p class="mt-2 text-success font-weight-bold">Paid</p>
-                <?php } ?> 
-               
+                    <?php if($user->pay_type == 0){ ?>
+                    <button type="button" class="btn btn-danger"
+                        style="padding-top: 1px; padding-bottom: 1px; margin-top: 5px">Unpaid</button>
+                    <?php  }  else {?>
+                    <p class="mt-2 text-success font-weight-bold">Paid</p>
+                    <?php } ?>
+
                 </div>
             </div>
             <?php   $counter++; } ?>
         </div>
     </div>
-  <?php } else { ?> 
+    <?php } else { ?>
     <div class="my-policy_div">
-            <div class="my-policy">My Policy</div>
-        </div>
-        <div class="container no_found">
-        <img src="<?php echo base_url();?>/image/no-product-found.jpg" class="img-fluid" alt="" >
-        </div>
+        <div class="my-policy">My Policy</div>
+    </div>
+    <div class="container no_found">
+        <img src="<?php echo base_url();?>/image/no-product-found.jpg" class="img-fluid" alt="">
+    </div>
 
-  <?php } ?>
+    <?php } ?>
 
 
 
@@ -263,52 +268,7 @@
 
 
     <!-- footer -->
-    <div class="container-fluid footer" style="background-color: black;">
-        <div class="container" style="padding: 25px 25px;">
-            <div class="row" style="color: white;">
-                <div class="col">
-                    <h3>Company</h3>
-                    <p style="font-size: 13px;">Mobi Protect Pvt Ltd. <br>
-                        Near old arpa bridge, Pratap chowk, <br>
-                        Bilaspur, Chhattisgarh-495001 .</p>
-                </div>
-                <div class="col">
-                    <p>About Us</p>
-                    <p style="font-size: 13px;">Terms &
-                        Condition <br>
-                        Media & Low</p>
-                </div>
-                <div class="col">
-                    <p>Products</p>
-                    <p style="font-size: 13px;">Mobile Protection<br>
-                        Speed
-                        Electric Vehicle
-                    </p>
-                </div>
-                <div class="col">
-                    <p> Contact Us</p>
-                    <p style="font-size: 13px;">Help / Support</p>
-                </div>
-                <div class="col">
-                    <p> Get Email Notifications</p>
-                    <p style="font-size: 13px;">Generate outside the box thinking with
-                        the possibility to targtet the low</p>
-
-                    <input type="email" name="submit" value="Enter email...">submit
-                </div> <br>
-                <!-- <button style="color: white; background-color: #FFB600; ">Get The app-></button> -->
-
-
-
-            </div><br>
-            <div class="text-center">
-                <button type="button" class="btn  "
-                    style="border-radius: 40px; background-color: #FFB600;color: white;">Get The app <i
-                        class="fa fa-arrow-right"></i></button><br>
-            </div><br>
-            <p style="color: white; font-size: 13px;"> © 2023 Mobile. All Rights Reserved.</p>
-        </div>
-    </div>
+    
     <script>
     $(function() {
         $('.logout').click(function(e) {

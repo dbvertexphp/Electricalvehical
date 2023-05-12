@@ -22,12 +22,12 @@ a:focus{
   }
   /*@font-face {*/
   /*  font-family: SP-PRO;*/
-  /*  src: url(/assets/fonts/sp-pro.ttf);*/
+  /*  src: url(/asstes/fonts/sp-pro.ttf);*/
   /*}*/
   
   @font-face {
     font-family: SP-PRO;
-    src: url(/assets/fonts/sp-pro-text-medium.ttf);
+    src: url(/asstes/fonts/sp-pro-text-medium.ttf);
   }
   
   .form-close-btn{
@@ -144,7 +144,7 @@ a:focus{
 
 }
 #service_con_fluid{
-    background-image: url("/assets/homepage/images/services-back.jpg");
+    background-image: url("/asstes/homepage/images/services-back.jpg");
     background-size: cover;
     background-attachment: fixed;
 }    
@@ -167,7 +167,7 @@ a:focus{
     hyphens:auto;
 }
 .service_android_image{
-    /* background-image: url("/assets/homepage/images/android_sectin_logo.png"); */
+    /* background-image: url("/asstes/homepage/images/android_sectin_logo.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -214,7 +214,7 @@ a:focus{
       hyphens:auto;
   }
 .service_web_image{
-    /* background-image: url("/assets/homepage/images/web_section_image.png"); */
+    /* background-image: url("/asstes/homepage/images/web_section_image.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -265,7 +265,7 @@ a:focus{
     
 }
 .about_us_fluid{
-    background-image: url("/assets/homepage/images/about-us-back.jpg");
+    background-image: url("/asstes/homepage/images/about-us-back.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -293,7 +293,7 @@ background: #ffffffcc;
 /*border-radius: 25px;*/
 }
 .about_us_image div{
-    background-image: url("/assets/homepage/images/about_us_image.png");
+    background-image: url("/asstes/homepage/images/about_us_image.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -329,7 +329,7 @@ background: #ffffffcc;
 }
 .testinominial_section{
     height:360px;
-    /*background-image: url("/assets/homepage/images/testinomial_background.png");*/
+    /*background-image: url("/asstes/homepage/images/testinomial_background.png");*/
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -519,7 +519,7 @@ header {
     color: #fff;
 }
 .our_work_section:nth-child(1) {
-    background-image: ;
+    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
     color: #000;
     top: 0;
     z-index: 1;
@@ -530,7 +530,7 @@ header {
     /* transform: translate(-50%, -50%); */
 }
 .our_work_section:nth-child(2) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
+    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
     background-image: ;
     color: #000;
     top: 100vh;
@@ -549,7 +549,7 @@ header {
 }
 .our_work_section:nth-child(3) {
     box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
-    background-image:;
+    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
     color: #000;
     top: 200vh;
     z-index: 3;
@@ -716,13 +716,13 @@ margin-top: 47px;
     height:500px;
 }
 .stats_section_fluid{
-     background-image: url(https://dbvertex.com/mobile/assets/homepage/images/Mask.png);
+     background-image: url(https://dbvertex.com/mobile/asstes/homepage/images/Mask.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .stats_section_fluid_intgtetd{
-     background-image: url(/assets/homepage/images/intgtetd.jpeg);
+     background-image: url(/asstes/homepage/images/intgtetd.jpeg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1056,12 +1056,12 @@ input[type="submit"].login:focus{outline: none;}
    .fixede .row .appdevcol, .mobile_skin{
     margin-left: 50%;
     transform: translate(-50%);
-    height: 57vh;
+   
     max-height: 600px;
     padding-top: 8vh;
     } 
     .fixede .finxed_row{
-    height: 100vh;
+   
     display: flex;
     align-items: center;
     width:inherit;
@@ -1177,19 +1177,17 @@ font-size: 16px;
 }
 .fixede .row .appdevcol, .mobile_skin{
     
-    height: 55vh;
+  
     max-height: 600px;
 }  
     .fixede .finxed_row{
-    height: 100vh;
+
     display: flex;
     align-items: center;
     width:inherit;
     } 
     .appdetaildivider{
-   position: inherit;
-   margin-top: 50%;
-   transform: translateY(-50%);
+   
     }
     .appnameh1{
    font-family: 'Kanit', sans-serif;
@@ -1245,18 +1243,16 @@ font-size: 16px;
     padding: 0; 
       }
       .fixede .row .appdevcol, .mobile_skin{
-    height: inherit;
+  
     max-height: 600px;
 }  
     .fixede .finxed_row{
-    height: 80vh;
+   
     display: flex;
     align-items: center;
     } 
     .appdetaildivider{
-   position: inherit;
-   margin-top: 50%;
-   transform: translateY(-50%);
+   
     }
     .appnameh1{
    font-family: 'Kanit', sans-serif;
@@ -1310,18 +1306,16 @@ font-size: 16px;
     padding: 0; 
      }
      .fixede .row .appdevcol, .mobile_skin{
-    height: inherit;
+ 
     max-height: 600px;
 }  
     .fixede .finxed_row{
-    height: 80vh;
+  
     display: flex;
     align-items: center;
     } 
     .appdetaildivider{
-   position: inherit;
-   margin-top: 50%;
-   transform: translateY(-50%);
+   
     }
     .appnameh1{
    font-family: 'Kanit', sans-serif;
@@ -1381,18 +1375,15 @@ font-size: 16px;
         height: 360px;
     }   
     .fixede .row .appdevcol, .mobile_skin{
-    height: inherit;
     max-height: 600px;
 }  
     .fixede .finxed_row{
-    height: 80vh;
+   
     display: flex;
     align-items: center;
     } 
     .appdetaildivider{
-   position: inherit;
-   margin-top: 50%;
-   transform: translateY(-50%);
+  
     }
     .appnameh1{
    font-family: 'Kanit', sans-serif;
@@ -1444,18 +1435,16 @@ font-size: 16px;
     padding: 0; 
      }
     .fixede .row .appdevcol, .mobile_skin{
-    height: inherit;
+   
     max-height: 600px;
 }  
     .fixede .finxed_row{
-    height: 80vh;
+  
     display: flex;
     align-items: center;
     } 
     .appdetaildivider{
-   position: inherit;
-   margin-top: 50%;
-   transform: translateY(-50%);
+   
     }
     .appnameh1{
    font-family: 'Kanit', sans-serif;

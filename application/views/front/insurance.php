@@ -110,8 +110,9 @@
 
     .why_choose {
         line-height: 23px;
-        font-weight: 900;
+        font-weight: 600;
         letter-spacing: 1px;
+        font-size:20px;
     }
 
     .scroll-then-fix {
@@ -235,8 +236,8 @@
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="pahadiuncle_layout">
                                     </div>
@@ -276,8 +277,8 @@
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png"
                                             alt="h1bq_layout.png">
                                     </div>
@@ -317,8 +318,8 @@
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="mobile_phototribe">
                                     </div>

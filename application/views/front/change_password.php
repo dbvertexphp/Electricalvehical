@@ -57,7 +57,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-1" style="padding-right: 85px;">
-                <form method="post" action="<?php echo base_url();?>Fornt/change_password_user">
+                <form  class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/change_password_user" novalidate>
                     <h3><b>Mobile</b></h3><br>
                     <h5>Change Password</h5>
                     <?php  if($error=$this->session->flashdata('old_password')){  ?>
@@ -95,26 +95,36 @@
                     <?php } ?>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Enter your Old Password</label>
+                        <label for="password" class="form-label">Old Password</label>
                         <input type="password" placeholder="Type your Old password here" class="form-control"
                             name="oldpassword" id="oldpassword" required>
+                            <div class="invalid-feedback">
+                            Enter Old Password is required.
+                        </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Enter your New Password</label>
+                        <label for="password" class="form-label">New Password</label>
                         <input type="password" placeholder="Type your New password here" class="form-control"
-                            name="password" id="password" required>
+                            name="password" id="password" required>  
+                            <div class="invalid-feedback">
+                            Your password must be at least 7 characters long, with 1 uppercase and 1 lowercase character, 1 number, and a minimum of 1 special character.
+                        </div> 
                     </div>
+                  
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Enter your confirm Password</label>
+                        <label for="password" class="form-label">Confirm Password</label>
                         <input type="password" placeholder="Type your confirm password here" class="form-control"
                             name="password" id="confirm_password" required>
+                            <div class="invalid-feedback">
+                            Enter Confirm Password is required.
+                        </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col ">
-                            <!-- Checkbox -->
+                          
 
                         </div>
 
@@ -165,21 +175,63 @@
     });
     </script>
 
-    <script>
-    var password = document.getElementById("password"),
-        confirm_password = document.getElementById("confirm_password");
+   
 
-    function validatePassword() {
-        if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
 
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                var passwordInput = document.getElementById('password');
+            var passwordValue = passwordInput.value;
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                
+            if (!/[A-Z]/.test(passwordValue)) {
+                console.log('[A-Z]');
+              passwordInput.setCustomValidity("Password must contain at least one uppercase letter.");
+            } else if (!/[a-z]/.test(passwordValue)) {
+                console.log('[a-z]');
+              passwordInput.setCustomValidity("Password must contain at least one lowercase letter.");
+            } else if (!/^(?=.*[!@#$%^&*])(?=.*\d{1}).*$/.test(passwordValue)) {
+                console.log('[0-9a-zA-Z]');
+              passwordInput.setCustomValidity("Password must contain at least one unique number.");
+            }
+             else {
+                
+              passwordInput.setCustomValidity("");
+            }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  var passwordInput = document.getElementById('password');
+  var confirmPasswordInput = document.getElementById('confirm_password');
+  
+  function checkPasswords() {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordInput.classList.add("is-invalid");
+    } else {
+        confirmPasswordInput.classList.remove("is-invalid");
+    }
+  }
+  
+  passwordInput.addEventListener('change', checkPasswords);
+  confirmPasswordInput.addEventListener('keyup', checkPasswords);
+});
+        </script>
 
 
 </body>

@@ -132,6 +132,7 @@
         /* Adjust the width of the fixed image */
         height: auto;
     }
+   
     </style>
 
 </head>
@@ -361,32 +362,37 @@
 
     <br>
     <div class="container text-center">
-        <h1><b>Read Recent Post</b></h1>
+        <h1><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
-            <div class="col-sm-5 ">
+            <div class="col-sm-4">
                 <img src="/image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Course Screen Damage</b></h3>
-            </div>
-            <div class="col-sm-5">
+                <h3 style="color: #707070;"><b>Screen Damages</b></h3>
+            </div> 
+            <div class="col-sm-4">
                 <img src="/image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Course Liquid Damage</b></h3>
+                <h3 style="color: #707070;"><b>Water/Liquid Damages</b></h3>
             </div>
+            <div class="col-sm-4">
+                <img src="/image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Hardware / Software Damages</b></h3>
+            </div>
+
         </div>
     </div>
     <br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
-            <div class="col-sm-5 ">
+            <div class="col-sm-4">
                 <img src="/image/img3.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Free Pickup & Drop</b></h3>
+                <h3 style="color: #707070;"><b>Free Pick-up and Drop</b></h3>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <img src="/image/img4.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Repairs in Brands Authorized Service Center</b></h3>
+                <h3 style="color: #707070;"><b>Brand Authorized Repairs </b></h3>
             </div>
         </div>
     </div>
@@ -396,11 +402,7 @@
         <img src="image/limg.png" alt="Snow" style="width:100%;">
 
         <div class="centered">
-            <h1 style="font-size:4vw;">Hassel Free Service Get <br>
-
-                your mobile Repaired <br>
-
-                in just a few clicks</h1>
+            <h1 style="font-size:4vw;">Hassel Free Service – Convenience + Peace of Mind</h1>
         </div>
     </div><br>
 
@@ -411,44 +413,54 @@
                     <div class="container">
                         <div class="row" style="color: #FFB600;">
                             <div class="col-6">
-                                <h3><b style="font-size: max(2vw, 13px);">Comprehensive Course</b></h3>
+                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Course</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(2vw, 13px);">Mobile Perfect</b></h3>
+                                <h3><b style="font-size:max(1.5vw, 13px);">Under Mobi Protect</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(2vw, 13px);">Under Brand</b></h3>
+                                <h3><b style="font-size:max(1.5vw, 13px);">Under Brand</b></h3>
                             </div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Repair / Replace Broken Screen</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Repair/Replace Broken Screen</div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair / Replace Water Damage</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Free Door Step Pick-up</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Repair for Hardware/Software Issues</div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Theft Protection</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Replace/Recover for Theft </div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Easy Laing Settlement</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Cash Payout option for Self-Repairs</div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-6" style="color: #707070;">Free Doorstep Pick-up and Drop</div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-6" style="color: #707070;">User Friendly Support </div>
+                            <div class="col-3"><img src="image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
                     </div>
 

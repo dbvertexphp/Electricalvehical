@@ -519,7 +519,7 @@ header {
     color: #fff;
 }
 .our_work_section:nth-child(1) {
-    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
+    background-image: url();
     color: #000;
     top: 0;
     z-index: 1;
@@ -530,7 +530,7 @@ header {
     /* transform: translate(-50%, -50%); */
 }
 .our_work_section:nth-child(2) {
-    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
+    background-image: url();
     background-image: ;
     color: #000;
     top: 100vh;
@@ -549,7 +549,7 @@ header {
 }
 .our_work_section:nth-child(3) {
     box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
-    background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Group.png);
+    background-image: url();
     color: #000;
     top: 200vh;
     z-index: 3;
@@ -716,7 +716,7 @@ margin-top: 47px;
     height:500px;
 }
 .stats_section_fluid{
-     background-image: url(https://dbvertex.com/mobile/asstes/homepage/images/Mask.png);
+     background-image: url(https://dbvertex.com/Electricalvehical/asstes/homepage/images/Mask.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

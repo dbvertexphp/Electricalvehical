@@ -16,9 +16,96 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>
-        .footer_optine{
-            text-decoration:none;
-        }
+    .footer_optine {
+        text-decoration: none;
+    }
+    .footer_logo_content{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A5ACBA;
+    }
+    .get_app{
+  width: 216.5px;
+height: 46.14px;
+left: 593.27px;
+top: 5293.07px;
+background: #FFB600;
+border-radius: 24.7931px;
+    }
+    .get_app:hover{
+ width: 216.5px;
+height: 46.14px;
+left: 593.27px;
+top: 5293.07px;
+background: #FFB600;
+border-radius: 24.7931px; 
+    }
+    .get_app_text{
+ font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 24px;
+color: #FFFFFF;
+    }
+    .footer_email{
+ box-sizing: border-box;
+flex-direction: row;
+align-items: center;
+gap: 8px;
+
+height: 46px;
+background: #2C3444;
+border: 1px solid #2E3545;
+border-radius: 6px 0px 0px 6px;
+flex: none;
+order: 0;
+flex-grow: 1;
+    }
+    .footer_email_button{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 18px;
+gap: 6px;
+width: 89px;
+height: 46px;
+background: #FFB600;
+border-radius: 0px 6px 6px 0px;
+flex: none;
+order: 1;
+flex-grow: 0;
+    }
+    .footer_email_button_text{
+  font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+color: #FFFFFF;
+flex: none;
+order: 1;
+flex-grow: 0;
+    }
+.footer_email_button:hover{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 18px;
+gap: 6px;
+width: 89px;
+height: 46px;
+background: #FFB600;
+border-radius: 0px 6px 6px 0px;
+flex: none;
+order: 1;
+flex-grow: 0;
+    }
     </style>
 
 </head>
@@ -27,39 +114,43 @@
     <div class="container-fluid" style="background-color: black;">
         <div class="container" style="padding: 25px 25px;">
             <div class="row" style="color: white;">
-                <div class="col">
-                    <h3>Mobile</h3>
-                    <p style="font-size: 13px;">Generate outside the box <br>
-                        thinking with the possibility to
-                        targtet the low.</p>
+                <div class="col-sm-3">
+                    <h3>Mobi Protect Pvt Ltd.</h3>
+                    <p class="footer_logo_content">Near old arpa bridge, Pratap chowk  Bilaspur, Chhattisgarh-495001</p>
                 </div>
-                <div class="col">
-                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/about_us"><p>About Us</p></a>
-                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Terms_conditions"><p style="font-size: 13px;">Terms &
-                        Condition</p></a>
+                <div class="col-sm-2">
+                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/about_us">
+                        <p>About Us</p>
+                    </a>
+                    <a class="text-white footer_optine " href="<?php echo base_url();?>Fornt/Terms_conditions">
+                        <p class="footer_logo_content">Terms &
+                            Condition</p>
+                    </a>
                 </div>
-                <div class="col">
+                <div class="col-sm-2">
                     <p>Products</p>
-                    <p style="font-size: 13px;">Mobile <br>
-                        Low Speed
+                    <p class="footer_logo_content">Mobile<p>
+                       <p class="footer_logo_content"> Low Speed
                         Electric Vehicle
                     </p>
                 </div>
-                <div class="col">
-                <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us"><p> Contact Us</p></a>
-                    <p style="font-size: 13px;">Help / Support</p>
+                <div class="col-sm-2">
+                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us">
+                        <p> Contact Us</p>
+                    </a>
+                    <p class="footer_logo_content">Help / Support</p>
                 </div>
                 <div class="col-sm-3">
                     <p> Get Email Notifications</p>
-                    <p style="font-size: 13px;">Generate outside the box thinking with
+                    <p class="footer_logo_content">Generate outside the box thinking with
                         the possibility to targtet the low</p>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" value="Enter email...">
+                    <div class="row ">
+                        <div class="col-8 pe-0 ">
+                            <input type="email" class="form-control footer_email" value="Enter email...">
                         </div>
-                        <div class="col-sm-4">
-                            <input style="color: white; background-color: #FFB600" type="Submit" class="form-control"
-                                value="Submit">
+                        <div class="col-4 ps-0">
+                                <button type="button" class="btn footer_email_button "><span class="footer_email_button_text">Submit</span></button>
+
                         </div>
                     </div>
                 </div> <br>
@@ -69,9 +160,8 @@
 
             </div><br>
             <div class="text-center">
-                <button type="button" class="btn  "
-                    style="border-radius: 40px; background-color: #FFB600;color: white;font-size:22px;">Get The app <i
-                        class="fas fa-long-arrow-alt-right"></i></button><br>
+                <button type="button" class="btn get_app"><span class="get_app_text">Get The app </span><i
+                        class="bi bi-arrow-right fs-4 text-white"></i></button><br>
             </div><br>
             <p style="color: white; font-size: 13px;"> © 2023 Mobile. All Rights Reserved.</p>
         </div>

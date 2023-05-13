@@ -129,6 +129,10 @@ line-height: 34px;
 color: #FFB600;
 text-decoration: none;
 }
+.link{
+    text-decoration:none;
+    color:black;
+   }
  </style>
 
   </head>
@@ -172,9 +176,9 @@ text-decoration: none;
                   <i class="bi bi-chevron-down"></i>
                   </span>
                   <div class="dropdown-content">
-                  <a href="#"><p class="dropdown_hover">My Profile</p></a>
-                   <a href="<?php echo base_url();?>Fornt/change_password"><p class="dropdown_hover">Change Password</p></a>
-                   <a href="<?php echo base_url();?>Fornt/logout" class="logout dropdown_hover"><p>Logout</p></a>
+                  <a href="#" class="link"><p class="dropdown_hover">My Profile</p></a>
+                   <a class="link" href="<?php echo base_url();?>Fornt/change_password"><p class="dropdown_hover">Change Password</p></a>
+                   <a  class="link" href="<?php echo base_url();?>Fornt/logout" class="logout dropdown_hover"><p>Logout</p></a>
                 </div>
                  
               <?php   } 
@@ -182,7 +186,7 @@ text-decoration: none;
                ?>
               
               <a href="<?php echo base_url();?>Fornt/singup" class="btn" role="button" aria-disabled="true" style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;">Sign Up</a>
-            <a href="<?php echo base_url();?>Fornt/login" style="color: #FFB600;">login</a>
+            <a href="<?php echo base_url();?>Fornt/login" style="color: #FFB600;  text-decoration:none;">login</a>
             
             <?php } ?>
             </div>

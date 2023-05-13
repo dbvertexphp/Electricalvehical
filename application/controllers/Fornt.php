@@ -370,7 +370,7 @@ class Fornt extends CI_Controller {
 	    //	$this->session->set_userdata('otp', $mobile);
 		$insert = $this->User_model->resand_otp($randCode,$mobile);
 		
-		
+		return redirect('Fornt/Otp');
 	}
 	
 	public function verify_otp(){
@@ -418,7 +418,11 @@ class Fornt extends CI_Controller {
 	public function forgot_password_otp(){
 	    
 	 $mobile =  $this->input->post('Mobile');
-	 $this->session->set_userdata('mobile', $mobile); 
+
+	 $mobile_search = $this->db->get_where('Website_users', array('mobile' => $mobile))->row();
+
+      if(!empty($mobile_search)){
+	     $this->session->set_userdata('mobile', $mobile); 
 	        $size = 4;
             $alpha_key = '';
             $keys = range('0', '9');
@@ -454,12 +458,18 @@ class Fornt extends CI_Controller {
 	   //	$this->session->set_userdata('otp', $mobile);
 		$insert = $this->User_model->resand_otp($randCode,$mobile); 
 	     return redirect('Fornt/forgot');	
-	  	
+	  }
+	  else{
+		$this->session->set_flashdata('forgot_password_otp', 'Mobile Number is not exist'); 
+		$this->session->set_flashdata('msg_class','alert-success');
+		  return redirect('Fornt/forgot_password_mobile');
+		 
+	  }
 		
-		
-	}	
+		}	
 	
-	public function forgot_password_verify_otp(){
+	
+		public function forgot_password_verify_otp(){
 	    
 	    
 	     $otp1 = $this->input->post('otp');

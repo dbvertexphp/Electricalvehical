@@ -36,12 +36,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-1" style="padding-right: 85px;">
-                <form method="post" action="<?php echo base_url();?>Fornt/registration">
+                <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/registration"
+                    novalidate >
 
                     <h5>Sing up</h5>
                     <?php  if($error=$this->session->flashdata('singup_error')){  ?>
                     <div class="row  text-center" style="justify-content: center;">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="alert alert-danger ">
                                 <?= $error; 
 
@@ -58,22 +59,37 @@
                         <label for="email" class="form-label">Email Address</label>
                         <input type="email" placeholder="Type your email address here" class="form-control" id="email"
                             name="email" aria-describedby="emailHelp" required>
+                        <div class="invalid-feedback">
+                            Valid Email is required.
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Full Name</label>
                         <input type="text" placeholder="Type your full name here" class="form-control" id="username"
                             name="name" aria-describedby="emailHelp" required>
+                        <div class="invalid-feedback">
+                            Valid Name is required.
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" placeholder="Type your password here" class="form-control" id="password"
-                            name="password" required>
+                            name="password"  minlength="7"
+                             required  >
+                            <div class="invalid-feedback">
+                            Your password must be at least 7 characters long, with 1 uppercase and 1 lowercase character, 1 number, and a minimum of 1 special character.
+                        </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="password" class="form-label">Mobile</label>
-                        <input type="Number" placeholder="Type your Mobile Number" class="form-control" id="Mobile"
-                            name="Mobile" required>
+                        <input type="tel" placeholder="Type your Mobile Number" class="form-control" id="Mobile"
+                            maxlength="10"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            required pattern="[0-9]{10}" name="Mobile" required>
+                        <div class="invalid-feedback">
+                            Valid Mobile is required.
+                        </div>
                     </div>
 
                     <div class="row mb-3">
@@ -102,9 +118,51 @@
             </div>
         </div>
     </div>
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- footer -->
-  
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                var passwordInput = document.getElementById('password');
+            var passwordValue = passwordInput.value;
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                
+            if (!/[A-Z]/.test(passwordValue)) {
+                console.log('[A-Z]');
+              passwordInput.setCustomValidity("Password must contain at least one uppercase letter.");
+              event.preventDefault()
+                    event.stopPropagation()
+            } else if (!/[a-z]/.test(passwordValue)) {
+                console.log('[a-z]');
+              passwordInput.setCustomValidity("Password must contain at least one lowercase letter.");
+              event.preventDefault()
+                    event.stopPropagation()
+            } else if (!/^(?=.*[!@#$%^&*])(?=.*\d{1}).*$/.test(passwordValue)) {
+                console.log('[0-9a-zA-Z]');
+              passwordInput.setCustomValidity("Password must contain at least one unique number.");
+              event.preventDefault()
+                    event.stopPropagation()
+            }
+             else {
+                
+              passwordInput.setCustomValidity("");
+            }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+    </script>
 
 </body>
 

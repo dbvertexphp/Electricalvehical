@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-1">
-                <h3><b>Mobile</b></h3> <br> <br> <br> <br></br>
+                <h3><b>OTP</b></h3> <br> <br> <br> <br></br>
                 <?php  if($error=$this->session->flashdata('otp_verify_message')){  ?>
                 <div class="row  text-center" style="justify-content: center;">
                     <div class="col-lg-6">
@@ -81,10 +81,10 @@
                         <a href="<?php echo base_url();?>Fornt/resend_otp"
                             style="text-decoration: none;color:#ffb600">Resend</a>
 
-                        <div class="d-grid gap-2 col-5 mx-auto">
+                        <!-- <div class="d-grid gap-2 col-5 mx-auto">
                             <button class="btn " type="submit"
                                 style="background-color: #ffb600;color:white">Submit</button>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
 

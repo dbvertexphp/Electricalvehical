@@ -37,7 +37,31 @@
 
     .header_option {
         text-decoration: none;
+        color: white;
     }
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px; /* Adjust this value to match the height of your footer */
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.content {
+  min-height: 100%;
+  padding-bottom: 300px; /* Adjust this value to match the height of your footer */
+}
     </style>
 
 </head>
@@ -49,7 +73,7 @@
 
     <br>
     <div class="container">
-        <div class="row">
+        <div class="row content ">
             <div class="col-md-6 mb-1" style="padding-right: 85px; align-self: center;">
                 <form class="needs-validation" method="post" method="post"
                     action="<?php echo base_url();?>Fornt/userlogin" novalidate autocomplete="off">
@@ -101,6 +125,8 @@
                             </div>
                         </div>
 
+                      
+
                         <div class="col text-end">
                             <a href="<?php echo base_url();?>Fornt/forgot_password_mobile"
                                 style="text-decoration: none;color: #b9b8b8;">Forgot password?</a>
@@ -113,6 +139,9 @@
                     </div>
 
                 </form><br>
+                <div class="text-center">
+                    <p style="text-decoration: none;color: #b9b8b8;">  Don't have account? <a  href="<?php echo base_url();?>Fornt/singup"  style="text-decoration: none;color: #b9b8b8;"> <span style="color:#ffb600">SIGN UP</span></a></p>
+                </div>
             </div>
             <div class="col-md-6">
                 <img src="<?php echo base_url();?>/image/loginimg.png" class="img-fluid" alt=""

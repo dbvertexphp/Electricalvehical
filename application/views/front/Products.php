@@ -136,9 +136,31 @@
         border-bottom: 6px solid #FFB600;
         padding-bottom: 3px;
     }
-    </style>
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px; /* Adjust this value to match the height of your footer */
+  background-color: #f5f5f5;
+  text-align: center;
+}
 
-    <title>Login form</title>
+body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.content {
+  min-height: 100%;
+  padding-bottom: 300px; /* Adjust this value to match the height of your footer */
+}
+
+    </style>
 </head>
 
 <body>
@@ -165,7 +187,7 @@
         $datas = get_user_policy_count($user_id); 
       if($datas !== NULL){
     ?>
-    <div class="container" style="height:600px;">
+    <div class="container" style="height:700px;">
         <div class="my-policy_div">
             <div class="my-policy">My Policy</div>
         </div>

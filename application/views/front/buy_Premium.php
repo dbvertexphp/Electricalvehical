@@ -113,17 +113,43 @@ legend.scheduler-border {
     border-radius: 10px;
     padding-left: 10px;
 }
+
 .policy_submit_button{
     background-color: #ffb600;
     color: white;
-    font-size:19px;
-    font-weight:bold;
-    width:200px;
+    font-size: 19px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 22px;
+    border: 2px solid white;
 }
-.policy_submit_button:hover{
+
+.policy_submit_button:hover {
     background-color: #ffb600;
-    color: white;  
+    color: white;
+    border-radius: 22px;
+    border: 2px solid white;
 }
+
+.products {
+    color: #FFB600;
+    border-bottom: 6px solid #FFB600;
+    padding-bottom: 3px;
+}
+.no-spinners::-webkit-inner-spin-button,
+  .no-spinners::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-spinners {
+    -moz-appearance: textfield;
+  }
+  #hidden{
+    display: none;
+  }
+  #hidden_Address{
+    display: none;
+  }
 </style>
 
 
@@ -136,11 +162,68 @@ legend.scheduler-border {
         <div class="container">
 
             <div class="row g-5">
-                <div class="col-md-12 col-lg-12">
-                    <h4 class="mb-3 text-center Policy_Form">Policy Form</h4>
+                <div class="col-md-12 col-lg-12 ">
+                    <h4 class="mb-3 text-center Policy_Form mt-3">Policy Form</h4>
                     <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/policy_form"
                         novalidate autocomplete="off">
                         <div class=" g-3">
+
+
+                        <fieldset class="border rounded-3 p-3 mt-2">
+                            <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
+                                Customer Information </legend>
+                            <div class="row ">
+
+                                <div class="col-sm-3">
+                                    <label for="state" class="form-label">Salutation</label>
+                                    <select class="form-select" id="Salutation" name="Salutation" required>
+                                        <option value="">Choose...</option>
+                                        <option value="MR">MR</option>
+                                        <option value="MRS">MRS</option>
+                                        <option value="MS">MS</option>
+                                        <option value="DR">DR</option>
+                                        <option value="MISS">MISS</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid Salutation.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label for="lastName" class="form-label">Name OF Policy Holder </label>
+                                    <input type="text" class="form-control" value="" id="Policy_Holder"
+                                        name="Policy_Holder" placeholder="Name OF Policy Holder " value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid Policy Holder is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label for="state" class="form-label">Gender</label>
+                                    <select class="form-select" id="Gender" name="Gender" required>
+                                        <option value="">Choose...</option>
+                                        <option value="MALE">MALE</option>
+                                        <option value="FEMALE ">FEMALE </option>
+                                        <option value="TRANSGENDER MALE ">TRANSGENDER MALE </option>
+                                        <option value="TRANSGENDER FEMALE ">TRANSGENDER FEMALE </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label for="lastName" class="form-label">Date OF Birth</label>
+                                    <input type="date" class="form-control" id="Date_Birth" name="Date_Birth"
+                                        placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+
 
                             <fieldset class="border rounded-3 p-3 mt-2">
                                 <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
@@ -188,8 +271,8 @@ legend.scheduler-border {
 
                                 <div class="col-sm-4">
                                     <label for="lastName" class="form-label">Policy Start Date</label>
-                                    <input type="date" class="form-control" id="Policy_Start" name="date" placeholder=""
-                                        value="" required>
+                                    <input type="date" class="form-control" id="Policy_Start" name="date" value="<?php echo date('Y-m-d'); ?>" placeholder=""
+                                        value="" required readonly>
                                     <div class="invalid-feedback">
                                         Valid Policy Start Date is required.
                                     </div>
@@ -247,7 +330,7 @@ legend.scheduler-border {
 
                                 <div class="col-sm-4">
                                     <label for="lastName" class="form-label">Price</label>
-                                    <input type="Number" class="form-control" value="" id="SumInsured" name="SumInsured"
+                                    <input type="Number" class="form-control no-spinners" value="" id="SumInsured" name="SumInsured"
                                         placeholder="" value="" required>
                                     <div class="invalid-feedback">
                                         Valid Price is required.
@@ -256,7 +339,7 @@ legend.scheduler-border {
 
                                 <div class="col-sm-4">
                                     <label for="lastName" class="form-label">Policy Premium</label>
-                                    <input type="Number" class="form-control" id="results" name="premium" placeholder=""
+                                    <input type="Number" class="form-control no-spinners" id="results" name="premium" placeholder=""
                                         readonly>
                                     <div class="invalid-feedback">
                                         Valid Price is required.
@@ -267,60 +350,7 @@ legend.scheduler-border {
                         </fieldset>
 
 
-                        <fieldset class="border rounded-3 p-3 mt-2">
-                            <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
-                                Customer Information </legend>
-                            <div class="row ">
 
-                                <div class="col-sm-3">
-                                    <label for="state" class="form-label">Salutation</label>
-                                    <select class="form-select" id="Salutation" name="Salutation" required>
-                                        <option value="">Choose...</option>
-                                        <option value="MR">MR</option>
-                                        <option value="MRS">MRS</option>
-                                        <option value="MS">MS</option>
-                                        <option value="DR">DR</option>
-                                        <option value="MISS">MISS</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid Salutation.
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <label for="lastName" class="form-label">Name OF Policy Holder </label>
-                                    <input type="text" class="form-control" value="" id="Policy_Holder"
-                                        name="Policy_Holder" placeholder="Name OF Policy Holder " value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid Policy Holder is required.
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <label for="state" class="form-label">Gender</label>
-                                    <select class="form-select" id="Gender" name="Gender" required>
-                                        <option value="">Choose...</option>
-                                        <option value="MALE">MALE</option>
-                                        <option value="FEMALE ">FEMALE </option>
-                                        <option value="TRANSGENDER MALE ">TRANSGENDER MALE </option>
-                                        <option value="TRANSGENDER FEMALE ">TRANSGENDER FEMALE </option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <label for="lastName" class="form-label">Date OF Birth</label>
-                                    <input type="date" class="form-control" id="Date_Birth" name="Date_Birth"
-                                        placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
-                                </div>
-
-                            </div>
-                        </fieldset>
 
                         <fieldset class="border rounded-3 p-3 mt-2">
                             <legend class="float-none w-auto px-3 scheduler-border border-2 borders  border ">
@@ -470,8 +500,12 @@ legend.scheduler-border {
 
                                 <div class="col-sm-4">
                                     <label for="lastName" class="form-label">Year Of Manufacturing*</label>
-                                    <input type="Number" class="form-control" name="Tear_Manufacturing"
-                                        id="Tear_Manufacturing" placeholder="Manufacturing" value="" required>
+                                    <input type="number" class="form-control no-spinners" name="Tear_Manufacturing"
+                                        id="Tear_Manufacturing" placeholder="Manufacturing" value="<?php $year = (int)date('Y');
+                                        echo  $year; 
+                                          ?>"  required readonly>
+                                        
+
                                     <div class="invalid-feedback">
                                         Valid Manufacturing is required.
                                     </div>
@@ -498,9 +532,9 @@ legend.scheduler-border {
                                 </div>
 
                                 <div class="col-sm-4">
-                                    <label for="lastName" class="forborder rounded-3 p-3 mt-2m-label">Serial KW</label>
+                                    <label for="lastName" class="form-label">Serial Number</label>
                                     <input type="text" class="form-control" id="Battery_kw" name="Battery_kw"
-                                        placeholder="Serial KW" value="" required>
+                                        placeholder="Serial Number" value="" required>
                                     <div class="invalid-feedback">
                                         Valid Serial KW is required.
                                     </div>
@@ -516,12 +550,12 @@ legend.scheduler-border {
                             <div class="row ">
 
 
-                            <div class="col-sm-12">
-                                <input type="checkbox" id="same" name="same" onchange="billingFunction()"
-                                    style=" width:15px; height:15px;" />
-                                <label for="same" style=" color:black;">Is the communication here the same as the
-                                    address?</label>
-                                  </div> 
+                                <div class="col-sm-12">
+                                    <input type="checkbox" id="same" name="same" onchange="billingFunction()"
+                                        style=" width:15px; height:15px;" />
+                                    <label for="same" style=" color:black;">Is the communication here the same as the
+                                        address?</label>
+                                </div>
                                 <div class="col-sm-6">
                                     <label for="lastName" class="form-label">Address Line 1*</label>
                                     <textarea type="text" class="form-control" name="Addresss_Line_1"
@@ -630,7 +664,7 @@ legend.scheduler-border {
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-6" id="hidden">
                                     <label for="lastName" class="form-label">Financer Name</label>
                                     <input type="text" class="form-control" id="Financer_Name" name="Financer_Name"
                                         value="" placeholder="Financer Name" value="">
@@ -640,7 +674,7 @@ legend.scheduler-border {
                                 </div>
 
 
-                                <div class="col-sm-12">
+                                <div class="col-sm-12" id="hidden_Address">
                                     <label for="lastName" class="form-label">Address</label>
                                     <textarea type="text" class="form-control" id="Address" name="Address"
                                         placeholder="Address" row="10" colume="50" value=""></textarea>
@@ -656,19 +690,40 @@ legend.scheduler-border {
                 </div>
 
                 <div class="col-sm-12" style="text-align: center;">
-                <button class=" btn  policy_submit_button btn-lg" id="submit" type="submit">Submit</button>
+                    <button class="   policy_submit_button  btn-lg" id="submit" type="submit">Submit</button>
                 </div>
                 </form>
-               <div class="mb-2"></div>
+                <div class="mb-2"></div>
             </div>
 
         </div>
 
 
-    
+
     </div>
     </div>
 
+  <script>
+    $('#Financer_Type').on('change', function() {
+  if(this.value == "YES"){
+    document.getElementById("hidden").style.display = "block";
+    document.getElementById("hidden_Address").style.display = "block";
+    document.getElementById("Financer_Name").required = true;
+    document.getElementById("Address").required = true;
+  }
+  else{
+    document.getElementById("hidden").style.display = "none";
+    document.getElementById("hidden_Address").style.display = "none";
+    document.getElementById("Financer_Name").required = false;
+     document.getElementById("Address").required = false;
+  }
+});
+  </script>  
+<script>
+    $(function() {
+    $( "#Tear_Manufacturing" ).datepicker({dateFormat: 'YY'});
+});​
+</script>
     <script>
     function billingFunction() {
         if (document.getElementById("same").checked) {
@@ -700,19 +755,6 @@ legend.scheduler-border {
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
                 if (!form.checkValidity()) {
-
-                    var Financer_Type = document.getElementById("Financer_Type").value;
-                  
-                    if (Financer_Type == "YES") {
-                        document.getElementById("Financer_Name").required = true;
-                        document.getElementById("Address").required = true;
-                    } 
-                    
-                    
-                    else {
-                        document.getElementById("Financer_Name").required = false;
-                        document.getElementById("Address").required = false;
-                    }
                     event.preventDefault()
                     event.stopPropagation()
                 }
@@ -753,6 +795,9 @@ legend.scheduler-border {
                 } else if (num1 >= 100001 && num1 <= 200000) {
                     num3 = 5000;
                     num4 = 5000;
+                } else if (num1 >= 200000) {
+                    num3 = 5000;
+                    num4 = 5000;
                 }
 
                 document.getElementById("results").value = Math.round(num4);
@@ -776,13 +821,19 @@ legend.scheduler-border {
                 } else if (num1 >= 100001 && num1 <= 200000) {
                     num3 = 5000 + 1000;
                     num4 = 5000 + 1000;
+                } else if (num1 >= 200000) {
+                    num3 = 5000 + 1000;
+                    num4 = 5000 + 1000;
                 }
+
 
                 document.getElementById("results").value = Math.round(num4);
             }
         }
     });
     </script>
+
+
 </body>
 
 </html>

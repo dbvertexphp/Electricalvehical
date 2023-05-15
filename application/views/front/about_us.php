@@ -63,7 +63,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 18.515px;
 line-height: 17px;
-color: #313131;
+color: white;
 flex: none;
 order: 1;
 flex-grow: 0;
@@ -102,7 +102,29 @@ text-decoration: none;
       margin-bottom: 20px;
     }
    
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px; /* Adjust this value to match the height of your footer */
+  background-color: #f5f5f5;
+  text-align: center;
+}
 
+body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.content {
+  min-height: 100%;
+  padding-bottom: 300px; /* Adjust this value to match the height of your footer */
+}
     </style>
 </head>
 
@@ -113,7 +135,7 @@ text-decoration: none;
 
     <br>
     <div class="container clam_handing_container">
-        <div class="row">
+        <div class="row content">
             <div class="col-md-12 mb-1" style="align-self: center;">
             <h2 class="clam_handing">Welcome to Mobi Protect!</h2>
             <p class="clam_handing_text mt-3"><?php echo "&#8226;" ?> We are a team of dedicated professionals who understand the importance of protecting your valuable mobile devices. Our mission is to provide you with the best mobile protection plan coverage possible, giving you peace of mind and protection against any unexpected events like accidental damages, water damage, and theft.</p>

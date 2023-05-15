@@ -70,7 +70,7 @@
         font-weight: 400;
         font-size: 18.515px;
         line-height: 17px;
-        color: #313131;
+        color: white;
         flex: none;
         order: 1;
         flex-grow: 0;

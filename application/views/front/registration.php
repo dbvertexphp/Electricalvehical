@@ -12,6 +12,7 @@
     <style>
     .header_option {
         text-decoration: none;
+        color: white;
     }
 
     .logo {

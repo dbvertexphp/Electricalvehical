@@ -74,7 +74,8 @@
 
                         <div class=" col-md-6 mt-0">
                             <label for="Price" class=" post_input_lable"><b>Price</b></label>
-                            <input type="text" class="form-control" id="Price" name="Price" placeholder="Enter Price"
+                            <input type="number" class="form-control no-spinners" id="Price" name="Price" placeholder="Enter Price"
+                            maxlength="6" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
                                 required>
                             <div class="invalid-feedback">
                                 Please Enter Price.
@@ -404,6 +405,10 @@
                     num3 = 5000;
                     num4 = 5000;
                 }
+                 else if (num1 >= 200000) {
+                    num3 = 5000;
+                    num4 = 5000;
+                }
                 document.getElementById("Final_Premium").innerHTML = Math.round(num3);
 
                 document.getElementById('final_amount').style.visibility = "visible";
@@ -424,6 +429,10 @@
                     num3 = 3000 + 700;
                     num4 = 3000 + 700;
                 } else if (num1 >= 100001 && num1 <= 200000) {
+                    num3 = 5000 + 1000;
+                    num4 = 5000 + 1000;
+                }
+                else if (num1 >= 200000) {
                     num3 = 5000 + 1000;
                     num4 = 5000 + 1000;
                 }

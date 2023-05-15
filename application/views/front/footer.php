@@ -111,7 +111,7 @@ flex-grow: 0;
 </head>
 
 <body>
-    <div class="container-fluid" style="background-color: black;">
+    <div class="container-fluid footer" style="background-color: black;">
         <div class="container" style="padding: 25px 25px;">
             <div class="row" style="color: white;">
                 <div class="col-sm-3">
@@ -144,7 +144,7 @@ flex-grow: 0;
                     <p> Get Email Notifications</p>
                     <p class="footer_logo_content">Generate outside the box thinking with
                         the possibility to targtet the low</p>
-                    <div class="row ">
+                    <!-- <div class="row ">
                         <div class="col-8 pe-0 ">
                             <input type="email" class="form-control footer_email" value="Enter email...">
                         </div>
@@ -152,7 +152,7 @@ flex-grow: 0;
                                 <button type="button" class="btn footer_email_button "><span class="footer_email_button_text">Submit</span></button>
 
                         </div>
-                    </div>
+                    </div> -->
                 </div> <br>
                 <!-- <button style="color: white; background-color: #FFB600; ">Get The app-></button> -->
 

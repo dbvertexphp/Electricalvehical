@@ -115,7 +115,18 @@ class Fornt extends CI_Controller {
 		  $this->load->view('front/footer');	   
 	   }
 	   else{
+		$redirectUri = $this->session->userdata('pade_redirect'); 
+		  if($redirectUri == 'products'){
+            return redirect('Fornt/products'); 
+			$this->session->unset_userdata('pade_redirect');
+		  }
+		  else if($redirectUri == 'buy_Premium' ){
+			return redirect('Fornt/buy_Premium');
+			$this->session->unset_userdata('pade_redirect');
+		  }
+		  else{
 	       return redirect('Fornt/index'); 
+		  }
 	   }
 	}
 	
@@ -154,6 +165,7 @@ class Fornt extends CI_Controller {
 	
 	public function products(){
 	  $id = $this->session->userdata('vehical'); 
+	  $this->session->set_userdata('pade_redirect','products');
 	  if(isset($id) == ''){
 		  $this->load->view('front/header'); 
 		 $this->load->view('front/login'); 
@@ -199,7 +211,7 @@ class Fornt extends CI_Controller {
 		      $login_id=$email_search->id;
 	          $this->session->set_userdata('vehical',$login_id);
 		      $msg = "Login successfull";
-	      	   return redirect('Fornt/index');
+	      	   return redirect('Fornt/login');
         	 }
         		else{
                 	$this->session->set_flashdata('login_error', 'Invalid User and password'); 
@@ -394,7 +406,7 @@ class Fornt extends CI_Controller {
 	        foreach($insert as $id)
 	        $this->session->set_userdata('vehical', $id->id); 
 	        $this->db->set('user_verified', 1)->where('id', $id->id)->update('Website_users');
-	         return redirect('Fornt/index');
+	         return redirect('Fornt/login');
 	     }
 	     
 	}
@@ -516,6 +528,7 @@ class Fornt extends CI_Controller {
 
 	public function buy_Premium(){
 		$id = $this->session->userdata('vehical'); 
+		$this->session->set_userdata('pade_redirect','buy_Premium');
 		if(isset($id) == ''){
 		    $this->load->view('front/header'); 
 		   $this->load->view('front/login');  
@@ -534,7 +547,7 @@ class Fornt extends CI_Controller {
 		$Business = $this->input->post('Business');
 		$date = $this->input->post('date');
 		$Business_Type = $this->input->post('Business_Type');
-		$bank_name = $this->input->post('bank_name');
+		$bank_name = 'Shop name';
 		$premium = $this->input->post('premium'); 
      
 		$Salutation = $this->input->post('Salutation');
@@ -727,6 +740,12 @@ class Fornt extends CI_Controller {
 		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
 	      	 $this->session->set_flashdata('msg_class','alert-success');
 	      	return redirect('Fornt/Contact_us');
+	}
+
+	   function my_profil_view(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/my_profile'); 
+		$this->load->view('front/footer');	
 	}
 	
 	}

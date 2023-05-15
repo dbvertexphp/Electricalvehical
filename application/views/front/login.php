@@ -60,7 +60,7 @@ body {
 }
 .content {
   min-height: 100%;
-  padding-bottom: 300px; /* Adjust this value to match the height of your footer */
+  padding-bottom: 40%; /* Adjust this value to match the height of your footer */
 }
     </style>
 

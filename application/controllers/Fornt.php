@@ -747,6 +747,55 @@ class Fornt extends CI_Controller {
 		$this->load->view('front/my_profile'); 
 		$this->load->view('front/footer');	
 	}
+
+
+	public function uploadprofileimg(){  
+      
+		$user_id=$this->input->post('user_id');
+	
+		   if (!empty($_FILES['profile_img']['name'])) {
+						$config['upload_path'] = './uplode/profile/';
+						// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+						$config['allowed_types'] = '*';
+						$this->load->library('upload', $config);
+						if (!$this->upload->do_upload('profile_img')) {
+						   
+						}else{
+	
+							//---- Successfully upload than add member-----
+							$image_data = $this->upload->data();
+							$filename = $image_data['file_name'];
+	
+						 $this->db->update("website_users", ["profile_images"=>$filename], "id=$user_id");
+						 
+						 return redirect('Fornt/my_profil_view');
+						}
+					  }
+		}
+
+		public function editprofile(){  
+
+			$id = $this->session->userdata('vehical'); 
+
+			$email = $this->input->post("email");
+            $name = $this->input->post("name");
+            $Mobile = $this->input->post("Mobile");
+			
+			$idata["id"]= $id;
+           $idata["email"]=$email;
+           $idata["name"]= $name;
+          $idata["mobile"]= $Mobile;
+
+		   $result = $this->db->update("Website_users", $idata, ["id"=>$id]);
+
+		     $this->session->set_flashdata('edit_profile', 'Profile Successfully Update'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+
+		   return redirect('Fornt/my_profil_view');
+           
+
+		}
+
 	
 	}
 	

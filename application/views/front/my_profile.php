@@ -44,17 +44,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-1" style="padding-right: 85px;">
-                <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/registration"
+                <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/editprofile"
                     novalidate>
 
                     <h5>My Profile</h5>
-                    <?php  if($error=$this->session->flashdata('singup_error')){  ?>
+                    <?php  if($error=$this->session->flashdata('edit_profile')){  ?>
                     <div class="row  text-center" style="justify-content: center;">
                         <div class="col-lg-12">
-                            <div class="alert alert-danger ">
+                            <div class="alert alert-success ">
                                 <?= $error; 
 
-                               unset($_SESSION['singup_error']);
+                               unset($_SESSION['edit_profile']);
                                  ?>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
                                     style="float:right;"></button>
@@ -88,45 +88,6 @@
 
                             </div>
 
-                        </div>
-                    </div>
-
-                 
-                
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Update Profile Picture</h5>
-                                    
-                                </div>
-                                <div class="modal-body">
-                                    <form id="cover_img" enctype="multipart/form-data"
-                                        action="<?php echo base_url();?>welcome/uploadprofileimg" method="POST">
-                                        <input type="hidden" name="user_id" value="<?php echo $user->id ?>">
-                                        <div class="modal-body">
-                                            <div class="form-group">
-
-                                                <label>Image </label>
-                                                <input type="file" class="form-control" id="cover_image"
-                                                    name="profile_img" accept="image/*">
-                                                <span id="cover_err" style="color:red;"></span>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn-change btn btn-secondary pull-left"
-                                                data-dismiss="modal">Cancel</button>
-                                            <button type="button" style="background-color:#13C571; color:#fff;
-                                                   border-radius:0.20rem;" class="btn-change btn btn-rounded"
-                                                onclick="return checkcoverimage();">Upload</button>
-                                        </div>
-                                    </form>
-                                </div>
-                             
-                            </div>
                         </div>
                     </div>
 
@@ -180,10 +141,62 @@
             </div>
         </div>
     </div>
+
+
+
+
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Update Profile Picture</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <form id="cover_img" enctype="multipart/form-data"
+                                        action="<?php echo base_url();?>Fornt/uploadprofileimg" method="POST">
+                                        <input type="hidden" name="user_id" value="<?php echo $user->id ?>">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+
+                                                <label>Image </label>
+                                                <input type="file" class="form-control" id="cover_image"
+                                                    name="profile_img" accept="image/*">
+                                                <span id="cover_err" style="color:red;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn-change btn btn-secondary pull-left"
+                                                data-dismiss="modal">Cancel</button>
+                                            <button type="button" style="background-color:#13C571; color:#fff;
+                                                   border-radius:0.20rem;" class="btn-change btn btn-rounded"
+                                                onclick="return checkcoverimage();">Upload</button>
+                                        </div>
+                                    </form>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
+    <script>
+        function checkcoverimage(event) {
+var image =$('#cover_image').val();
+if (image == "" ) {
+    $("#cover_err").text("Please upload image");
+    event.preventDefault()
+    event.stopPropagation()
+} else {
+    $("#cover_img").submit();
+}
 
+}</script>
 
 
 

@@ -99,7 +99,8 @@
     }
 
     .profile_img {
-        border-radius: 50%;
+      
+          border-radius: 50%;
     }
 
     .profile_name {
@@ -214,9 +215,9 @@
                   ?>
                 <div class="dropdown">
                     <?php if($user->profile_images !== 'images (2).png'){ ?>
-                    <img class="img-fluid profile_img"
+                    <img class=" profile_img"
                         src="<?php echo base_url();?>uplode/profile/<?php echo $user->profile_images ?>"
-                        alt="Girl in a jacket" width="40" height="40">
+                        alt="Girl in a jacket" width="50" height="50">
                     <?php } else{ ?>
                     <img src="<?php echo base_url();?>uplode/profile/images__2_remove.png" alt="Girl in a jacket" width="50"
                         height="50">

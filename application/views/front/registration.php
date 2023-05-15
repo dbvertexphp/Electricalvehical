@@ -24,6 +24,29 @@
         color: #FFB600;
         text-decoration: none;
     }
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px; /* Adjust this value to match the height of your footer */
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.content {
+  min-height: 100%;
+  padding-bottom: 40%; /* Adjust this value to match the height of your footer */
+}
     </style>
 
 </head>
@@ -35,7 +58,7 @@
 
     <br>
     <div class="container">
-        <div class="row">
+        <div class="row content">
             <div class="col-md-6 mb-1" style="padding-right: 85px;">
                 <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/registration"
                     novalidate >

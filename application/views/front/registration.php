@@ -45,7 +45,8 @@ body {
 }
 .content {
   min-height: 100%;
-  padding-bottom: 40%; /* Adjust this value to match the height of your footer */
+  padding-bottom: 40%;
+  align-items: center; /* Adjust this value to match the height of your footer */
 }
     </style>
 
@@ -58,7 +59,7 @@ body {
 
     <br>
     <div class="container">
-        <div class="row content">
+        <div class="row content" >
             <div class="col-md-6 mb-1" style="padding-right: 85px;">
                 <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/registration"
                     novalidate >

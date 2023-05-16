@@ -224,35 +224,35 @@ class Fornt extends CI_Controller {
                    
              $this->session->set_userdata('mobile', $email_search->mobile);  
             $mobile =  $email_search->mobile;
-            $size = 4;
-            $alpha_key = '';
-            $keys = range('0', '9');
-            for ($i = 0; $i < 4; $i++) {
-              $alpha_key .= $keys[array_rand($keys)];
-            }
-            $randCode = $alpha_key;
-            $numberss = "91" . $mobile; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+            $email = $this->session->userdata('email');
+	    
+		$randCode = rand(1000,9999);
 
-            $apiKey = urlencode('');
+		$this->load->library('email');
+	 
+		 $this->email->set_newline("\r\n");
+	 
+		 $config['protocol'] = 'smtp';
+		 $config['smtp_host'] = 'dbvertex.com';
+		 $config['smtp_port'] = '465';
+		 $config['smtp_user'] = 	'classified@dbvertex.com';
+		 $config['smtp_from_name'] = 'Mobi Protect';
+		 $config['smtp_pass'] = 'g+S7SHye4}eS';
+		 $config['wordwrap'] = TRUE;
+		 $config['newline'] = "\r\n"; 
+		 $config['mailtype'] = 'html';  
+		 $config['MAIL_ENCRYPTION'] = null;                      
+	     $config['smtp_crypto'] = "ssl";
 
-            $numbers = array($mobile);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
 
-            $numbers = implode(',', $numbers);
-
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
-
-            curl_close($ch);
+		 $this->email->initialize($config);
+	 
+		 $this->email->from($config['smtp_user'], $config['smtp_from_name']);
+		 $this->email->to($email);
+		 $this->email->subject('	Verify your OTP - Mobi Protect');
+	 
+		 $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+		  $e = $this->email->send();
             
 	       $this->session->set_userdata('randCode', $randCode);  
 	     	$insert = $this->User_model->resand_otp($randCode,$mobile);  
@@ -284,36 +284,34 @@ class Fornt extends CI_Controller {
              if(empty($email_search)){
               if(empty($mobile_numbers)){   
 	    
-	        $size = 4;
-            $alpha_key = '';
-            $keys = range('0', '9');
-            for ($i = 0; $i < 4; $i++) {
-              $alpha_key .= $keys[array_rand($keys)];
-            }
-            $randCode = $alpha_key;
-            $numberss = "91" . $mobile; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+				$randCode = rand(1000,9999);
 
-            $apiKey = urlencode('');
+				$this->load->library('email');
+			 
+				 $this->email->set_newline("\r\n");
+			 
+				 $config['protocol'] = 'smtp';
+				 $config['smtp_host'] = 'dbvertex.com';
+				 $config['smtp_port'] = '465';
+				 $config['smtp_user'] = 	'classified@dbvertex.com';
+				 $config['smtp_from_name'] = 'Mobi Protect';
+				 $config['smtp_pass'] = 'g+S7SHye4}eS';
+				 $config['wordwrap'] = TRUE;
+				 $config['newline'] = "\r\n"; 
+				 $config['mailtype'] = 'html';  
+				 $config['MAIL_ENCRYPTION'] = null;                      
+				 $config['smtp_crypto'] = "ssl";      
+						   
+							   $this->email->initialize($config);
+						   
+							   $this->email->from($config['smtp_user'], $config['smtp_from_name']);
+							   $this->email->to($email);
+							   $this->email->subject('	Verify your OTP - Mobi Protect');
+						   
+							   $this->email->message("Verify your OTP - Mobi Protect Hello ".$name.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+								$this->email->send();
 
-            $numbers = array($mobile);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
-
-            $numbers = implode(',', $numbers);
-
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
-
-            curl_close($ch);
-	    
+								
 	     $this->session->set_userdata('randCode', $randCode);  
 	    $data = array(
 			'email'  =>$email,
@@ -324,6 +322,7 @@ class Fornt extends CI_Controller {
 			
 		); 
 		$this->session->set_userdata('mobile', $mobile);
+		$this->session->set_userdata('email', $email);
 		$insert = $this->User_model->user_registration($data);
 		 return redirect('Fornt/Otp');
          }
@@ -346,36 +345,36 @@ class Fornt extends CI_Controller {
 	public function resend_otp(){
 	 
 	    $mobile = $this->session->userdata('mobile');
+		$email = $this->session->userdata('email');
 	    
-	        $size = 4;
-            $alpha_key = '';
-            $keys = range('0', '9');
-            for ($i = 0; $i < 4; $i++) {
-              $alpha_key .= $keys[array_rand($keys)];
-            }
-            $randCode = $alpha_key;
-            $numberss = "91" . $mobile; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+		$randCode = rand(1000,9999);
 
-            $apiKey = urlencode('');
+		$this->load->library('email');
+	 
+		 $this->email->set_newline("\r\n");
+	 
+		 $config['protocol'] = 'smtp';
+		 $config['smtp_host'] = 'dbvertex.com';
+		 $config['smtp_port'] = '465';
+		 $config['smtp_user'] = 	'classified@dbvertex.com';
+		 $config['smtp_from_name'] = 'Mobi Protect';
+		 $config['smtp_pass'] = 'g+S7SHye4}eS';
+		 $config['wordwrap'] = TRUE;
+		 $config['newline'] = "\r\n"; 
+		 $config['mailtype'] = 'html';  
+		 $config['MAIL_ENCRYPTION'] = null;                      
+	     $config['smtp_crypto'] = "ssl";
 
-            $numbers = array($mobile);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
 
-            $numbers = implode(',', $numbers);
-
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
-
-            curl_close($ch);
+		 $this->email->initialize($config);
+	 
+		 $this->email->from($config['smtp_user'], $config['smtp_from_name']);
+		 $this->email->to($email);
+		 $this->email->subject('	Verify your OTP - Mobi Protect');
+	 
+		 $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+		  $e = $this->email->send();
+		
 	    
 	     $this->session->set_userdata('randCode', $randCode);  
 	 
@@ -435,35 +434,37 @@ class Fornt extends CI_Controller {
 
       if(!empty($mobile_search)){
 	     $this->session->set_userdata('mobile', $mobile); 
-	        $size = 4;
-            $alpha_key = '';
-            $keys = range('0', '9');
-            for ($i = 0; $i < 4; $i++) {
-              $alpha_key .= $keys[array_rand($keys)];
-            }
-            $randCode = $alpha_key;
-            $numberss = "91" . $mobile; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+		 $email = $this->session->userdata('email');
+	    
+		 $randCode = rand(1000,9999);
+ 
+		 $this->load->library('email');
+	  
+		  $this->email->set_newline("\r\n");
+	  
+		  $config['protocol'] = 'smtp';
+		  $config['smtp_host'] = 'dbvertex.com';
+		  $config['smtp_port'] = '465';
+		  $config['smtp_user'] = 	'classified@dbvertex.com';
+		  $config['smtp_from_name'] = 'Mobi Protect';
+		  $config['smtp_pass'] = 'g+S7SHye4}eS';
+		  $config['wordwrap'] = TRUE;
+		  $config['newline'] = "\r\n"; 
+		  $config['mailtype'] = 'html';  
+		  $config['MAIL_ENCRYPTION'] = null;                      
+		  $config['smtp_crypto'] = "ssl";
+ 
+ 
+		  $this->email->initialize($config);
+	  
+		  $this->email->from($config['smtp_user'], $config['smtp_from_name']);
+		  $this->email->to($email);
+		  $this->email->subject('	Verify your OTP - Mobi Protect');
+	  
+		  $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+		   $e = $this->email->send();
 
-            $apiKey = urlencode('');
 
-            $numbers = array($mobile);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
-
-            $numbers = implode(',', $numbers);
-
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
-
-            curl_close($ch);
 	    
 	    $this->session->set_userdata('randCode', $randCode);   
 	 

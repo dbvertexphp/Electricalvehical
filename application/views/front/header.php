@@ -123,10 +123,10 @@
     .header_option {
         font-family: 'Plus Jakarta Sans';
         font-style: normal;
-        font-weight: 400;
+        font-weight: bold;
         font-size: 20.515px;
         line-height: 17px;
-        color: white;
+        color: black;
         flex: none;
         order: 1;
         flex-grow: 0;
@@ -164,7 +164,8 @@
     }
 
     .header_container-fluid {
-        background-color: black;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .header_container {
@@ -183,8 +184,8 @@
     }
 
     .policy_submit_button {
-        background-color: #ffb600;
-        color: white;
+        background-color: white;
+        color: black;
         font-size: 19px;
         font-weight: bold;
         width: 150px;
@@ -194,8 +195,8 @@
     }
 
     .policy_submit_button:hover {
-        background-color: #ffb600;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     .body {
@@ -210,8 +211,8 @@
     <div class="container-fluid header_container-fluid">
         <div class="container header_container">
             <nav class="navbar navbar-expand-lg ">
-
-                <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
+               <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>image/MOBI PROTECT (4).png" alt="" width="100" height="100"></a>
+               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" style=" background-color: white;">
@@ -223,7 +224,7 @@
                             <select
                                 onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
                                 class=" header_option products active" name="cars" id="cars"
-                                style=" background-color: black; border-color: black;">
+                                style=" background-color: white; border-color: white;">
                                 <option value="">Product</option>
                                 <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
                                 <option value="<?php echo base_url();?>">Vehicle</option>
@@ -285,7 +286,7 @@
                             style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;">Sign
                             Up</a>
                         <a href="<?php echo base_url();?>Fornt/login"
-                            style="color: #FFB600;  text-decoration:none;">login</a>
+                            style="color: #FFB600;  text-decoration:none; font-size:22px; font-weight:bold;">login</a>
 
                         <?php } ?>
                     </div>
@@ -295,7 +296,7 @@
 
 
     <div class=" position-fixed bottom-0 end-0 mb-5 me-5">
-        <button class=" rounded-pill policy_submit_button btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Contact us</button>
+        <button style="background-color:#FFB600; color: #FFFFFF;" class=" rounded-pill policy_submit_button btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Contact us</button>
         </button>
        
         </div>

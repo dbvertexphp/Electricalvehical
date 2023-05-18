@@ -797,14 +797,21 @@ class Fornt extends CI_Controller {
 
 	}
 
-	
-	
 
 	function mobile_view(){
 		$this->load->view('front/header'); 
 		$this->load->view('front/mobile'); 
 		$this->load->view('front/footer');	
 	}
+   
+
+	function low_speed(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/low_speed'); 
+		$this->load->view('front/footer');	
+	}
+
+
 	
 }
 	?>

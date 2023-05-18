@@ -119,26 +119,26 @@ flex-grow: 0;
                     <p class="footer_logo_content">Near old arpa bridge, Pratap chowk  Bilaspur, Chhattisgarh-495001</p>
                 </div>
                 <div class="col-sm-2">
-                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/about_us">
-                        <p>About Us</p>
-                    </a>
-                    <a class="text-white footer_optine " href="<?php echo base_url();?>Fornt/Terms_conditions">
-                        <p class="footer_logo_content">Terms &
-                            Condition</p>
-                    </a>
+                        <p> <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/about_us">About Us </a></p>
+    
+                        <p class="footer_logo_content">  <a class="text-white footer_optine " href="<?php echo base_url();?>Fornt/Terms_conditions">Terms & Condition </a></p>
+                   
                 </div>
                 <div class="col-sm-2">
                     <p>Products</p>
-                    <p class="footer_logo_content">Mobile<p>
-                       <p class="footer_logo_content"> Low Speed
-                        Electric Vehicle
+                    <p class="footer_logo_content"><a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/mobile_view">Mobile </a> <p>
+                       <p class="footer_logo_content"><a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/low_speed">Low Speed
+                        Electric Vehicle</a> 
                     </p>
                 </div>
                 <div class="col-sm-2">
-                    <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us">
-                        <p> Contact Us</p>
-                    </a>
-                    <p class="footer_logo_content">Help / Support</p>
+                    
+                        <p> <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us"> Contact Us   </a></p>
+                  
+                
+                        <p>     <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us"> Help / Support  </a></p>
+                   
+                   
                 </div>
                 <div class="col-sm-3">
                     <p> Get Email Notifications</p>

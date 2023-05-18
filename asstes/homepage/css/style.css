@@ -621,7 +621,6 @@ header {
 }
 
 .our_work_section:nth-child(3) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-image: url();
     color: #000;
     top: 200vh;
@@ -635,7 +634,6 @@ header {
 }
 
 .our_work_section:nth-child(4) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #FF8592;
     background-image: ;
     background-size: cover;
@@ -650,7 +648,6 @@ header {
 }
 
 .our_work_section:nth-child(5) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #FFE788;
     color: #fff;
     top: 400vh;
@@ -663,7 +660,6 @@ header {
 }
 
 .our_work_section:nth-child(6) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #0a0a0a;
     color: #fff;
     top: 500vh;
@@ -676,7 +672,6 @@ header {
 }
 
 .our_work_section:nth-child(7) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #0a0a0a;
     color: #fff;
     top: 600vh;
@@ -689,7 +684,6 @@ header {
 }
 
 .our_work_section:nth-child(8) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #0a0a0a;
     color: #fff;
     top: 700vh;
@@ -702,7 +696,6 @@ header {
 }
 
 .our_work_section:nth-child(9) {
-    box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
     background-color: #0a0a0a;
     color: #fff;
     top: 800vh;

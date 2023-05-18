@@ -132,6 +132,14 @@
         /* Adjust the width of the fixed image */
         height: auto;
     }
+    .appnameh1{
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: Bold;
+font-size: 40.0801px;
+letter-spacing: 0px;
+color: #313131;
+    }
    
     </style>
 
@@ -248,8 +256,8 @@
                                                 <div class="col">
                                                     <div class="row ">
 
-                                                        <div class="appnameh1 col-10">
-                                                            <h3 style="font-weight:900;">Why choose us?</h3>
+                                                        <div class=" col-10">
+                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose us?</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -290,7 +298,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h3 style="font-weight:900;">Easy to buy</h3>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -330,8 +338,8 @@
                                                 <div class="col">
                                                     <div class="row ">
 
-                                                        <div class="appnameh1 col-10">
-                                                            <h3 style="font-weight:900;">Hassle Free claims</h3>
+                                                        <div class="appnaeh1 col-10">
+                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free claims</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -341,7 +349,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <p class="why_choose"> Claim settlement is just a call away.
+                                                            <p class="why_choose "> Claim settlement is just a call away.
                                                                 Just call on our toll-free number or drop a mail that’s
                                                                 it.</p>
                                                         </div>
@@ -362,21 +370,21 @@
 
     <br>
     <div class="container text-center">
-        <h1><b>Repair and Replacement guarantee for </b></h1>
+        <h1 class="text-danger"><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
             <div class="col-sm-4">
-                <img src="/image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
+                <img src="<?php echo base_url();?>image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
                 <h3 style="color: #707070;"><b>Screen Damages</b></h3>
             </div> 
             <div class="col-sm-4">
-                <img src="/image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
                 <h3 style="color: #707070;"><b>Water/Liquid Damages</b></h3>
             </div>
             <div class="col-sm-4">
-                <img src="/image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
                 <h3 style="color: #707070;"><b>Hardware / Software Damages</b></h3>
             </div>
 
@@ -387,11 +395,11 @@
     <div class="container text-center ">
         <div class="row justify-content-center">
             <div class="col-sm-4">
-                <img src="/image/img3.png" class="img-fluid" alt="" style="width: 80%;">
+                <img src="<?php echo base_url();?>image/img3.png" class="img-fluid" alt="" style="width: 80%;">
                 <h3 style="color: #707070;"><b>Free Pick-up and Drop</b></h3>
             </div>
             <div class="col-sm-4">
-                <img src="/image/img4.png" class="img-fluid" alt="" style="width: 80%;">
+                <img src="<?php echo base_url();?>image/img4.png" class="img-fluid" alt="" style="width: 80%;">
                 <h3 style="color: #707070;"><b>Brand Authorized Repairs </b></h3>
             </div>
         </div>
@@ -413,7 +421,7 @@
                     <div class="container">
                         <div class="row" style="color: #FFB600;">
                             <div class="col-6">
-                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Course</b></h3>
+                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Cover</b></h3>
                             </div>
                             <div class="col-3">
                                 <h3><b style="font-size:max(1.5vw, 13px);">Under Mobi Protect</b></h3>

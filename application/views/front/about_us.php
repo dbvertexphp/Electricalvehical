@@ -59,16 +59,16 @@ a:hover{
 }
 .header_option{
   font-family: 'Plus Jakarta Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 18.515px;
-line-height: 17px;
-color: white;
-flex: none;
-order: 1;
-flex-grow: 0;
-margin-left:15px;
-text-decoration: none;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20.515px;
+        line-height: 17px;
+        color: black;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: 15px;
+        text-decoration: none;
 }
 .header_option:hover{
   color: #FFB600;

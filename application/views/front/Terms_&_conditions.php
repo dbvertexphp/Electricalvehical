@@ -67,10 +67,10 @@
     .header_option {
         font-family: 'Plus Jakarta Sans';
         font-style: normal;
-        font-weight: 400;
-        font-size: 18.515px;
+        font-weight: bold;
+        font-size: 20.515px;
         line-height: 17px;
-        color: white;
+        color: black;
         flex: none;
         order: 1;
         flex-grow: 0;

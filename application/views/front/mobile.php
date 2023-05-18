@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="<?php echo base_url();?>https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    <script
+        src="<?php echo base_url();?>https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <!-- link for card -->
@@ -21,7 +22,8 @@
 
     <script src="<?php echo base_url();?>https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="<?php echo base_url();?>https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="<?php echo base_url();?>https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    </script>
     <script src="<?php echo base_url();?>https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <style>
@@ -112,7 +114,7 @@
         line-height: 23px;
         font-weight: 600;
         letter-spacing: 1px;
-        font-size:20px;
+        font-size: 20px;
     }
 
     .scroll-then-fix {
@@ -132,7 +134,6 @@
         /* Adjust the width of the fixed image */
         height: auto;
     }
-   
     </style>
 
 </head>
@@ -146,14 +147,15 @@
     <div class="container ">
         <div class="row ">
             <div class="col-lg-6">
-             <p>Form cantent</p>
-             <a class=" header_option products active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/buy_Premium">
-             <div class="input-group-append w-25">
-                                <span style=" background-color: #FFB600; place-content: center;" class="input-group-text text-white" id="basic-addon2">Buy Product
-                                </span>
-                            </div>
-                   </a>
+                <p>Form cantent</p>
+                <a class=" header_option products active" aria-current="page"
+                    href="<?php echo base_url();?>Fornt/buy_Premium">
+                    <div class="input-group-append w-25">
+                        <span style=" background-color: #FFB600; place-content: center;"
+                            class="input-group-text text-white" id="basic-addon2">Buy Product
+                        </span>
+                    </div>
+                </a>
             </div><br>
 
             <div class="col-lg-6 text-center">
@@ -163,7 +165,44 @@
     </div>
     <br>
 
-   
+    <div class="container text-center">
+        <h1 class="text-danger"><b>Repair and Replacement guarantee for </b></h1>
+    </div><br>
+
+    <div class="container text-center ">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Screen Damages</b></h3>
+            </div> 
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Water/Liquid Damages</b></h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Hardware / Software Damages</b></h3>
+            </div>
+
+        </div>
+    </div>
+    <br>
+
+    <div class="container text-center ">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/img3.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Free Pick-up and Drop</b></h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/img4.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Brand Authorized Repairs </b></h3>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
 
     <div class="container-fluid" id="contain">
         <img src="<?php echo base_url();?>image/limg.png" alt="Snow" style="width:100%;">
@@ -180,7 +219,7 @@
                     <div class="container">
                         <div class="row" style="color: #FFB600;">
                             <div class="col-6">
-                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Course</b></h3>
+                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Cover</b></h3>
                             </div>
                             <div class="col-3">
                                 <h3><b style="font-size:max(1.5vw, 13px);">Under Mobi Protect</b></h3>
@@ -192,42 +231,56 @@
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair/Replace Broken Screen</div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair / Replace Water Damage</div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair for Hardware/Software Issues</div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Replace/Recover for Theft </div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Cash Payout option for Self-Repairs</div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Free Doorstep Pick-up and Drop</div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                         <div class="row">
                             <div class="col-6" style="color: #707070;">User Friendly Support </div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                     </div>
 

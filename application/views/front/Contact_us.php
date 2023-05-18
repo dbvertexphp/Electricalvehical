@@ -67,10 +67,10 @@
     .header_option {
         font-family: 'Plus Jakarta Sans';
         font-style: normal;
-        font-weight: 400;
-        font-size: 18.515px;
+        font-weight: bold;
+        font-size: 20.515px;
         line-height: 17px;
-        color: white;
+        color: black;
         flex: none;
         order: 1;
         flex-grow: 0;
@@ -110,20 +110,22 @@
         font-size: 16px;
         margin-bottom: 20px;
     }
-    .policy_submit_button{
-    background-color: #ffb600;
-    color: white;
-    font-size:19px;
-    font-weight:bold;
-    width:150px;
-    border-radius: 10px;
-    border-color: #ffb600;
-    margin-top:20px;
-}
-.policy_submit_button:hover{
-    background-color: #ffb600;
-    color: white;  
-}
+
+    .policy_submit_button {
+        background-color: #ffb600;
+        color: white;
+        font-size: 19px;
+        font-weight: bold;
+        width: 150px;
+        border-radius: 10px;
+        border-color: #ffb600;
+        margin-top: 20px;
+    }
+
+    .policy_submit_button:hover {
+        background-color: #ffb600;
+        color: white;
+    }
     </style>
 </head>
 
@@ -163,9 +165,9 @@
                     provider - we can't wait to hear from
                     you!</p>
 
-
-                  <div class="col-md-12 mb-1 mt-5" style="align-self: center;">
-                  <?php  if($error=$this->session->flashdata('Contact_us_form')){  ?>
+                <div class="row justify-content-center">
+                <div class="col-sm-8 pb-5 mt-5 align-self-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <?php  if($error=$this->session->flashdata('Contact_us_form')){  ?>
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <div class="alert alert-success ">
@@ -180,16 +182,16 @@
                     </div>
 
                     <?php } ?>
-                        <h5 class="text-center my-5 fw-bold">Contact Form</h5>
+                    <h5 class="text-center my-5 fw-bold fs-4" style="color: #FFB600;">Contact Form</h5>
                     <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/Contact_us_form"
                         novalidate autocomplete="off">
                         <div class="row justify-content-center">
-                            <div class="col-sm-8">
+                            <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label for="lastName" class="form-label">Name</label>
-                                        <input type="text" class="form-control" value="" id="Name"
-                                            name="Name" placeholder="Name" value="" required>
+                                        <input type="text" class="form-control" value="" id="Name" name="Name"
+                                            placeholder="Name" value="" required>
                                         <div class="invalid-feedback">
                                             Valid Name is required.
                                         </div>
@@ -227,7 +229,8 @@
                                     </div>
 
                                     <div class="col-sm-12" style="text-align: center;">
-                                    <button class="   policy_submit_button btn-lg" id="submit" type="submit">Submit</button>
+                                        <button class="   policy_submit_button btn-lg" id="submit"
+                                            type="submit">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +238,7 @@
                     </form>
 
                 </div>
-
+                </div>
 
 
 

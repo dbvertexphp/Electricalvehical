@@ -155,8 +155,11 @@ font-size: 16px;
 line-height: 24px;
 color: #FFFFFF;
     }
-
-
+   .cooming_soon{
+    min-width: 400px;
+    min-height: 400px;
+   }
+ 
 
     </style>
 </head>
@@ -168,20 +171,9 @@ color: #FFFFFF;
 
     <br>
     <div class="container clam_handing_container">
-        <div class="row content">
-            <div class="col-md-12 mb-1" style="align-self: center;">
-            <h2 class="clam_handing">How to Claim?</h2>
-
-            <div class="text-center mt-4">
-                <button type="button" class=" get_app_toll"> </span><i
-                        class="bi bi-telephone-fill fs-5 text-white"></i><span class="get_app_toll_text ps-2">Toll free Number - 0000-00-00 </button><br>
-            </div><br>
-            <p class="clam_handing_text mt-3"><?php echo "&#8226;" ?> Did your mobile get damaged or stolen? Don't worry; we've got you covered! We have a very convenient process. Here's what you need to do if the situation arises:</p>
-            <p class="clam_handing_text"> <?php echo "&#8226;" ?> Please inform us of the incident immediately. To do so, head over to the Claims section on our website. You'll find a toll-free number and email address where you can report the incident and file your claim. We know accidents happen, so we're here to help make the process as hassle-free as possible.</p>
-            <p class="clam_handing_text"> <?php echo "&#8226;" ?> We'll swing into action once you've informed us about the incident! Within 24 hours, we'll send someone to pick up your damaged mobile and send it off for repairs. We know how much your mobile means to you, so we'll ensure it's in good hands and gets the TLC needed to get back to tip-top shape.</p>
-            <p class="clam_handing_text"><?php echo "&#8226;" ?> As soon as your mobile is repaired and ready to go, we'll give you a heads-up and arrange for it to be delivered back to the same place it was picked up from. We know you're busy, so we'll do our best to make the process as convenient as possible for you.</p>
-            <p class="clam_handing_text"><?php echo "&#8226;" ?> And that's it! Just head over to the Claims section on our website, follow these simple steps, and let us take care of the rest.</p>
-            </div>
+        <div class="row">
+           
+         <img src="<?php echo base_url();?>image/cooming_soon.jpg" alt="" class="img-fluid cooming_soon">
         
         </div>
     </div><br>

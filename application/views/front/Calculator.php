@@ -33,6 +33,22 @@
     .culculetter_page {
         align-self: center;
     }
+
+    .appnameh1 {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: Bold;
+        font-size: 40.0801px;
+        letter-spacing: 0px;
+        color: #313131;
+    }
+
+    .why_choose {
+        line-height: 23px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
     </style>
 </head>
 
@@ -74,8 +90,9 @@
 
                         <div class=" col-md-6 mt-0">
                             <label for="Price" class=" post_input_lable"><b>Price</b></label>
-                            <input type="number" class="form-control no-spinners" id="Price" name="Price" placeholder="Enter Price"
-                            maxlength="6" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+                            <input type="number" class="form-control no-spinners" id="Price" name="Price"
+                                placeholder="Enter Price" maxlength="6"
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 required>
                             <div class="invalid-feedback">
                                 Please Enter Price.
@@ -144,9 +161,10 @@
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>image/phone.png" alt="pahadiuncle_layout">
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                            alt="pahadiuncle_layout">
                                     </div>
                                     <div class="appdevcol col-md-6">
                                         <div class="appdetaildivider">
@@ -154,8 +172,9 @@
                                                 <div class="col">
                                                     <div class="row ">
 
-                                                        <div class="appnameh1 col-10">
-                                                            <h1>Why Choose Us ?</h1>
+                                                        <div class=" col-10">
+                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose
+                                                                us?</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -165,9 +184,10 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h1>
-
-                                                                Low Pricing</h1>
+                                                            <p class="why_choose"> Buy Mobile protection plan that fits
+                                                                your pocket. our plans are affordable and easy to
+                                                                understand, so you won't be blindsided by hidden fees.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,21 +199,12 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
                     <div class="our_work_section py-5">
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png"
                                             alt="h1bq_layout.png">
                                     </div>
@@ -204,7 +215,8 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h1>Why Choose Us ?</h1>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy
+                                                            </h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -214,9 +226,9 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h1>
-
-                                                                Low Pricing</h1>
+                                                            <p class="why_choose">Just head on over to the Buy
+                                                                Protection Plans section and follow the simple steps to
+                                                                get started.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -233,8 +245,8 @@
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
-                                    <div class="appdevcol col-md-6">
-                                        <img class="mobile_skin" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                    <div class="appdevcol col-md-4">
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="mobile_phototribe">
                                     </div>
@@ -244,8 +256,9 @@
                                                 <div class="col">
                                                     <div class="row ">
 
-                                                        <div class="appnameh1 col-10">
-                                                            <h1>What are you doing</h1>
+                                                        <div class="appnaeh1 col-10">
+                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free
+                                                                claims</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -255,7 +268,10 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h1>What are you doing</h1>
+                                                            <p class="why_choose "> Claim settlement is just a call
+                                                                away.
+                                                                Just call on our toll-free number or drop a mail that’s
+                                                                it.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -274,35 +290,41 @@
 
     <br>
     <div class="container text-center">
-        <h1><b>Read Recent Post</b></h1>
+        <h1 class="text-danger"><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
-            <div class="col-sm-5 ">
+            <div class="col-sm-4">
                 <img src="<?php echo base_url();?>image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Course Screen Damage</b></h3>
+                <h3 style="color: #707070;"><b>Screen Damages</b></h3>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Course Liquid Damage</b></h3>
+                <h3 style="color: #707070;"><b>Water/Liquid Damages</b></h3>
             </div>
+            <div class="col-sm-4">
+                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
+                <h3 style="color: #707070;"><b>Hardware / Software Damages</b></h3>
+            </div>
+
         </div>
     </div>
     <br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
-            <div class="col-sm-5 ">
+            <div class="col-sm-4">
                 <img src="<?php echo base_url();?>image/img3.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Free Pickup & Drop</b></h3>
+                <h3 style="color: #707070;"><b>Free Pick-up and Drop</b></h3>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <img src="<?php echo base_url();?>image/img4.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Repairs in Brands Authorized Service Center</b></h3>
+                <h3 style="color: #707070;"><b>Brand Authorized Repairs </b></h3>
             </div>
         </div>
     </div>
+    <br>
     <br>
 
     <div class="container-fluid" id="contain">
@@ -317,51 +339,61 @@
         </div>
     </div><br>
 
-    <div class="container">
+       <div class="container">
         <div class="w3-container">
             <div class="w3-panel w3-card">
                 <div class="card" style="border: none;">
                     <div class="container">
                         <div class="row" style="color: #FFB600;">
                             <div class="col-6">
-                                <h3><b style="font-size: max(2vw, 13px);">Comprehensive Course</b></h3>
+                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Cover</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(2vw, 13px);">Mobile Perfect</b></h3>
+                                <h3><b style="font-size:max(1.5vw, 13px);">Under Mobi Protect</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(2vw, 13px);">Under Brand</b></h3>
+                                <h3><b style="font-size:max(1.5vw, 13px);">Under Brand</b></h3>
                             </div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Repair / Replace Broken Screen</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Repair/Replace Broken Screen</div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair / Replace Water Damage</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Free Door Step Pick-up</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Repair for Hardware/Software Issues</div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Theft Protection</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Replace/Recover for Theft </div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
-                            <div class="col-6" style="color: #707070;">Easy Laing Settlement</div>
-                            <div class="col-3">&#9989;</div>
-                            <div class="col-3"> &#10062;</div>
+                            <div class="col-6" style="color: #707070;">Cash Payout option for Self-Repairs</div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-6" style="color: #707070;">Free Doorstep Pick-up and Drop</div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-6" style="color: #707070;">User Friendly Support </div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
                         </div><br>
                     </div>
 
@@ -369,7 +401,6 @@
             </div>
         </div>
     </div> <br><br>
-
 
     <script>
     $("#submit").click(function(e) {
@@ -404,8 +435,7 @@
                 } else if (num1 >= 100001 && num1 <= 200000) {
                     num3 = 5000;
                     num4 = 5000;
-                }
-                 else if (num1 >= 200000) {
+                } else if (num1 >= 200000) {
                     num3 = 5000;
                     num4 = 5000;
                 }
@@ -431,8 +461,7 @@
                 } else if (num1 >= 100001 && num1 <= 200000) {
                     num3 = 5000 + 1000;
                     num4 = 5000 + 1000;
-                }
-                else if (num1 >= 200000) {
+                } else if (num1 >= 200000) {
                     num3 = 5000 + 1000;
                     num4 = 5000 + 1000;
                 }

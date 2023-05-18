@@ -11,8 +11,17 @@
     </script>
     <style>
     .header_option {
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20.515px;
+        line-height: 17px;
+        color: black;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: 15px;
         text-decoration: none;
-        color: white;
     }
 
     .logo {

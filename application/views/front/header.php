@@ -124,7 +124,7 @@
         font-family: 'Plus Jakarta Sans';
         font-style: normal;
         font-weight: 400;
-        font-size: 18.515px;
+        font-size: 20.515px;
         line-height: 17px;
         color: white;
         flex: none;
@@ -166,9 +166,18 @@
       background-color:black;
     }
     .header_container{
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
     }
+    .logo_img{
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .nav-item{
+        padding-right: 32px;
+    }
+    
     </style>
 
 </head>
@@ -179,17 +188,22 @@
     <div class="container header_container">
         <nav class="navbar navbar-expand-lg ">
 
-            <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
+        <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation" style=" background-color: white;">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto ">
                     <li class="nav-item">
-                        <a class=" header_option products active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/buy_Premium">Product</a>
+                      <select  onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"  class=" header_option products active" name="cars" id="cars" style=" background-color: black; border-color: black;">
+                      <option value="">Product</option>
+                        <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
+                        <option value="<?php echo base_url();?>">Vehicle</option>
+                        </select>
+                        <!-- <a class=" header_option products active" aria-current="page"
+                            href="<?php echo base_url();?>Fornt/buy_Premium">Product</a> -->
                     </li>
 
                     <li class="nav-item">

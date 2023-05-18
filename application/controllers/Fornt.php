@@ -772,32 +772,39 @@ class Fornt extends CI_Controller {
 						 return redirect('Fornt/my_profil_view');
 						}
 					  }
-		}
+	}
 
-		public function editprofile(){  
+	public function editprofile(){  
 
-			$id = $this->session->userdata('vehical'); 
+		$id = $this->session->userdata('vehical'); 
 
-			$email = $this->input->post("email");
-            $name = $this->input->post("name");
-            $Mobile = $this->input->post("Mobile");
-			
-			$idata["id"]= $id;
-           $idata["email"]=$email;
-           $idata["name"]= $name;
-          $idata["mobile"]= $Mobile;
+		$email = $this->input->post("email");
+		$name = $this->input->post("name");
+		$Mobile = $this->input->post("Mobile");
+		
+		$idata["id"]= $id;
+		$idata["email"]=$email;
+		$idata["name"]= $name;
+		$idata["mobile"]= $Mobile;
 
-		   $result = $this->db->update("Website_users", $idata, ["id"=>$id]);
+		$result = $this->db->update("Website_users", $idata, ["id"=>$id]);
 
-		     $this->session->set_flashdata('edit_profile', 'Profile Successfully Update'); 
-	      	 $this->session->set_flashdata('msg_class','alert-success');
+			$this->session->set_flashdata('edit_profile', 'Profile Successfully Update'); 
+			$this->session->set_flashdata('msg_class','alert-success');
 
-		   return redirect('Fornt/my_profil_view');
-           
+		return redirect('Fornt/my_profil_view');
+		
 
-		}
+	}
 
 	
+	
+
+	function mobile_view(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/mobile'); 
+		$this->load->view('front/footer');	
 	}
 	
+}
 	?>

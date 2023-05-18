@@ -202,6 +202,11 @@
     .body {
         opacity: 0;
     }
+    .dropdown-menu{
+        height: 100px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border:none;
+    }
     </style>
 
 </head>
@@ -221,7 +226,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto ">
                         <li class="nav-item">
-                            <select
+                            <!-- <select
                                 onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
                                 class=" header_option products active" name="cars" id="cars"
                                 style=" background-color: white; border-color: white;">
@@ -229,8 +234,15 @@
                                 <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
                                 <option value="<?php echo base_url();?>">Vehicle</option>
                             </select>
-                            <!-- <a class=" header_option products active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/buy_Premium">Product</a> -->
+                             -->
+                             <li class="dropdown">
+                            <a href="#" class="dropdown-toggle header_option products active" data-toggle="dropdown" role="button" aria-expanded="false">Product <span class="caret"></span></a>
+                                <ul class="dropdown-menu mt-2" role="menu">
+                                <li class="pt-2"><a class="header_option " href="<?php echo base_url();?>Fornt/mobile_view">Mobile</a></li>
+                                <li  class="pt-3"><a  class="header_option pt-3"  href="<?php echo base_url();?>">Vehicle</a></li>
+                                </ul>
+                            </li>
+
                         </li>
 
                         <li class="nav-item">

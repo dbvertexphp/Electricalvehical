@@ -229,7 +229,7 @@
                                     </div>
 
                                     <div class="col-sm-12" style="text-align: center;">
-                                        <button class="   policy_submit_button btn-lg" id="submit"
+                                        <button class="  rounded-pill  policy_submit_button btn-lg" id="submit"
                                             type="submit">Submit</button>
                                     </div>
                                 </div>

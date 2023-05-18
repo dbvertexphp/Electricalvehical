@@ -212,7 +212,7 @@
                     </li>
                     <li class="nav-item">
                         <a class=" header_option Calculator active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/Calculator">Calculator</a>
+                            href="<?php echo base_url();?>Fornt/Calculator">Calculator</a> 
                     </li>
                     <li class="nav-item">
                         <a class=" header_option  Clam active" aria-current="page"

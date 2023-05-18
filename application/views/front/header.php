@@ -99,13 +99,13 @@
     }
 
     .profile_img {
-      
-          border-radius: 50%;
+
+        border-radius: 50%;
     }
 
     .profile_name {
         font-size: 18px;
-        color:white;
+        color: white;
     }
 
     .dropdown_hover:hover {
@@ -162,111 +162,161 @@
     .no-spinners {
         -moz-appearance: textfield;
     }
-    .header_container-fluid{
-      background-color:black;
+
+    .header_container-fluid {
+        background-color: black;
     }
-    .header_container{
+
+    .header_container {
         padding-top: 15px;
         padding-bottom: 15px;
 
     }
-    .logo_img{
+
+    .logo_img {
         max-width: 150px;
         max-height: 150px;
     }
-    .nav-item{
+
+    .nav-item {
         padding-right: 32px;
     }
-    
+
+    .policy_submit_button {
+        background-color: #ffb600;
+        color: white;
+        font-size: 19px;
+        font-weight: bold;
+        width: 150px;
+        border-radius: 20px;
+        border-color: #ffb600;
+        margin-top: 20px;
+    }
+
+    .policy_submit_button:hover {
+        background-color: #ffb600;
+        color: white;
+    }
+
+    .body {
+        opacity: 0;
+    }
     </style>
 
 </head>
 
 <body>
 
-<div class="container-fluid header_container-fluid">
-    <div class="container header_container">
-        <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid header_container-fluid">
+        <div class="container header_container">
+            <nav class="navbar navbar-expand-lg ">
 
-        <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation" style=" background-color: white;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav m-auto ">
-                    <li class="nav-item">
-                      <select  onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"  class=" header_option products active" name="cars" id="cars" style=" background-color: black; border-color: black;">
-                      <option value="">Product</option>
-                        <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
-                        <option value="<?php echo base_url();?>">Vehicle</option>
-                        </select>
-                        <!-- <a class=" header_option products active" aria-current="page"
+                <a class=" logo" style="color: #FFB600;" href="<?php echo base_url();?>">Mobile</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation" style=" background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto ">
+                        <li class="nav-item">
+                            <select
+                                onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
+                                class=" header_option products active" name="cars" id="cars"
+                                style=" background-color: black; border-color: black;">
+                                <option value="">Product</option>
+                                <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
+                                <option value="<?php echo base_url();?>">Vehicle</option>
+                            </select>
+                            <!-- <a class=" header_option products active" aria-current="page"
                             href="<?php echo base_url();?>Fornt/buy_Premium">Product</a> -->
-                    </li>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class=" header_option Policy active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/products">My Policy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" header_option Calculator active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/Calculator">Calculator</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class=" header_option  Clam active" aria-current="page"
-                            href="<?php echo base_url();?>Fornt/clam">Clam</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class=" header_option Policy active" aria-current="page"
+                                href="<?php echo base_url();?>Fornt/products">My Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" header_option Calculator active" aria-current="page"
+                                href="<?php echo base_url();?>Fornt/Calculator">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" header_option  Clam active" aria-current="page"
+                                href="<?php echo base_url();?>Fornt/clam">Clam</a>
+                        </li>
 
-                </ul>
+                    </ul>
 
-                <?php $id =  $this->session->userdata('vehical');
+                    <?php $id =  $this->session->userdata('vehical');
                 if (isset($id)) {
                    $objectName = $id;
                   $user =  get_user($objectName); 
                
                   ?>
-                <div class="dropdown">
-                    <?php if($user->profile_images !== 'images (2).png'){ ?>
-                    <img class=" profile_img"
-                        src="<?php echo base_url();?>uplode/profile/<?php echo $user->profile_images ?>"
-                        alt="Girl in a jacket" width="50" height="50">
-                    <?php } else{ ?>
-                    <img src="<?php echo base_url();?>uplode/profile/images__2_remove.png" alt="Girl in a jacket" width="50"
-                        height="50">
-                    <?php } ?>
-                    <span class="profile_name dropdown_hover_name"><?php  echo ucfirst($user->name);?>
-                        <i class="bi bi-chevron-down"></i>
-                    </span>
-                    <div class="dropdown-content">
-                        <a href="<?php echo base_url();?>Fornt/my_profil_view" class="link">
-                            <p class="dropdown_hover">My Profile</p>
-                        </a>
-                        <a class="link" href="<?php echo base_url();?>Fornt/change_password">
-                            <p class="dropdown_hover">Change Password</p>
-                        </a>
-                        <a class="link" href="<?php echo base_url();?>Fornt/logout" class="logout dropdown_hover">
-                            <p class="dropdown_hover">Logout</p>
-                        </a>
-                    </div>
+                    <div class="dropdown">
+                        <?php if($user->profile_images !== 'images (2).png'){ ?>
+                        <img class=" profile_img"
+                            src="<?php echo base_url();?>uplode/profile/<?php echo $user->profile_images ?>"
+                            alt="Girl in a jacket" width="50" height="50">
+                        <?php } else{ ?>
+                        <img src="<?php echo base_url();?>uplode/profile/images__2_remove.png" alt="Girl in a jacket"
+                            width="50" height="50">
+                        <?php } ?>
+                        <span class="profile_name dropdown_hover_name"><?php  echo ucfirst($user->name);?>
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                        <div class="dropdown-content">
+                            <a href="<?php echo base_url();?>Fornt/my_profil_view" class="link">
+                                <p class="dropdown_hover">My Profile</p>
+                            </a>
+                            <a class="link" href="<?php echo base_url();?>Fornt/change_password">
+                                <p class="dropdown_hover">Change Password</p>
+                            </a>
+                            <a class="link" href="<?php echo base_url();?>Fornt/logout" class="logout dropdown_hover">
+                                <p class="dropdown_hover">Logout</p>
+                            </a>
+                        </div>
 
-                    <?php   } 
+                        <?php   } 
                 if($id == ''){
                ?>
 
-                    <a href="<?php echo base_url();?>Fornt/singup" class="btn" role="button" aria-disabled="true"
-                        style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;">Sign
-                        Up</a>
-                    <a href="<?php echo base_url();?>Fornt/login"
-                        style="color: #FFB600;  text-decoration:none;">login</a>
+                        <a href="<?php echo base_url();?>Fornt/singup" class="btn" role="button" aria-disabled="true"
+                            style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;">Sign
+                            Up</a>
+                        <a href="<?php echo base_url();?>Fornt/login"
+                            style="color: #FFB600;  text-decoration:none;">login</a>
 
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class=" position-fixed bottom-0 end-0 mb-5 me-5">
+        <button class=" rounded-pill policy_submit_button btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Contact us</button>
+        </button>
+       
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                     <p>Text test</p>
+                    </div>
+                   
                 </div>
-        </nav>
-    </div>
-    </div>
-   
+            </div>
+        </div>
+
+
+  
 
     <script>
     $(function() {

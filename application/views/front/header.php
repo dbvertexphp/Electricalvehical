@@ -190,7 +190,7 @@
         color: black;
         font-size: 22px;
         font-weight: bold;
-        width: 150px;
+        width: 120px;
         border-radius: 20px;
         border-color: #ffb600;
         margin-top: 20px;
@@ -318,7 +318,7 @@
 
 
     <div class=" position-fixed bottom-0 end-0 mb-5 me-5">
-        <button style="background-color:#FFB600; color: #FFFFFF;" class=" rounded-pill policy_submit_button btn-lg pulse_submit_button fs-3"
+        <button style="background-color:#FFB600; color: #FFFFFF;" class=" rounded-pill policy_submit_button btn-lg pulse_submit_button fs-5"
             data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Help ?</button>
         </button>
 

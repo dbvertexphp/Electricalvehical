@@ -22,7 +22,7 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-1">
+            <div class="col-md-6 mb-1" style="align-self: center;">
               
                 <?php  if($error=$this->session->flashdata('forgot_password_otp')){  ?>
                 <div class="row  text-center" style="justify-content: center;">

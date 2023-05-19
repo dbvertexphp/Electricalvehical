@@ -57,13 +57,13 @@
                     <h4>Forgot Password</h4>
                     <p style="font-size: 12px;color:#b9b8b8"> Your OTP send on <span style="color:black"><?php 
               $number =  $this->session->userdata('mobile');
-               $otp =  $this->session->userdata('randCode');
+            //    $otp =  $this->session->userdata('randCode');
               
              echo str_pad(substr($number, -4), strlen($number), '*', STR_PAD_LEFT);
             
             ?></span> <br>
                         Please enter OTP here </p>
-                    <?php  echo "OTP-".$otp; ?>
+                    <?php // echo "OTP-".$otp; ?>
                     <form method="post" action="<?php echo base_url();?>Fornt/verify_otp">
                         <div class="input-container d-flex flex-row justify-content-center mt-2 mb-3">
                             <div class="otp-input">

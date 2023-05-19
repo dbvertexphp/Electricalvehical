@@ -20,10 +20,10 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-1" style="padding-right: 85px;">
+            <div class="col-md-6 mb-1" style="padding-right: 85px; align-self: center;">
                 <form class="needs-validation" novalidate class="pure-form" method="post" action="<?php echo base_url();?>Fornt/forgot_password_verify_otp">
                     <fieldset>
-                        <h3><b>Mobile</b></h3><br>
+                     
                         <h5>Forgot Password</h5>
                         <?php  if($error=$this->session->flashdata('otp_verify_message')){  ?>
                         <div class="row  text-center" style="justify-content: center;">
@@ -40,8 +40,9 @@
                         </div>
 
                         <?php } ?>
-                        <?php  $otp =  $this->session->userdata('randCode'); 
-                    echo "Otp-:".$otp;
+                        <?php  
+                        // $otp =  $this->session->userdata('randCode'); 
+                    // echo "Otp-:".$otp;
                    ?>
                         <div class="mb-3">
                             <label for="password" class="form-label">Otp</label>

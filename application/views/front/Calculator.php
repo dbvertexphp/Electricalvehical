@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="<?php echo base_url();?>image/MOBI PROTECT (4).png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -44,7 +45,7 @@
     }
 
     .appnameh1 {
-        font-family: 'Bebas Neue';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: Bold;
         font-size: 40.0801px;
@@ -57,7 +58,15 @@
         font-weight: 600;
         letter-spacing: 1px;
         font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
     }
+    .pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.1); }
+}
     </style>
 </head>
 
@@ -65,7 +74,7 @@
 
 
 
-    <div class="container mt-3">
+    <div class="container my-5">
         <div class="row">
             <div class="col-md-6 culculetter_page">
 
@@ -126,7 +135,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="<?php echo base_url();?>image/productimg.png" class="img-fluid" alt="">
+                <img src="<?php echo base_url();?>image/productimg.png" class="img-fluid pulse" alt="">
             </div>
         </div>
     </div>

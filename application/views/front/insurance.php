@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="<?php echo base_url();?>image/MOBI PROTECT (4).png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -24,7 +25,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <style>
+     
     html,
     body {
         max-width: 100%;
@@ -113,6 +117,7 @@
         font-weight: 600;
         letter-spacing: 1px;
         font-size:20px;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .scroll-then-fix {
@@ -133,13 +138,71 @@
         height: auto;
     }
     .appnameh1{
-font-family: 'Bebas Neue';
+        font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: Bold;
 font-size: 40.0801px;
 letter-spacing: 0px;
 color: #313131;
     }
+    .pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.1); }
+}
+.cardItem {
+  
+  margin-top: 100px;
+  margin-right: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: all 500ms ease-in-out;
+  background-color: #eee;
+  background: var(--white-color);
+  border-radius: 5%;
+}
+.cardItem:hover {
+  margin-top: 92px;
+  cursor: pointer;
+  background: var(--white-color);
+  border-radius: 5%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cardItem:hover .icon_images {
+  width: 60px;
+  height: 60px;
+}
+.cardLabel {
+  
+  width: 100%;
+  font-size: 20px;
+  display: block;
+}
+.material-icons {
+  font-size: 64px;
+  margin-top: 24px;
+  color: #1ab5ad;
+}
+.text_card{
+    color: var(--p-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-light);
+}
+.cardLabel{
+    color: #FFB600;
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+.icon_images{
+    width:70px;
+    height:70px;
+}
+
+
    
     </style>
 
@@ -151,7 +214,7 @@ color: #313131;
 
     <br>
 
-    <div class="container ">
+    <div class="container my-5">
         <div class="row ">
             <div class="col-lg-6">
                 <h1><b>DO THE DIGITAL INSURANCE</b></h1><br>
@@ -198,7 +261,7 @@ color: #313131;
             </div><br>
 
             <div class="col-lg-6 text-center">
-                <img src="image/img1.png" class="mx-auto d-block" alt="" id="one">
+                <img src="image/img1.png" class="mx-auto d-block pulse" alt="" id="one">
             </div>
         </div>
     </div>
@@ -246,7 +309,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="pahadiuncle_layout">
                                     </div>
@@ -287,7 +350,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png"
                                             alt="h1bq_layout.png">
                                     </div>
@@ -328,7 +391,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="mobile_phototribe">
                                     </div>
@@ -369,38 +432,40 @@ color: #313131;
     </div>
 
     <br>
-    <div class="container text-center">
-        <h1 class="text-danger"><b>Repair and Replacement guarantee for </b></h1>
+    <div class="container text-center my-3">
+        <h1 class="text-danger" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px;"><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <img src="<?php echo base_url();?>image/ph1.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Screen Damages</b></h3>
+            <div class="col-sm-6 col-md-4">
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
+            <p class="mt-3 text_card">Our guarantee covers screen damages. We will repair or replace the subject's screen at no additional cost during the guarantee period.</p>
             </div> 
-            <div class="col-sm-4">
-                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Water/Liquid Damages</b></h3>
             </div>
-            <div class="col-sm-4">
-                <img src="<?php echo base_url();?>image/ph2.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Hardware / Software Damages</b></h3>
+            <div class="col-sm-6 col-md-4">
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Water/Liquid Damages</strong></span>
+            <p class="mt-3 text_card">Our repair and replacement guarantee covers water/liquid damages for the specified subject. If your device sustains water/liquid damage during the guarantee period, we will repair or replace it at no additional cost.</p>
+            </div> 
+            </div>
+            <div class="col-sm-6 col-md-4">
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Hardware / Software Damages</strong></span>
+            <p class="mt-3 text_card">Our guarantee covers hardware and software damages. We offer repair or replacement services for the subject at no additional cost during the guarantee period.</p>
+            </div> 
+              
             </div>
 
-        </div>
-    </div>
-    <br>
-
-    <div class="container text-center ">
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <img src="<?php echo base_url();?>image/img3.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Free Pick-up and Drop</b></h3>
+            <div class="col-sm-6 col-md-4">
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Free Pick-up and Drop</strong></span>
+            <p class="mt-3 text_card">Our repair and replacement guarantee includes free pick-up and drop-off services for the specified subject, ensuring a convenient and hassle-free experience during the guarantee period.</p>
+            </div> 
+              
             </div>
-            <div class="col-sm-4">
-                <img src="<?php echo base_url();?>image/img4.png" class="img-fluid" alt="" style="width: 80%;">
-                <h3 style="color: #707070;"><b>Brand Authorized Repairs </b></h3>
+            <div class="col-sm-6 col-md-4">
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Brand Authorized Repairs</strong></span>
+            <p class="mt-3 text_card">Our repair and replacement guarantee ensures that all repairs for the specified subject are conducted by authorized technicians, maintaining the brand's standards and quality during the guarantee period.</p>
+            </div> 
+            
             </div>
         </div>
     </div>

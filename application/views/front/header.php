@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="<?php echo base_url();?>image/MOBI PROTECT (4).png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -23,6 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <title>MOBILE</title>
     <style>
     html,
@@ -179,14 +183,12 @@
         max-height: 150px;
     }
 
-    .nav-item {
-        padding-right: 32px;
-    }
+    .nav-item {}
 
     .policy_submit_button {
         background-color: white;
         color: black;
-        font-size: 19px;
+        font-size: 22px;
         font-weight: bold;
         width: 150px;
         border-radius: 20px;
@@ -202,11 +204,23 @@
     .body {
         opacity: 0;
     }
-    .dropdown-menu{
+
+    .dropdown-menu {
         height: 100px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        border:none;
+        border: none;
     }
+
+    .nav-item {
+        padding-right: 21px;
+    }
+    .pulse_submit_button {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse_submit_button {
+  from { transform: scale(0.8); }
+  to { transform: scale(1.1); }
+}
     </style>
 
 </head>
@@ -216,8 +230,9 @@
     <div class="container-fluid header_container-fluid">
         <div class="container header_container">
             <nav class="navbar navbar-expand-lg ">
-               <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>image/MOBI PROTECT (4).png" alt="" width="100" height="100"></a>
-               
+                <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>image/MOBI PROTECT (4).png" alt=""
+                        width="100" height="100"></a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" style=" background-color: white;">
@@ -225,25 +240,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto ">
-                        <li class="nav-item">
-                            <!-- <select
-                                onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
-                                class=" header_option products active" name="cars" id="cars"
-                                style=" background-color: white; border-color: white;">
-                                <option value="">Product</option>
-                                <option value="<?php echo base_url();?>Fornt/mobile_view">Mobile</option>
-                                <option value="<?php echo base_url();?>">Vehicle</option>
-                            </select>
-                             -->
-                             <li class="dropdown">
-                            <a href="#" class="dropdown-toggle header_option products active" data-toggle="dropdown" role="button" aria-expanded="false">Product <span class="caret"></span></a>
-                                <ul class="dropdown-menu mt-2" role="menu">
-                                <li class="pt-2"><a class="header_option " href="<?php echo base_url();?>Fornt/mobile_view">Mobile</a></li>
-                                <li  class="pt-3"><a  class="header_option pt-3"  href="<?php echo base_url();?>">Vehicle</a></li>
-                                </ul>
-                            </li>
 
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle header_option products active" data-toggle="dropdown"
+                                role="button" aria-expanded="false">Product <span class="caret"></span></a>
+                            <ul class="dropdown-menu mt-2" role="menu">
+                                <li class="pt-2"><a class="header_option "
+                                        href="<?php echo base_url();?>Fornt/mobile_view">Mobile</a></li>
+                                <li class="pt-3"><a class="header_option pt-3"
+                                        href="<?php echo base_url();?>">Vehicle</a></li>
+                            </ul>
                         </li>
+
+
 
                         <li class="nav-item">
                             <a class=" header_option Policy active" aria-current="page"
@@ -295,7 +304,8 @@
                ?>
 
                         <a href="<?php echo base_url();?>Fornt/singup" class="btn" role="button" aria-disabled="true"
-                            style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;">Sign
+                            style="margin-right: 10px;background-color: #FFB600; color: white;border-radius: 50px;
+                            text-decoration:none; font-size:20px; font-weight:bold;">Sign
                             Up</a>
                         <a href="<?php echo base_url();?>Fornt/login"
                             style="color: #FFB600;  text-decoration:none; font-size:22px; font-weight:bold;">login</a>
@@ -308,28 +318,29 @@
 
 
     <div class=" position-fixed bottom-0 end-0 mb-5 me-5">
-        <button style="background-color:#FFB600; color: #FFFFFF;" class=" rounded-pill policy_submit_button btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Contact us</button>
+        <button style="background-color:#FFB600; color: #FFFFFF;" class=" rounded-pill policy_submit_button btn-lg pulse_submit_button fs-3"
+            data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Help ?</button>
         </button>
-       
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                     <p>Text test</p>
-                    </div>
-                   
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <p>Text test</p>
+                </div>
+
             </div>
         </div>
+    </div>
 
 
-  
+
 
     <script>
     $(function() {

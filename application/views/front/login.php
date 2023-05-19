@@ -71,6 +71,13 @@ body {
   min-height: 100%;
   padding-bottom: 40%; /* Adjust this value to match the height of your footer */
 }
+.pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.1); }
+}
     </style>
 
 </head>
@@ -81,7 +88,7 @@ body {
 
 
     <br>
-    <div class="container">
+    <div class="container my-5">
         <div class="row content ">
             <div class="col-md-6 mb-1" style="padding-right: 85px; align-self: center;">
                 <form class="needs-validation" method="post" method="post"
@@ -153,7 +160,7 @@ body {
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="<?php echo base_url();?>/image/loginimg.png" class="img-fluid" alt=""
+                <img src="<?php echo base_url();?>/image/loginimg.png" class="img-fluid pulse" alt=""
                     style="padding: 35px;background-color: #ffb600;">
             </div>
         </div>

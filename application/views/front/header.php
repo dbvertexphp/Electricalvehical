@@ -185,6 +185,23 @@
     .header_option:hover {
         color: #FFB600;
     }
+    .header_option_droup{
+        font-family: 'Plus Jakarta Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16.515px;
+        line-height: 17px;
+        color: #313131;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+
+    .header_option_droup:hover{
+        color: #FFB600;
+       }
 
     .logo {
         font-family: 'Plus Jakarta Sans';
@@ -300,9 +317,9 @@
                             <a href="#" class="dropdown-toggle header_option products active" data-toggle="dropdown"
                                 role="button" aria-expanded="false">Product <span class="caret"></span></a>
                             <ul class="dropdown-menu mt-2" role="menu">
-                                <li class="pt-2"><a class="header_option "
+                                <li class="pt-2"><a class="header_option_droup "
                                         href="<?php echo base_url();?>Fornt/mobile_view">Mobile</a></li>
-                                <li class="pt-3"><a class="header_option pt-3"
+                                <li class="pt-3"><a class="header_option_droup pt-3"
                                         href="<?php echo base_url();?>">Vehicle</a></li>
                             </ul>
                         </li>

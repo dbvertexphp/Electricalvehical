@@ -169,7 +169,7 @@
                 <div class="col-sm-8 pb-5 mt-5 align-self-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <?php  if($error=$this->session->flashdata('Contact_us_form')){  ?>
                     <div class="row justify-content-center">
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 mt-3">
                             <div class="alert alert-success ">
                                 <?= $error; 
 
@@ -188,7 +188,7 @@
                         <div class="row justify-content-center">
                             <div class="col-sm-10">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mt-2">
                                         <label for="lastName" class="form-label">Name</label>
                                         <input type="text" class="form-control" value="" id="Name" name="Name"
                                             placeholder="Name" value="" required>
@@ -197,7 +197,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mt-2">
                                         <label for="lastName" class="form-label">Email</label>
                                         <input type="Email" class="form-control" value="" id="Policy_Holder"
                                             name="email" placeholder="Email" value="" required>
@@ -207,7 +207,7 @@
                                     </div>
 
 
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mt-5">
                                         <label for="lastName" class="form-label">Mobile Number</label>
                                         <input type="tel" class="form-control" name="Mobile" id="Mobile"
                                             placeholder="Mobile Number" value="" maxlength="10"
@@ -219,7 +219,7 @@
                                     </div>
 
 
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mt-5">
                                         <label for="lastName" class="form-label">Message</label>
                                         <input type="text" class="form-control" id="Message" name="Message"
                                             placeholder="Message" value="" required>
@@ -228,7 +228,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-12" style="text-align: center;">
+                                    <div class="col-sm-12 mt-5" style="text-align: center;">
                                         <button class="  rounded-pill  policy_submit_button btn-lg" id="submit"
                                             type="submit">Submit</button>
                                     </div>

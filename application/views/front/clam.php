@@ -118,7 +118,7 @@ body {
 }
 .content {
   min-height: 100%;
-  padding-bottom: 300px; /* Adjust this value to match the height of your footer */
+  /* Adjust this value to match the height of your footer */
 }
 .get_app_toll{
   width: 327.5px;

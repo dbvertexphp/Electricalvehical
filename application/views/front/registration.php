@@ -45,17 +45,10 @@ body {
 }
 .content {
   min-height: 100%;
-  padding-bottom: 40%;
+ 
   align-items: center; /* Adjust this value to match the height of your footer */
 }
-.pulse {
-  animation: pulse 2s infinite ease-in-out alternate;
-}
-@keyframes pulse {
-  from { transform: scale(1.0); }
-  to { transform: scale(1.1); }
-}
-    </style>
+ </style>
 
 </head>
 

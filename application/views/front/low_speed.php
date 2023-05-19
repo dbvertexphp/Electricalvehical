@@ -111,15 +111,6 @@ text-decoration: none;
   margin: 0;
   padding: 0;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 250px; /* Adjust this value to match the height of your footer */
-  background-color: #f5f5f5;
-  text-align: center;
-}
 
 body {
   overflow-y: scroll;

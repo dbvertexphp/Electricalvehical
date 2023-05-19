@@ -214,8 +214,6 @@ color: #313131;
     font-size: max(1.5vw, 10px);
 }
 
-
-
    
     </style>
 
@@ -322,7 +320,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="pahadiuncle_layout">
                                     </div>
@@ -363,7 +361,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png"
                                             alt="h1bq_layout.png">
                                     </div>
@@ -404,7 +402,7 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="pulse" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
                                             src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
                                             alt="mobile_phototribe">
                                     </div>
@@ -446,7 +444,7 @@ color: #313131;
 
     <br>
     <div class="container text-center my-3">
-        <h1 class="text-danger" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px;"><b>Repair and Replacement guarantee for </b></h1>
+        <h1 class="" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px; color:#313131"><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">

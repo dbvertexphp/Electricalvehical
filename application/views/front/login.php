@@ -53,15 +53,7 @@
   margin: 0;
   padding: 0;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 250px; /* Adjust this value to match the height of your footer */
-  background-color: #f5f5f5;
-  text-align: center;
-}
+
 
 body {
   overflow-y: scroll;
@@ -78,6 +70,8 @@ body {
   from { transform: scale(1.0); }
   to { transform: scale(1.1); }
 }
+
+
     </style>
 
 </head>
@@ -88,7 +82,7 @@ body {
 
 
     <br>
-    <div class="container my-5">
+    <div class="container container_login my-5">
         <div class="row content ">
             <div class="col-md-6 mb-1" style="padding-right: 85px; align-self: center;">
                 <form class="needs-validation" method="post" method="post"

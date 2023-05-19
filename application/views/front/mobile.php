@@ -225,7 +225,7 @@
     <br>
 
     <div class="container text-center my-3">
-        <h1 class="text-danger" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px;"><b>Repair and Replacement guarantee for </b></h1>
+        <h1 class="" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px; color:#313131"><b>Repair and Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">

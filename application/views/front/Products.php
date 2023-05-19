@@ -111,16 +111,7 @@
         box-shadow: 0px 0px 12.4835px rgba(0, 0, 0, 0.25);
     }
 
-    /* 
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
-    } */
+
     .no_found {
         display: flex;
         justify-content: center;
@@ -140,15 +131,6 @@
   height: 100%;
   margin: 0;
   padding: 0;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 250px; /* Adjust this value to match the height of your footer */
-  background-color: #f5f5f5;
-  text-align: center;
 }
 
 body {

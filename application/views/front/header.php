@@ -213,7 +213,7 @@
 
     .header_container-fluid {
         background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     }
 
     .header_container {
@@ -286,7 +286,7 @@
         <div class="container header_container">
             <nav class="navbar navbar-expand-lg ">
                 <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>image/MOBI PROTECT (4).png" alt=""
-                        width="100" height="100"></a>
+                        width="140" height="140"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -319,7 +319,7 @@
                         </li>
                         <li class="nav-item">
                             <a class=" header_option  Clam active" aria-current="page"
-                                href="<?php echo base_url();?>Fornt/clam">Clam</a>
+                                href="<?php echo base_url();?>Fornt/clam">Claim</a>
                         </li>
 
                     </ul>

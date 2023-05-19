@@ -152,55 +152,11 @@ color: #313131;
   from { transform: scale(1.0); }
   to { transform: scale(1.1); }
 }
-.cardItem {
-  
-  margin-top: 100px;
-  margin-right: 20px;
-  padding: 20px;
-  text-align: center;
-  transition: all 500ms ease-in-out;
-  background-color: #eee;
-  background: var(--white-color);
-  border-radius: 5%;
-}
-.cardItem:hover {
-  margin-top: 92px;
-  cursor: pointer;
-  background: var(--white-color);
-  border-radius: 5%;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+.Comprehensive_Cover{
+    font-size: max(1.5vw, 10px);
 }
 
-.cardItem:hover .icon_images {
-  width: 60px;
-  height: 60px;
-}
-.cardLabel {
-  
-  width: 100%;
-  font-size: 20px;
-  display: block;
-}
-.material-icons {
-  font-size: 64px;
-  margin-top: 24px;
-  color: #1ab5ad;
-}
-.text_card{
-    color: var(--p-color);
-    font-size: var(--p-font-size);
-    font-weight: var(--font-weight-light);
-}
-.cardLabel{
-    color: #FFB600;
-    margin-top: 20px;
-    transition: all 0.5s;
-}
-.icon_images{
-    width:70px;
-    height:70px;
-}
+
 
 
    
@@ -486,13 +442,13 @@ color: #313131;
                     <div class="container">
                         <div class="row" style="color: #FFB600;">
                             <div class="col-6">
-                                <h3><b style="font-size: max(1.5vw, 13px);">Comprehensive Cover</b></h3>
+                                <h3><b class="Comprehensive_Cover" style="">Comprehensive Cover</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(1.5vw, 13px);">Under Mobi Protect</b></h3>
+                                <h3><b class="Comprehensive_Cover" style="">Under Mobi Protect</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b style="font-size:max(1.5vw, 13px);">Under Brand</b></h3>
+                                <h3><b  class="Comprehensive_Cover" style="">Under Brand</b></h3>
                             </div>
                         </div><br>
 

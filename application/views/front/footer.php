@@ -115,24 +115,26 @@ flex-grow: 0;
     <div class="container-fluid footer" style="background-color: black;">
         <div class="container" style="padding: 25px 25px;">
             <div class="row" style="color: white;">
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="text-align: center;">
+                <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>image/MOBI PROTECT (4).png" alt=""
+                        width="140" height="140"></a>
                     <h3>Mobi Protect Pvt Ltd.</h3>
                     <p class="footer_logo_content">Near old arpa bridge, Pratap chowk  Bilaspur, Chhattisgarh-495001</p>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 pt-1">
                         <p> <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/about_us">About Us </a></p>
     
                         <p class="footer_logo_content">  <a class="text-white footer_optine " href="<?php echo base_url();?>Fornt/Terms_conditions">Terms & Condition </a></p>
                    
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 pt-1">
                     <p>Products</p>
                     <p class="footer_logo_content"><a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/mobile_view">Mobile </a> <p>
                        <p class="footer_logo_content"><a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/low_speed">Low Speed
                         Electric Vehicle</a> 
                     </p>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 pt-1">
                     
                         <p> <a class="text-white footer_optine" href="<?php echo base_url();?>Fornt/Contact_us"> Contact Us   </a></p>
                   
@@ -141,7 +143,7 @@ flex-grow: 0;
                    
                    
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 pt-1">
                     <p> Get Email Notifications</p>
                     <p class="footer_logo_content">Generate outside the box thinking with
                         the possibility to targtet the low</p>

@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-1">
-                <h3><b>Mobile</b></h3> <br> <br> <br> <br></br>
+              
                 <?php  if($error=$this->session->flashdata('forgot_password_otp')){  ?>
                 <div class="row  text-center" style="justify-content: center;">
                     <div class="col-lg-6">
@@ -47,13 +47,11 @@
                     <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/forgot_password_otp" novalidate>
                         <div class="input-container d-flex flex-row justify-content-center mt-2">
                             <div class="mb-3">
-                                <label for="password" class="form-label">Mobile</label>
-                                <input type="tel" placeholder="Type your Mobile Number" class="form-control"
-                                    id="Mobile" name="Mobile" maxlength="10"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            required pattern="[0-9]{10}" required>
+                                <label for="password" class="form-label">Email</label>
+                                <input type="email" placeholder="Type your email address here" class="form-control" id="email"
+                            name="email" aria-describedby="emailHelp" required>
                             <div class="invalid-feedback">
-                            Valid Mobile is required.
+                            Valid Email is required.
                         </div>
                             </div>
                         </div>

@@ -428,13 +428,12 @@ class Fornt extends CI_Controller {
 	
 	public function forgot_password_otp(){
 	    
-	 $mobile =  $this->input->post('Mobile');
+	 $email =  $this->input->post('email');
 
-	 $mobile_search = $this->db->get_where('Website_users', array('mobile' => $mobile))->row();
+	 $mobile_search = $this->db->get_where('Website_users', array('email' => $email))->row();
 
       if(!empty($mobile_search)){
 	     $this->session->set_userdata('mobile', $mobile); 
-		 $email = $this->session->userdata('email');
 	    
 		 $randCode = rand(1000,9999);
  
@@ -473,7 +472,7 @@ class Fornt extends CI_Controller {
 	     return redirect('Fornt/forgot');	
 	  }
 	  else{
-		$this->session->set_flashdata('forgot_password_otp', 'Mobile Number is not exist'); 
+		$this->session->set_flashdata('forgot_password_otp', 'Email is not exist'); 
 		$this->session->set_flashdata('msg_class','alert-success');
 		  return redirect('Fornt/forgot_password_mobile');
 		 

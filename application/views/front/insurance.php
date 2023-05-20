@@ -185,6 +185,11 @@ color: #313131;
   width: 60px;
   height: 60px;
 }
+.cardItem:hover .icon_images_screen {
+  width: 60px;
+  height: 60px;
+}
+
 .cardLabel {
   
   width: 100%;
@@ -209,6 +214,10 @@ color: #313131;
 .icon_images{
     width:70px;
     height:70px;
+}
+.icon_images_screen{
+    width:82px;
+    height:82px;
 }
 .Comprehensive_Cover{
     font-size: max(1.5vw, 10px);
@@ -450,7 +459,7 @@ color: #313131;
     <div class="container text-center ">
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12.png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images_screen" src="<?php echo base_url();?>image/Artboard 12.png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
             <p class="mt-3 text_card">Our guarantee covers screen damages. We will repair or replace the subject's screen at no additional cost during the guarantee period.</p>
             </div> 
             </div>

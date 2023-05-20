@@ -205,18 +205,15 @@
     <div class="container-fluid stats_section_fluid">
         <div class="container">
 
-            <div class="row " style="padding-top:15%; padding-bottom:15%">
-                <div class="col-md-6" style="color: white;">
+            <div class="row " style="padding-top:10%; padding-bottom:10%">
+                <div class="col-md-6" style="color: white;  place-self: center;">
                     <h1><b>Who Are We ?</b></h1><br>
                     <p>Pack your luggage and pick your destination, we will provide you <br>
                         the flight ticket, hotel booking and best guides</p>
                 </div>
                 <div class="col-md-6 text-center">
 
-                    <div class="embed-responsive embed-responsive-16by8">
-                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"
-                            title="YouTube video" allowfullscreen></iframe>
-                    </div>
+                <img src="<?php echo base_url();?>image/video.png" alt="video" class="img-fluid pulse">
 
                 </div>
 
@@ -276,13 +273,15 @@
                         </div>
                     </div>
 
-                    <div class="our_work_section py-5">
+
+
+                    <div class="our_work_section">
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/images/h1bq_layout.png"
+                                        <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>image/mobile project_easy.png"  width="260" height="562"
                                             alt="h1bq_layout.png">
                                     </div>
                                     <div class="appdevcol col-md-6">

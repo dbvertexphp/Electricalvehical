@@ -192,6 +192,14 @@
     width:82px;
     height:82px;
 }
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.1); }
+}
     </style>
 
 </head>
@@ -204,29 +212,35 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="align-self: center;">
+                <div class="row">
+                
                 <p>Form cantent</p>
+                <div class="col-3">
                 <a class=" header_option products active" aria-current="page"
                     href="<?php echo base_url();?>Fornt/buy_Premium">
-                    <div class="input-group-append w-25">
+                    <div class="input-group-append w-100">
                         <span style=" background-color: #FFB600; place-content: center;"
                             class="input-group-text text-white" id="basic-addon2">Buy Product
                         </span>
                     </div>
                 </a>
-
+                </div>
+                <div class="col-6">
                 <a class=" header_option products active mt-5" aria-current="page"
                     href="<?php echo base_url();?>Fornt/Calculator">
-                    <div class="input-group-append w-25">
+                    <div class="input-group-append w-50">
                         <span style=" background-color: #FFB600; place-content: center;"
                             class="input-group-text text-white" id="basic-addon2">Calculator
                         </span>
                     </div>
                 </a>
+                </div>
+                </div>
             </div><br>
 
             <div class="col-lg-6 text-center">
-                <img src="<?php echo base_url();?>image/img1.png" class="mx-auto d-block" alt="" id="one">
+                <img src="<?php echo base_url();?>image/home_hading.png" class="mx-auto d-block pulse" alt="home_hading" id="one">
             </div>
         </div>
     </div>

@@ -240,8 +240,8 @@
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                        <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>image/mobile_project.png" width="260" height="562"
                                             alt="pahadiuncle_layout">
                                     </div>
                                     <div class="appdevcol col-md-6">
@@ -251,8 +251,7 @@
                                                     <div class="row ">
 
                                                         <div class=" col-10">
-                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose
-                                                                us?</h2>
+                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose us?</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -293,8 +292,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy
-                                                            </h2>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -324,8 +322,8 @@
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                        <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>image/mobile project_claim.png" width="260" height="562"
                                             alt="mobile_phototribe">
                                     </div>
                                     <div class="appdevcol col-md-6 applogodivx">
@@ -335,8 +333,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnaeh1 col-10">
-                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free
-                                                                claims</h2>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free claims</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -346,8 +343,7 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <p class="why_choose "> Claim settlement is just a call
-                                                                away.
+                                                            <p class="why_choose "> Claim settlement is just a call away.
                                                                 Just call on our toll-free number or drop a mail that’s
                                                                 it.</p>
                                                         </div>

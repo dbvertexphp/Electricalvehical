@@ -329,8 +329,8 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                        <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>image/mobile_project.png" width="260" height="562"
                                             alt="pahadiuncle_layout">
                                     </div>
                                     <div class="appdevcol col-md-6">
@@ -411,8 +411,8 @@ color: #313131;
                             <div class="p fixede">
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
-                                        <img class="" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>asstes/homepage/mobile_work/images/mobile_phototribe.png"
+                                        <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
+                                            src="<?php echo base_url();?>image/mobile project_claim.png" width="260" height="562"
                                             alt="mobile_phototribe">
                                     </div>
                                     <div class="appdevcol col-md-6 applogodivx">

@@ -81,7 +81,7 @@ body {
 
                     <?php } ?>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
+                        <label for="email" class="form-label">Email</label>
                         <input type="email" placeholder="Type your email address here" class="form-control" id="email"
                             name="email" aria-describedby="emailHelp" required>
                         <div class="invalid-feedback">

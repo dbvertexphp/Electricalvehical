@@ -366,30 +366,30 @@
     <div class="container text-center ">
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12.png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
             <p class="mt-3 text_card">Our guarantee covers screen damages. We will repair or replace the subject's screen at no additional cost during the guarantee period.</p>
             </div> 
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Water/Liquid Damages</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy.png" alt="cardItem"><span class="cardLabel"><strong>Water/Liquid Damages</strong></span>
             <p class="mt-3 text_card">Our repair and replacement guarantee covers water/liquid damages for the specified subject. If your device sustains water/liquid damage during the guarantee period, we will repair or replace it at no additional cost.</p>
             </div> 
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Hardware / Software Damages</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 2.png" alt="cardItem"><span class="cardLabel"><strong>Hardware / Software Damages</strong></span>
             <p class="mt-3 text_card">Our guarantee covers hardware and software damages. We offer repair or replacement services for the subject at no additional cost during the guarantee period.</p>
             </div> 
               
             </div>
 
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Free Pick-up and Drop</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 3.png" alt="cardItem"><span class="cardLabel"><strong>Free Pick-up and Drop</strong></span>
             <p class="mt-3 text_card">Our repair and replacement guarantee includes free pick-up and drop-off services for the specified subject, ensuring a convenient and hassle-free experience during the guarantee period.</p>
             </div> 
               
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/smartphone (4).png" alt="cardItem"><span class="cardLabel"><strong>Brand Authorized Repairs</strong></span>
+            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 4.png" alt="cardItem"><span class="cardLabel"><strong>Brand Authorized Repairs</strong></span>
             <p class="mt-3 text_card">Our repair and replacement guarantee ensures that all repairs for the specified subject are conducted by authorized technicians, maintaining the brand's standards and quality during the guarantee period.</p>
             </div> 
             

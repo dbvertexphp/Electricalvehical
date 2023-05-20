@@ -134,7 +134,7 @@
 
 
 
-    <div class="container my-5">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 culculetter_page">
 
@@ -195,7 +195,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="<?php echo base_url();?>image/productimg.png" class="img-fluid pulse" alt="">
+                <img src="<?php echo base_url();?>image/culculeter.png" class="img-fluid pulse" alt="">
             </div>
         </div>
     </div>

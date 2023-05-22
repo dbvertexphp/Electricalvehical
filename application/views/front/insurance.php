@@ -293,7 +293,7 @@ color: #313131;
             <div class="row " style="padding-top:10%; padding-bottom:10%">
                 <div class="col-lg-6" style="color: white;     place-self: center;">
                     <h1><b>Who Are We ?</b></h1><br>
-                    <p>We are a team of dedicated professionals who understand the importance of protecting your
+                    <p class="fs-4">We are a team of dedicated professionals who understand the importance of protecting your
                         valuable mobile devices. Our mission is to provide you with the best mobile protection plan
                         coverage possible, giving you peace of mind and protection against any unexpected events like
                         accidental damages, water damaged and theft.</p>

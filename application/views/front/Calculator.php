@@ -208,8 +208,10 @@
             <div class="row " style="padding-top:10%; padding-bottom:10%">
                 <div class="col-md-6" style="color: white;  place-self: center;">
                     <h1><b>Who Are We ?</b></h1><br>
-                    <p>Pack your luggage and pick your destination, we will provide you <br>
-                        the flight ticket, hotel booking and best guides</p>
+                    <p class="fs-4">We are a team of dedicated professionals who understand the importance of protecting your
+                        valuable mobile devices. Our mission is to provide you with the best mobile protection plan
+                        coverage possible, giving you peace of mind and protection against any unexpected events like
+                        accidental damages, water damaged and theft.</p>
                 </div>
                 <div class="col-md-6 text-center">
 

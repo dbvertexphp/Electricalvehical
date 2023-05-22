@@ -214,7 +214,7 @@
         <div class="row ">
             <div class="col-lg-6" style="align-self: center;">
                 <div class="row">
-                
+                <h1><b>PROTECT THE MOBILE</b></h1><br>
                 <p class="fs-4">Buy Mobile protection plan that fits your pocket. our plans are affordable and easy to understand, so you won't be blindsided by hidden fees.</p>
                 <div class="col-3">
                 <a class=" header_option products active" aria-current="page"

@@ -237,10 +237,8 @@ color: #313131;
     <div class="container my-5">
         <div class="row ">
             <div class="col-lg-6">
-                <h1><b>DO THE DIGITAL INSURANCE</b></h1><br>
-                <p style="color: #707070;">Pack your luggage and pick your destination, we will provide you <br>
-                    the flight ticket, hotel booking and best guides</p><br>
-
+                <h1><b>PROTECT THE MOBILE</b></h1><br>
+                <p style="color: #707070;">We're here to help you protect your mobile and keep you connected to what matters most.</p><br>
                 <p>
                     <a class="btn shadow rounded-pill" data-bs-toggle="collapse" href="#collapseExample" role="button"
                         aria-expanded="false" aria-controls="collapseExample"

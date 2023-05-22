@@ -319,7 +319,7 @@ color: #313131;
 
 
 
-                    <div class="our_work_section">
+                    <div class="our_work_section" style="background-color: #F0FFF0;">
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
@@ -362,7 +362,7 @@ color: #313131;
 
 
 
-                    <div class="our_work_section">
+                    <div class="our_work_section" style="background-color: #FAF0E6;">
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">
@@ -403,7 +403,7 @@ color: #313131;
                     </div>
 
 
-                    <div class="our_work_section">
+                    <div class="our_work_section" style="background-color: #FFE4E1;">
                         <div class="container" style="height:100vh">
                             <div class="p fixede">
                                 <div class="row finxed_row">

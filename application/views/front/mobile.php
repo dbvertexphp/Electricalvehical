@@ -215,7 +215,7 @@
             <div class="col-lg-6" style="align-self: center;">
                 <div class="row">
                 
-                <p>Form cantent</p>
+                <p class="fs-4">Buy Mobile protection plan that fits your pocket. our plans are affordable and easy to understand, so you won't be blindsided by hidden fees.</p>
                 <div class="col-3">
                 <a class=" header_option products active" aria-current="page"
                     href="<?php echo base_url();?>Fornt/buy_Premium">

@@ -839,7 +839,7 @@ class Fornt extends CI_Controller {
 	  ));
 	  $amount = $razorpayOrder['amount'];
 	  $razorpayOrderId = $razorpayOrder['id'];
-	  $_SESSION['amount'] = $_SESSION['amount'];
+	  $_SESSION['amount'] = isset($_SESSION['amount']);
 	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
 	  $data = $this->prepareData($amount,$razorpayOrderId);
 	  $this->load->view('rezorpay',array('data' => $data));
@@ -904,20 +904,20 @@ class Fornt extends CI_Controller {
 	  $data = array(
 		"key" => "rzp_test_dfwGYguqxcme16",
 		"amount" => $amount,
-		"name" => "Coding Birds Online",
+		"name" => "Mobi Protect Pvt Ltd",
 		"description" => "Learn To Code",
-		"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
+		"image" => base_url() . "image/MOBI PROTECT (4).png",
 		"prefill" => array(
 		  "name"  => $this->input->post('name'),
 		  "email"  => $this->input->post('email'),
 		  "contact" => $this->input->post('contact'),
 		),
 		"notes"  => array(
-		  "address"  => "Hello World",
+		  "address"  => "Payment Policy",
 		  "merchant_order_id" => rand(),
 		),
 		"theme"  => array(
-		  "color"  => "#F37254"
+		  "color"  => "#FFB600"
 		),
 		"order_id" => $razorpayOrderId,
 	  );

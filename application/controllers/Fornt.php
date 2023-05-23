@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once(APPPATH."libraries/vendor/razorpay/razorpay/Razorpay.php");
+use Razorpay\Api\Api;
+use Razorpay\Api\Errors\SignatureVerificationError;
 class Fornt extends CI_Controller {
 
 	/**
@@ -42,6 +44,9 @@ class Fornt extends CI_Controller {
 		$this->load->model('Website_user');
 		$this->load->library('pagination');
 		$this->load->helper('cookie');
+
+		$key = "rzp_test_dfwGYguqxcme16"; 
+		$key_secret = "d9WQOxajFVqojtWZzVPKgsRE";
 
 	}
 	public function index(){
@@ -626,6 +631,7 @@ class Fornt extends CI_Controller {
 	    $invoice++;
 		$invoice_number = "MB/MP/".sprintf('%07d', $invoice);
 
+        $_SESSION['premium_amount'] = $Final;
 		$data = array(
 			'salutation' => $Salutation,
 			'name_policy_holder' =>$Policy_Holder,
@@ -674,12 +680,11 @@ class Fornt extends CI_Controller {
 		); 
 		
 		$insert = $this->Website_user->insert($data);
-
+		$insertId = $this->db->insert_id();
 		$this->session->set_flashdata('policy_form', 'Thank you! Your policy form has been successfully submitted.'); 
 		$this->session->set_flashdata('msg_class','alert-success');
-		  return redirect('Fornt/products');
-
-
+		 $redirectUrl = 'Fornt/pay/' . $insertId;
+          return redirect($redirectUrl);
     }	
 	
 	function website_mobile_pdf($id=0){
@@ -809,6 +814,152 @@ class Fornt extends CI_Controller {
 		$this->load->view('front/low_speed'); 
 		$this->load->view('front/footer');	
 	}
+
+    
+	public function pay($id)
+	{
+		$_SESSION['report_id'] = $id;
+		$result = $this->db->where('id', $id)->get('website_mobile_report')->result();
+		foreach($result as $dataji)
+		$_SESSION['premium_amount'] = $dataji->premium;
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  /**
+	   * You can calculate payment amount as per your logic
+	   * Always set the amount from backend for security reasons
+	   */
+
+	  $razorpayOrder = $api->order->create(array(
+		'receipt'         => rand(),
+		'amount'          => $_SESSION['premium_amount'] * 100, // 2000 rupees in paise
+		'currency'        => 'INR',
+		'payment_capture' => 1 // auto capture
+	  ));
+	  $amount = $razorpayOrder['amount'];
+	  $razorpayOrderId = $razorpayOrder['id'];
+	  $_SESSION['amount'] = $_SESSION['amount'];
+	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
+	  $data = $this->prepareData($amount,$razorpayOrderId);
+	  $this->load->view('rezorpay',array('data' => $data));
+	}
+	/**
+	 * This function verifies the payment,after successful payment
+	 */
+	public function verify()
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $success = true;
+	  $error = "payment_failed";
+	  if (empty($_POST['razorpay_payment_id']) === false) {
+		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  try {
+		  $attributes = array(
+			'razorpay_order_id' => $_SESSION['razorpay_order_id'],
+			'razorpay_payment_id' => $_POST['razorpay_payment_id'],
+			'razorpay_signature' => $_POST['razorpay_signature'],
+			'amount' => $_SESSION['amount'],
+			'report_id' => $_SESSION['report_id'],
+			'user_id' => $this->session->userdata('vehical')
+		  );
+		  $api->utility->verifyPaymentSignature($attributes);
+          $this->db->where('id', $_SESSION['report_id'])->update('website_mobile_report', ['pay_type' => 1]);
+		  $insert = $this->Website_user->payment($attributes);
+          
+		} catch(SignatureVerificationError $e) {
+		  $success = false;
+		  $error = 'Razorpay_Error : ' . $e->getMessage();
+		}
+		
+	  }
+	  if ($success === true) {
+		/**
+		 * Call this function from where ever you want
+		 * to save save data before of after the payment
+		 */
+		unset($_SESSION['premium_amount']); 
+		unset($_SESSION['razorpay_order_id']);
+		unset($_SESSION['amount']);
+		$this->setRegistrationData();
+		redirect(base_url().'Fornt/products');
+	  }
+	  else {
+		
+		redirect(base_url().'Fornt/products');
+	  }
+
+	}
+	/**
+	 * This function preprares payment parameters
+	 * @param $amount
+	 * @param $razorpayOrderId
+	 * @return array
+	 */
+	public function prepareData($amount,$razorpayOrderId)
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $data = array(
+		"key" => "rzp_test_dfwGYguqxcme16",
+		"amount" => $amount,
+		"name" => "Coding Birds Online",
+		"description" => "Learn To Code",
+		"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
+		"prefill" => array(
+		  "name"  => $this->input->post('name'),
+		  "email"  => $this->input->post('email'),
+		  "contact" => $this->input->post('contact'),
+		),
+		"notes"  => array(
+		  "address"  => "Hello World",
+		  "merchant_order_id" => rand(),
+		),
+		"theme"  => array(
+		  "color"  => "#F37254"
+		),
+		"order_id" => $razorpayOrderId,
+	  );
+	
+	  return $data;
+	}
+	/**
+	 * This function saves your form data to session,
+	 * After successfull payment you can save it to database
+	 */
+	public function setRegistrationData()
+	{
+	  $name = $this->input->post('name');
+	  $email = $this->input->post('email');
+	  $contact = $this->input->post('contact');
+	  $amount = $_SESSION['payable_amount'];
+	  $registrationData = array(
+		'order_id' => $_SESSION['razorpay_order_id'],
+		'name' => $name,
+		'email' => $email,
+		'contact' => $contact,
+		'amount' => $amount,
+	  );
+	  // save this to database
+	}
+	/**
+	 * This is a function called when payment successfull,
+	 * and shows the success message
+	 */
+	public function success()
+	{
+	  $this->load->view('success');
+	}
+	/**
+	 * This is a function called when payment failed,
+	 * and shows the error message
+	 */
+	public function paymentFailed()
+	{
+	  $this->load->view('error');
+	}  
+  
 
 
 	

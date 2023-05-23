@@ -356,7 +356,7 @@
                         <img src="<?php echo base_url();?>uplode/profile/images__2_remove.png" alt="Girl in a jacket"
                             width="50" height="50">
                         <?php } ?>
-                        <span class="profile_name dropdown_hover_name"><?php  echo ucfirst($user->name);?>
+                        <span class="profile_name dropdown_hover_name header_option"><?php  echo ucfirst($user->name);?>
                             <i class="bi bi-chevron-down"></i>
                         </span>
                         <div class="dropdown-content">

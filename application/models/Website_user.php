@@ -52,5 +52,10 @@ public function website_Mobile_selectquery($id){
             return true;
         }
 
+        function payment($data){
+            $this->db->insert('payment',$data);
+            return true;
+        }
+
 
 }

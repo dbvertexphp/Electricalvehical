@@ -24,6 +24,10 @@
     <!-- Custom styles for this page -->
     <link href="<?php echo base_url();?>/asstes/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <style type="text/css">
 
@@ -153,7 +157,7 @@ legend.scheduler-border {
     <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">User Report</h1>
+<h1 class="h3 mb-2 text-gray-800">Shop List</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -166,11 +170,14 @@ legend.scheduler-border {
                 <thead>
                     <tr>
                         <th>S no</th>
-                        <th>Policy Numbers</th>
-                        <th>Name</th>
-                        <th>Downlod</th>
-                        <th>View</th>
-                        <th>Policy start Date</th>
+                        <th>Shop Name</th>
+                        <th>OwnerName</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>cerated</th>
+                        <th>GST</th>
+                        <th>Action</th>
+                       
                     </tr>
                 </thead>
                
@@ -178,12 +185,20 @@ legend.scheduler-border {
                            <?php $i=0;  foreach ($report as $row) 
                             {  $i++;?>
                                 <tr>         
-                                    <td><?php echo  $i;?></td>             
-                                    <td><?php echo $row->policy_numbers;?></td>
-                                    <td><?php echo $row->name_policy_holder;?></td>
-                                    <td><a  href="<?php echo site_url("Welcome/website_pdf/".$row->id);?>">Downlod</a></td>
-                                    <td><a  href="<?php echo site_url("Welcome/website_viewpdf/".$row->id);?>">View</a></td>
-                                    <td ><?php echo $row->policy_start;?></td>
+                                    <td><?php echo  $i;?></td>  
+                                    <td><?php echo $row->name;?></td>           
+                                    <td><?php echo $row->shop_owner;?></td>
+                                    <td><?php echo $row->email;?></td>
+                                    <td><?php echo $row->mobile;?></td>
+                                    <td><?php echo $row->created_at;?></td>
+                                    <td><?php echo $row->GST;?></td>
+                                    <td>
+                                    <a href="javascript:void(0)" id="b" class="delete_product btn"   data-pid="<?php echo $row->id; ?>"><span  style="color:#4e73df">  <i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                               
+                                <a class="" href="<?php echo site_url("Welcome/edit_shop/").$row->id;?>">
+                                <i class="fa fa-pencil ml-3" aria-hidden="true"></i></a>
+                                </td>
+                                   
                                     
                                 </tr>
                                 <?php } ?>
@@ -261,6 +276,41 @@ aria-hidden="true">
     }
 
 </script>
+<script>
+"use strict"; /* Start of use strict */
+(function () {
+function14();
+})();
+function function14() {
+$('.delete_product').on("click", function () {
+    var pid=$(this).data("pid");
+  
+swal({
+title: " DELETE!",
+text: "Are you sure you want to ?",
+type: "warning",
+showCancelButton: true,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "Yes",
+cancelButtonText: "No",
+closeOnConfirm: false,
+closeOnCancel: true},
+function (isConfirm) {
+if (isConfirm) {
+$.ajax({
+        type:'POST',
+        url:"<?php echo base_url();?>welcome/delete_shop",
+        data: {pid:pid},
+        success: function(){
+             location.reload(); 
+          },
+});
+} else {
+}
+});
+});
+}
+</script>		
 <!-- Bootstrap core JavaScript-->
 <script src="<?php echo base_url();?>/asstes/admin/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>/asstes/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

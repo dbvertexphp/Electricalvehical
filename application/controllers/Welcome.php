@@ -712,9 +712,285 @@ class Welcome extends CI_Controller {
 	
     }
 
+	function add_agent(){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->Website_get_user_data();   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/add_agent',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+	function add_agent_form(){
+		$Name = $this->input->post('Name');
+		$email = $this->input->post('email');
+		$Mobile = $this->input->post('Mobile');
+		$Address = $this->input->post('Address');
+
+		$data['report'] = $this->admin_model->agent_code();  
+		foreach($data as $inv);
+		$str = $inv;
+		$trim = trim($str, "AG");
+	
+		$invoice =$trim;
+	    $invoice++;
+		$invoice_number = "AG".sprintf('%03d', $invoice);
+
+		
+
+		$data = array(
+			'name' => $Name,
+			'email' =>$email,
+			'mobile' =>$Mobile,
+			'address' =>$Address,
+			'agent_code' =>$invoice_number
+		);
+
+		$insert = $this->admin_model->agent_insert($data);
+
+		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+	      	return redirect('Welcome/agent_list');
+	}
+
+	public function agent_list(){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->agent_list_get();   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/agent_list',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+		
+	}
 
 
+	function edit_agent($id = 0 ){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->edit_agent($id);   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/edit_agent',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+	function edit_agent_form(){
+		$Name = $this->input->post('Name');
+		$email = $this->input->post('email');
+		$Mobile = $this->input->post('Mobile');
+		$Address = $this->input->post('Address');
+		$id = $this->input->post('id');
 
 	
+
+		$data = array(
+			'name' => $Name,
+			'email' =>$email,
+			'mobile' =>$Mobile,
+			'address' =>$Address,
+		);
+
+		$insert = $this->admin_model->agent_update($data,$id);
+
+		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+	      	return redirect('Welcome/agent_list');
+	}
+
+	function delete_agent(){
+		$pid = $this->input->post('pid');
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->agent_delete($pid);   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/edit_agent',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+	function add_shop($id=0){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->Website_get_user_data();   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/add_shop',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+	function add_shop_form(){
+		$Name = $this->input->post('Name');
+		$email = $this->input->post('email');
+		$Mobile = $this->input->post('Mobile');
+		$Address = $this->input->post('Address');
+		$owner_Name = $this->input->post('owner_Name');
+		$GST = $this->input->post('GST');
+		$id = $this->input->post('id');
+		
+		$data['report'] = $this->admin_model->shop_code();  
+		foreach($data as $inv);
+		$str = $inv;
+		$trim = trim($str, "SP");
+	
+		$invoice =$trim;
+	    $invoice++;
+		$invoice_number = "SP".sprintf('%03d', $invoice);
+
+		
+
+		$data = array(
+			'name' => $Name,
+			'email' =>$email,
+			'mobile' =>$Mobile,
+			'address' =>$Address,
+			'shop_code' =>$invoice_number,
+			'shop_owner' => $owner_Name,
+			'GST' =>$GST,
+			'agent_id' =>$id
+		);
+
+		$insert = $this->admin_model->shop_insert($data);
+		$insert_id = $this->db->insert_id();
+
+		if (!empty($_FILES['shop_img']['name'][0])) {
+			$config['upload_path'] = './uplode/shop/';
+			$config['allowed_types'] = '*';
+			$this->load->library('upload', $config);
+		
+			// Iterate through each uploaded file
+			foreach ($_FILES['shop_img']['name'] as $key => $value) {
+				$_FILES['file']['name'] = $_FILES['shop_img']['name'][$key];
+				$_FILES['file']['type'] = $_FILES['shop_img']['type'][$key];
+				$_FILES['file']['tmp_name'] = $_FILES['shop_img']['tmp_name'][$key];
+				$_FILES['file']['error'] = $_FILES['shop_img']['error'][$key];
+				$_FILES['file']['size'] = $_FILES['shop_img']['size'][$key];
+		
+				// Check if the upload is successful
+				if (!$this->upload->do_upload('file')) {
+					$upload_error = $this->upload->display_errors();
+					echo "Upload Error: " . $upload_error;
+				} else {
+					$image_data = $this->upload->data();
+					$filename = $image_data['file_name'];
+		
+					// Update the database with the filename
+					$this->db->where('id', $insert_id);
+					$this->db->update('shop', ['shop_images' => $filename]);
+				}
+			}
+		}
+		
+		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+	      	return redirect('Welcome/agent_list');
+	}
+
+	public function shop_list($agent_id){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->shop_list_get($agent_id);   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/shop_list',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+		
+	}
+
+	function edit_shop($id = 0 ){
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->edit_shop($id);   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/edit_shop',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+	function edit_shop_form(){
+		$Name = $this->input->post('Name');
+		$email = $this->input->post('email');
+		$Mobile = $this->input->post('Mobile');
+		$Address = $this->input->post('Address');
+		$id = $this->input->post('id');
+
+	
+
+		$data = array(
+			'name' => $Name,
+			'email' =>$email,
+			'mobile' =>$Mobile,
+			'address' =>$Address,
+		);
+
+		$insert = $this->admin_model->agent_update($data,$id);
+
+		$this->session->set_flashdata('Contact_us_form', 'Contact Us Successfully Submit'); 
+	      	 $this->session->set_flashdata('msg_class','alert-success');
+	      	return redirect('Welcome/agent_list');
+	}
+
+	function delete_shop(){
+		$pid = $this->input->post('pid');
+		$session_id = $this->session->userdata('admin_uid');
+
+		$data['report'] = $this->admin_model->shop_delete($pid);   
+		//return the data in view  
+		if($session_id)
+		{
+		   $admin_detail = $this->admin_model->get_admin_data($session_id);
+		   $this->load->view('admin/edit_agent',$data);
+		}else{
+		  $this->session->set_flashdata('Login_failed','Please login!');
+		   $this->session->set_flashdata('msg_class','alert-danger');
+			 return redirect('/');
+		}
+	}
+
+
+
 }
 

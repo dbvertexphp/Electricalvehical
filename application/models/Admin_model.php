@@ -154,4 +154,79 @@ public function Website_get_user_data(){
       return $q->row();
       }
 
+      
+public function agent_code(){
+  $q=$this->db->select('*')
+        ->from('agent')
+        ->order_by('agent_code',"desc")
+        ->get();
+       return $q->row('agent_code');
+}
+function agent_insert($data){
+  $this->db->insert('agent',$data);
+  return true;
+}
+
+public function agent_list_get(){
+  $query = $this->db->order_by('id', 'desc')->get_where('agent');
+  return $query->result();
+  }   
+  
+  public function edit_agent($id){
+    $q=$this->db->select('*')
+    ->from('agent')
+    ->where('id',$id)
+    ->get();
+    return $q->row();
+    }
+
+    function agent_update($data, $id){
+      $this->db->where('id', $id);
+      $this->db->update('agent', $data);
+      return true;
+    }
+
+    function agent_delete($id){
+      $this->db->where('id', $id);
+      $this->db->delete('agent');
+      return true;
+    }
+
+    public function shop_code(){
+      $q=$this->db->select('*')
+            ->from('shop')
+            ->order_by('shop_code',"desc")
+            ->get();
+           return $q->row('shop_code');
+    }
+
+    function shop_insert($data){
+      $this->db->insert('shop',$data);
+      return true;
+    }
+
+    public function shop_list_get($agent_id) {
+      $this->db->order_by('id', 'desc');
+      $this->db->where('agent_id', $agent_id);
+      $query = $this->db->get('shop');
+      return $query->result();
+  }
+
+  public function edit_shop($id){
+    $q=$this->db->select('*')
+    ->from('shop')
+    ->where('id',$id)
+    ->get();
+    return $q->row();
+    }
+
+    function shop_delete($id){
+      $this->db->where('id', $id);
+      $this->db->delete('shop');
+      return true;
+    }
+
+  
+
+
 }

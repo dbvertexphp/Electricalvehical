@@ -29,6 +29,10 @@
     <!-- Custom styles for this page -->
     <link href="<?php echo base_url();?>/asstes/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <style type="text/css">
 fieldset.scheduler-border {
@@ -81,7 +85,7 @@ legend.scheduler-border {
     <div id="wrapper">
 
         <!-- Sidebar -->
-      <?php include 'sidebar.php'; ?>
+        <?php include 'sidebar.php'; ?>
         <!-- End of Sidebar -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -163,76 +167,69 @@ legend.scheduler-border {
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">
+                    <h1 class="h3 mb-2 text-gray-800">Agent List</h1>
 
-                        </h1>
-                    </div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
 
-                    <div class="row">
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>S no</th>
+                                            <th>Agent Code</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>cerated</th>
+                                            <th>Shop</th>
+                                            <th>Shop View</th>
+                                            <th>Action</th>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Report</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $h; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-sharp fa-solid fa-bookmark"></i>
-                                        </div>
+                                        </tr>
+                                    </thead>
 
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <a class="collapse-item " href="<?php echo site_url("Welcome/report");?>">More Info
-                                    </a>
-                                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </div>
+                                    <tbody>
+                                        <?php $i=0;  foreach ($report as $row) 
+                                                   {  $i++;?>
+                                        <tr>
+                                            <td><?php echo  $i;?></td>
+                                            <td><?php echo $row->agent_code;?></td>
+                                            <td><?php echo $row->name;?></td>
+                                            <td><?php echo $row->email;?></td>
+                                            <td><?php echo $row->mobile;?></td>
+                                            <td><?php echo $row->created_at;?></td>
+                                            <td>
+                                                <a class="" href="<?php echo site_url("Welcome/add_shop/").$row->id;?>">
+                                                    <button type="button" class="btn btn-primary">Add</button>
+                                                    </a>
+                                            </td>
+                                            <td>
+                                                <a class="" href="<?php echo site_url("Welcome/shop_list/").$row->id;?>">
+                                                   View
+                                                    </a>
+                                            </td>
+                                          
+                                            <td>
+                                                <a href="javascript:void(0)" id="b" class="delete_product btn"
+                                                    data-pid="<?php echo $row->id; ?>"><span style="color:#4e73df"> <i
+                                                            class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                                <a class=""
+                                                    href="<?php echo site_url("Welcome/edit_agent/").$row->id;?>">
+                                                    <i class="fa fa-pencil ml-3" aria-hidden="true"></i></a>
+                                            </td>
+
+
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $user; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-user"></i>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <a class="collapse-item " href="<?php echo site_url("Welcome/user_list");?>">More Info
-                                    </a>
-                                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Annual) Card Example -->
-
-
-                        <!-- Tasks Card Example -->
-
-
-                        <!-- Pending Requests Card Example -->
-
                     </div>
-
-
 
                 </div>
                 <!-- /.container-fluid -->
@@ -244,7 +241,7 @@ legend.scheduler-border {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -281,6 +278,63 @@ legend.scheduler-border {
         </div>
     </div>
 
+
+    <script>
+    function myFunction() {
+        var input, filter, tbody, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("td");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("td")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+    <script>
+    "use strict"; /* Start of use strict */
+    (function() {
+        function14();
+    })();
+
+    function function14() {
+        $('.delete_product').on("click", function() {
+            var pid = $(this).data("pid");
+
+            swal({
+                    title: " DELETE!",
+                    text: "Are you sure you want to ?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: true
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "<?php echo base_url();?>welcome/delete_agent",
+                            data: {
+                                pid: pid
+                            },
+                            success: function() {
+                                location.reload();
+                            },
+                        });
+                    } else {}
+                });
+        });
+    }
+    </script>
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url();?>/asstes/admin/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url();?>/asstes/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -297,6 +351,15 @@ legend.scheduler-border {
     <!-- Page level custom scripts -->
     <script src="<?php echo base_url();?>/asstes/admin/js/demo/chart-area-demo.js"></script>
     <script src="<?php echo base_url();?>/asstes/admin/js/demo/chart-pie-demo.js"></script>
+
+
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url();?>/asstes/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>/asstes/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url();?>/asstes/admin/js/demo/datatables-demo.js"></script>
+
 
 
 </body>

@@ -72,6 +72,13 @@ legend.scheduler-border {
     background-color: #0080ff;
     color: white;
 }
+
+.policy_submit_button {
+    font-size: 15px;
+    width: 100px;
+    background-color: #0080ff;
+    color: white;
+}
 </style>
 </head>
 
@@ -81,7 +88,7 @@ legend.scheduler-border {
     <div id="wrapper">
 
         <!-- Sidebar -->
-      <?php include 'sidebar.php'; ?>
+        <?php include 'sidebar.php'; ?>
         <!-- End of Sidebar -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -163,95 +170,107 @@ legend.scheduler-border {
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">
+                    <h1 class="h3 mb-2 text-gray-800"></h1>
 
-                        </h1>
-                    </div>
+                    <!-- DataTales Example -->
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border border-2 borders w-25 border ">Edit Agent</Details>
+                        </legend>
+                        <div class="control-group General bg-white shadow-sm p-4">
+                            <div class="row justify-content-center">
+                                <h5 class="text-center my-5 fw-bold fs-4" style="color: #FFB600;"></h5>
 
-                    <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Report</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $h; ?>
+                                <form class="needs-validation" method="post"
+                                    action="<?php echo base_url();?>welcome/edit_agent_form" novalidate
+                                    autocomplete="off">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-2">
+                                                    <label for="lastName" class="form-label">Name</label>
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $report->name; ?>" id="Name" name="Name"
+                                                        placeholder="Name" value="" required>
+                                                    <div class="invalid-feedback">
+                                                        Valid Name is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-2">
+                                                    <label for="lastName" class="form-label">Email</label>
+                                                    <input type="Email" class="form-control"
+                                                        value="<?php echo $report->email; ?>" id="Policy_Holder"
+                                                        name="email" placeholder="Email" value="" required>
+                                                    <div class="invalid-feedback">
+                                                        Valid Email is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-2">
+                                                    <label for="lastName" class="form-label">Mobile Number</label>
+                                                    <input type="tel" class="form-control" name="Mobile" id="Mobile"
+                                                        placeholder="Mobile Number"
+                                                        value="<?php echo $report->mobile; ?>" maxlength="10"
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                        required pattern="[0-9]{10}">
+                                                    <div class="invalid-feedback">
+                                                        Valid Mobile Number is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-2">
+                                                    <label for="lastName" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="Address" name="Address"
+                                                        placeholder="Address" value="<?php echo $report->address; ?>"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Valid Address is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control" id="id" name="id"
+                                                        placeholder="Address" value="<?php echo $report->id; ?>"
+                                                         hidden>
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-4" style="text-align: center;">
+                                                    <button class="  rounded-pill  policy_submit_button btn-lg"
+                                                        id="submit" type="submit">Edit</button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fa-sharp fa-solid fa-bookmark"></i>
-                                        </div>
-
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <a class="collapse-item " href="<?php echo site_url("Welcome/report");?>">More Info
-                                    </a>
-                                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </div>
+                                </form>
+
                             </div>
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $user; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-user"></i>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <a class="collapse-item " href="<?php echo site_url("Welcome/user_list");?>">More Info
-                                    </a>
-                                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Annual) Card Example -->
-
-
-                        <!-- Tasks Card Example -->
-
-
-                        <!-- Pending Requests Card Example -->
-
-                    </div>
-
-
+                        </fieldset>
 
                 </div>
-                <!-- /.container-fluid -->
+               
 
-            </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+          
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -281,6 +300,27 @@ legend.scheduler-border {
         </div>
     </div>
 
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+    </script>
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url();?>/asstes/admin/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url();?>/asstes/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -297,6 +337,15 @@ legend.scheduler-border {
     <!-- Page level custom scripts -->
     <script src="<?php echo base_url();?>/asstes/admin/js/demo/chart-area-demo.js"></script>
     <script src="<?php echo base_url();?>/asstes/admin/js/demo/chart-pie-demo.js"></script>
+
+
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url();?>/asstes/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>/asstes/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url();?>/asstes/admin/js/demo/datatables-demo.js"></script>
+
 
 
 </body>

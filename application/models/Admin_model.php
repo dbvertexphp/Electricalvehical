@@ -126,14 +126,14 @@ return $this->db->count_all('db_report');
 }
 
 function website_user_count() {
-  $query = $this->db->query("SELECT COUNT(*) FROM website_users");
-  return $this->db->count_all('website_users');
+  $query = $this->db->query("SELECT COUNT(*) FROM Website_users");
+  return $this->db->count_all('Website_users');
   }
 
 
 
 public function Website_get_user_data(){
-  $query = $this->db->order_by('id', 'desc')->get_where('website_users');
+  $query = $this->db->order_by('id', 'desc')->get_where('Website_users');
   return $query->result();
   
   }     

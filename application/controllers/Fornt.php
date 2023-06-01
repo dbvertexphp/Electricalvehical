@@ -904,8 +904,7 @@ class Fornt extends CI_Controller {
 	  $this->load->view('error');
 	}  
   
-
-
+	
 	
 }
 	?>

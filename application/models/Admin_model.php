@@ -251,5 +251,10 @@ public function agent_list_get(){
     return true;
   }
 
+  public function payment_status() {
+    $query = $this->db->order_by('id', 'desc')->where('payment_status', 0)->get('db_mobile_report');
+    return $query->result();
+}
+
 
 }

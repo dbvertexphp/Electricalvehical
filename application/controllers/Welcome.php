@@ -1263,90 +1263,155 @@ class Welcome extends CI_Controller {
 
 
 	public function pay($id)
-{
+    {
 	
-$_SESSION['report_id'] = $id;
-$result = $this->db->where('id', $id)->get('db_mobile_report')->result();
-foreach ($result as $dataji) {
-    $_SESSION['premium_amount'] = $dataji->premium;
-    $_SESSION['name_policy_holder'] = $dataji->name_policy_holder;
-    $_SESSION['emails'] = $dataji->email;
-    $_SESSION['mobiles'] = $dataji->mobile;
-    $_SESSION['bank_names'] = $dataji->bank_name;
-    $_SESSION['policy_numberss'] = $dataji->policy_numbers;
+			$_SESSION['report_id'] = $id;
+			$result = $this->db->where('id', $id)->get('db_mobile_report')->result();
+			foreach ($result as $dataji) {
+				$_SESSION['premium_amount'] = $dataji->premium;
+				$_SESSION['name_policy_holder'] = $dataji->name_policy_holder;
+				$_SESSION['emails'] = $dataji->email;
+				$_SESSION['mobiles'] = $dataji->mobile;
+				$_SESSION['bank_names'] = $dataji->bank_name;
+				$_SESSION['policy_numberss'] = $dataji->policy_numbers;
+			}
+
+			if($_SESSION['premium_amount'] == 1000){
+				$_SESSION['net_amount'] = 650;
+			}
+			else if($_SESSION['premium_amount'] == 1500){
+				$_SESSION['net_amount'] = 1000;
+			}
+			else if($_SESSION['premium_amount'] == 2000){
+				$_SESSION['net_amount'] = 1300;
+			}
+			else if($_SESSION['premium_amount'] == 2500){
+				$_SESSION['net_amount'] = 1550;
+			}
+			else if($_SESSION['premium_amount'] == 3000){
+				$_SESSION['net_amount'] = 1950;
+			}
+			else if($_SESSION['premium_amount'] == 5000){
+				$_SESSION['net_amount'] = 3550;
+			}
+
+			$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+
+			$prefix = "TSsd1183";
+			$randomNumber = $prefix . rand();
+
+			$currentDate = date('Y-m-d');
+			$currentDateString = strval($currentDate);
+
+			// Calculate the date after 6 months
+			$nextDate = date('Y-m-d', strtotime('+6 months'));
+			$nextDateString = strtotime($nextDate);
+			$curl = curl_init();
+
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://api.razorpay.com/v1/payment_links',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => '{
+				"amount": ' . ($_SESSION['net_amount'] * 100) . ',
+				"currency": "INR",
+				"accept_partial": false,
+				"expire_by": '.$nextDateString.',
+				"reference_id": "' . $randomNumber . '",
+				"description": "Payment for policy no ' . $_SESSION['policy_numberss'] . '",
+				"customer": {
+				"name": "' . $_SESSION['name_policy_holder'] . '",
+				"contact": "+91'.$_SESSION['mobiles'] . '",
+				"email": "' . $_SESSION['emails'] . '"
+				},
+				"notify": {
+				"sms": true,
+				"email": true,
+				"whatsapp": true
+				},
+				"reminder_enable": false, 
+				"notes": {
+				"policy_name": "' . $_SESSION['bank_names'] . '"
+				},
+				"callback_url": "https://dbvertex.com/Electricalvehical",
+				"callback_method": "get"
+			}',
+				CURLOPT_HTTPHEADER => array(
+					'Content-Type: application/json',
+					'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
+				),
+			));
+
+			$response = curl_exec($curl);
+			curl_close($curl);
+
+			// Convert the JSON response to an array
+			$responseArray = json_decode($response, true);
+
+			if ($responseArray) {
+				// Access the desired data from the array
+				$shortUrl = $responseArray['id'];
+
+				// Update the database with the short URL
+				$this->db->where('id', $_SESSION['report_id'])->update('db_mobile_report', ['payment_link' => $shortUrl]);
+			
+			} 
+			unset($_SESSION['policy_numberss']);
+			unset($_SESSION['premium_amount']);
+			unset($_SESSION['emails']);
+			unset($_SESSION['mobiles']);
+			unset($_SESSION['bank_names']);
+			unset($_SESSION['net_amount']);
+	}
+
+	public function payment_status(){
+		$data = $this->admin_model->payment_status();   
+		
+		foreach($data as $payment_check){
+			$pay_link = $payment_check->payment_link;
+			
+			  $curl = curl_init();
+
+				curl_setopt_array($curl, array(
+					CURLOPT_URL => 'https://api.razorpay.com/v1/payment_links/'.$pay_link,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+				CURLOPT_HTTPHEADER => array(
+					'Content-Type: application/json',
+					'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
+				),
+				));
+
+				$response = curl_exec($curl);
+
+				curl_close($curl);
+			
+
+				$responseArray = json_decode($response, true);
+
+			   if ($responseArray) {
+				// Access the desired data from the array
+				 $status = $responseArray['status'];
+				 if($status == "paid"){
+					$this->db->where('id', $payment_check->id)->update('db_mobile_report', ['payment_status' => 1, 'pay_type' =>1]);
+				 }
+
+				// Update the database with the short URL
+				
+			
+			   } 
+			}
+
+	}
+
 }
-
-$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
-
-$prefix = "TSsd1183";
-$randomNumber = $prefix . rand();
-
-$currentDate = date('Y-m-d');
-$currentDateString = strval($currentDate);
-
-// Calculate the date after 6 months
-$nextDate = date('Y-m-d', strtotime('+6 months'));
-$nextDateString = strtotime($nextDate);
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://api.razorpay.com/v1/payment_links',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-	"amount": ' . ($_SESSION['premium_amount'] * 100) . ',
-	"currency": "INR",
-	"accept_partial": false,
-	"expire_by": '.$nextDateString.',
-	"reference_id": "' . $randomNumber . '",
-	"description": "Payment for policy no ' . $_SESSION['policy_numberss'] . '",
-	"customer": {
-	  "name": "' . $_SESSION['name_policy_holder'] . '",
-	  "contact": "+91'.$_SESSION['mobiles'] . '",
-	  "email": "' . $_SESSION['emails'] . '"
-	},
-	"notify": {
-	  "sms": true,
-	  "email": true
-	},
-	"reminder_enable": false, 
-	"notes": {
-	  "policy_name": "' . $_SESSION['bank_names'] . '"
-	},
-	"callback_url": "https://dbvertex.com/Electricalvehical",
-	"callback_method": "get"
-  }',
-    CURLOPT_HTTPHEADER => array(
-        'Content-Type: application/json',
-        'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
-    ),
-));
-
-$response = curl_exec($curl);
-curl_close($curl);
-
-// Convert the JSON response to an array
-$responseArray = json_decode($response, true);
-
-if ($responseArray) {
-    // Access the desired data from the array
-    $shortUrl = $responseArray['short_url'];
-
-    // Update the database with the short URL
-    $this->db->where('id', $_SESSION['report_id'])->update('db_mobile_report', ['payment_link' => $shortUrl]);
-  
-} 
-unset($_SESSION['policy_numberss']);
-unset($_SESSION['premium_amount']);
-unset($_SESSION['emails']);
-unset($_SESSION['mobiles']);
-unset($_SESSION['bank_names']);
-}
-
-}
-

@@ -48,4 +48,13 @@ function get_user_policy_count($user_id)
   return null;
 }
 
+function shop_get($id) {
+  return get_instance()->db->select('*')->from('shop')->where('id', $id)->get()->row();
+}
+
+function agent_get($id) {
+  return get_instance()->db->select('*')->from('agent')->where('id', $id)->get()->row();
+}
+
+
 

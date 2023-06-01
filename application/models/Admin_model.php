@@ -72,7 +72,7 @@ function visitor_count() {
 
   
 public function Mobile_get_user_data(){
-  $query = $this->db->order_by('id', 'desc')->get_where('db_mobile_report');
+  $query = $this->db->order_by('id', 'desc')->where('agent_code IS NULL')->get('db_mobile_report');
   return $query->result();
   
 }
@@ -226,7 +226,30 @@ public function agent_list_get(){
       return true;
     }
 
+
+    function shop_update($data, $id){
+      $this->db->where('id', $id);
+      $this->db->update('shop', $data);
+      return true;
+    }
   
+    public function agent_Mobile_get_user_data(){
+      $query = $this->db->order_by('id', 'desc')->where('agent_code IS NOT NULL')->get('db_mobile_report');
+      return $query->result();
+      
+    }
+
+    public function agent_policy_list_get($agent_id) {
+      $this->db->order_by('id', 'desc');
+      $this->db->where('shop_code', $agent_id);
+      $query = $this->db->get('db_mobile_report');
+      return $query->result();
+  }
+
+  function agent_Mobile_insert($data){
+    $this->db->insert('db_mobile_report',$data);
+    return true;
+  }
 
 
 }

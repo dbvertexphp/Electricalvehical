@@ -201,7 +201,7 @@ legend.scheduler-border {
                                             <td><?php echo $row->name;?></td>
                                             <td><?php echo $row->email;?></td>
                                             <td><?php echo $row->mobile;?></td>
-                                            <td><?php echo $row->created_at;?></td>
+                                            <td><?php echo date('Y-m-d', strtotime($row->created_at)); ?></td>
                                             <td>
                                                 <a class="" href="<?php echo site_url("Welcome/add_shop/").$row->id;?>">
                                                     <button type="button" class="btn btn-primary">Add</button>

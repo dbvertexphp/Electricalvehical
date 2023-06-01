@@ -180,23 +180,23 @@ legend.scheduler-border {
                             <div class="row justify-content-center">
                                 <h5 class="text-center my-5 fw-bold fs-4" style="color: #FFB600;"></h5>
                                 <form class="needs-validation" method="post"
-                                    action="<?php echo base_url();?>welcome/add_shop_form" novalidate
+                                    action="<?php echo base_url();?>welcome/edit_shop_form" novalidate
                                     autocomplete="off" enctype="multipart/form-data">
                                     <div class="row justify-content-center">
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-6 mt-2">
                                                     <label for="lastName" class="form-label">Shop Name</label>
-                                                    <input type="text" class="form-control" value="" id="Name"
-                                                        name="Name" placeholder=" Shop Name" value="" required>
+                                                    <input type="text" class="form-control" value="<?php echo $report->name; ?>" id="Name"
+                                                        name="Name" placeholder=" Shop Name"  required>
                                                     <div class="invalid-feedback">
                                                         Valid Shop Name is required.
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 mt-2">
                                                     <label for="lastName" class="form-label">Owner Name</label>
-                                                    <input type="text" class="form-control" value="" id="owner_Name"
-                                                        name="owner_Name" placeholder="Owner Name" value="" required>
+                                                    <input type="text" class="form-control" value="<?php echo $report->shop_owner; ?>" id="owner_Name"
+                                                        name="owner_Name" placeholder="Owner Name"  required>
                                                     <div class="invalid-feedback">
                                                         Valid Owner Name is required.
                                                     </div>
@@ -205,8 +205,8 @@ legend.scheduler-border {
                                             <div class="row">
                                                 <div class="col-sm-12 mt-2">
                                                     <label for="lastName" class="form-label">Email</label>
-                                                    <input type="Email" class="form-control" value="" id="Policy_Holder"
-                                                        name="email" placeholder="Email" value="" required>
+                                                    <input type="Email" class="form-control" value="<?php echo $report->email; ?>" id="Policy_Holder"
+                                                        name="email" placeholder="Email" required>
                                                     <div class="invalid-feedback">
                                                         Valid Email is required.
                                                     </div>
@@ -216,7 +216,7 @@ legend.scheduler-border {
                                                 <div class="col-sm-12 mt-2">
                                                     <label for="lastName" class="form-label">Mobile Number</label>
                                                     <input type="tel" class="form-control" name="Mobile" id="Mobile"
-                                                        placeholder="Mobile Number" value="" maxlength="10"
+                                                        placeholder="Mobile Number" value="<?php echo $report->mobile; ?>" maxlength="10"
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         required pattern="[0-9]{10}">
                                                     <div class="invalid-feedback">
@@ -224,21 +224,12 @@ legend.scheduler-border {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-12 mt-2">
-                                                    <label for="lastName" class="form-label">Shop Images</label>
-                                                    <input type="file" class="form-control" id="shop_img" name="shop_img[]"
-                                                        placeholder="Address" value="" accept="image/*" required>
-                                                    <div class="invalid-feedback">
-                                                        Valid Shop Images is required.
-                                                    </div>
-                                                </div>
-                                            </div>
+                                           
                                             <div class="row">
                                                 <div class="col-sm-12 mt-2">
                                                     <label for="lastName" class="form-label">GST</label>
                                                     <input type="text" class="form-control" id="GST" name="GST"
-                                                        placeholder="GST" value="" required>
+                                                        placeholder="GST" value="<?php echo $report->GST; ?>" required>
                                                     <div class="invalid-feedback">
                                                         Valid GST is required.
                                                     </div>
@@ -248,7 +239,7 @@ legend.scheduler-border {
                                                 <div class="col-sm-12 mt-2">
                                                     <label for="lastName" class="form-label">Address</label>
                                                     <input type="text" class="form-control" id="Address" name="Address"
-                                                        placeholder="Address" value="" required>
+                                                        placeholder="Address" value="<?php echo $report->Address; ?>" required>
                                                     <div class="invalid-feedback">
                                                         Valid Address is required.
                                                     </div>

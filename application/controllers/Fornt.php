@@ -50,62 +50,6 @@ class Fornt extends CI_Controller {
 
 	}
 	public function index(){
-
-		//    $appid ='com.ashomapp';
-        //    $productID = ''; 
-		//    $purchaseToken = 'hieigbemmjdjfdhiincgoehk.AO-J1OzLWJ9qkmAUQdyuSUi6THOj_OmtCd69AwH5jEDd_DZLkeAB9awrcJ4oL2FOodpHi9CsMh6h-i1KrK-uXdNMIF6wGPw5bg';
-		//    $refreshToken = '';
-		//    $clientSecret = '';
-		//    $clientID = '109994979277836786776';
-		//    $redirectUri = 'https://www.googleapis.com/robot/v1/metadata/x509/ashom-app%40pc-api-8344464139982480245-452.iam.gserviceaccount.com';
-		   
-
-		// 		$ch = curl_init();
-		// 	     $TOKEN_URL = "https://oauth2.googleapis.com/token";
-		// 	     $VALIDATE_URL = "https://www.googleapis.com/androidpublisher/v3/applications/".
-		// 		 $appid."/purchases/subscriptions/".
-		// 		 $productID."/tokens/".$purchaseToken;
-
-		// 	$input_fields = 'refresh_token='.$refreshToken.
-		// 		'&client_secret='.$clientSecret.
-		// 		'&client_id='.$clientID.
-		// 		'&redirect_uri='.$redirectUri.
-		// 		'&grant_type=refresh_token';
-
-		// 	//Request to google oauth for authentication
-		// 	curl_setopt($ch, CURLOPT_URL, $TOKEN_URL);
-		// 	curl_setopt($ch, CURLOPT_POST, 1);
-		// 	curl_setopt($ch, CURLOPT_POSTFIELDS, $input_fields);
-		// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		// 	$result = curl_exec($ch);
-		// 	$result = json_decode($result, true);
-
-		// 	if (!$result || !$result["access_token"]) {
-		// 	//error   
-		// 	return;
-		// 	}
-
-		// 	//request to play store with the access token from the authentication request
-		// 	$ch = curl_init();
-		// 	curl_setopt($ch,CURLOPT_URL,$VALIDATE_URL."?access_token=".$result["access_token"]);
-		// 	curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
-		// 	$result = curl_exec($ch);
-		// 	$result = json_decode($result, true);
-
-		// 	if (!$result || $result["error"] != null) {
-		// 		//error
-		// 		return;
-		// 	}
-
-		// 	$expireTime = date('Y-m-d H:i:s', $result["expiryTimeMillis"]/1000. - date("Z")); 
-		// 	//You get the purchase expire time, for example 2017-02-22 09:16:42
-
-         // die();
-
-
-
-
 	  $this->load->view('front/header'); 
 	  $this->load->view('front/insurance');  
 	  $this->load->view('front/footer');	 

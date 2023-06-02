@@ -41,6 +41,7 @@ class Fornt extends CI_Controller {
         $this->load->helper('user_helper'); 
         /* $this->load->helper('pdf2text');*/
 		$this->load->model('User_model');
+		$this->load->model('admin_model');
 		$this->load->model('Website_user');
 		$this->load->library('pagination');
 		$this->load->helper('cookie');

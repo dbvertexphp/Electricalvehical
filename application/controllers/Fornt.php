@@ -50,6 +50,14 @@ class Fornt extends CI_Controller {
 
 	}
 	public function index(){
+	  $this->load->view('front/header'); 
+	  $this->load->view('front/insurance');  
+	  $this->load->view('front/footer');
+	  
+	  $this->payment_status();
+	}
+
+	public function payment_status(){
 		$data = $this->admin_model->payment_status();   
 		
 		foreach($data as $payment_check){
@@ -146,12 +154,6 @@ class Fornt extends CI_Controller {
 			}
 
 	}
-
-	public function newhome(){
-		$this->load->view('front/header'); 
-		$this->load->view('front/insurance');  
-		$this->load->view('front/footer');	 
-	  }
 	
 	
 	public function login(){

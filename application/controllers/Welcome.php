@@ -802,6 +802,7 @@ class Welcome extends CI_Controller {
 		$email = $this->input->post('email');
 		$Mobile = $this->input->post('Mobile');
 		$Address = $this->input->post('Address');
+		$account_id = $this->input->post('account_id'); 
 		$id = $this->input->post('id');
 
 	
@@ -811,6 +812,7 @@ class Welcome extends CI_Controller {
 			'email' =>$email,
 			'mobile' =>$Mobile,
 			'address' =>$Address,
+			'account_id' =>$account_id,
 		);
 
 		$insert = $this->admin_model->agent_update($data,$id);
@@ -1398,17 +1400,62 @@ class Welcome extends CI_Controller {
 			
 
 				$responseArray = json_decode($response, true);
-
+				
 			   if ($responseArray) {
 				// Access the desired data from the array
 				 $status = $responseArray['status'];
-				 if($status == "paid"){
-					$this->db->where('id', $payment_check->id)->update('db_mobile_report', ['payment_status' => 1, 'pay_type' =>1]);
-				 }
-
-				// Update the database with the short URL
 				
-			
+				 if($status == "paid"){
+					$paymentId = $responseArray['payments'][0]['payment_id'];
+					$paylink_Id = $responseArray['id'];
+
+
+				      	$data = $this->admin_model->getAgentDataByPayment($paylink_Id); 
+						
+						$accountId = $data->account_id;
+						$name = $data->name;
+						$mobile = $data->mobile;
+					
+					$this->db->where('id', $payment_check->id)->update('db_mobile_report', ['payment_status' => 1, 'pay_type' =>1]);
+                  
+					$curl = curl_init();
+
+					curl_setopt_array($curl, array(
+					CURLOPT_URL => 'https://api.razorpay.com/v1/payments/'.$paymentId.'/transfers',
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_ENCODING => '',
+					CURLOPT_MAXREDIRS => 10,
+					CURLOPT_TIMEOUT => 0,
+					CURLOPT_FOLLOWLOCATION => true,
+					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					CURLOPT_CUSTOMREQUEST => 'POST',
+					CURLOPT_POSTFIELDS =>'{
+						"transfers": [
+							{
+								"account": "'. $accountId.'",
+								"amount": 5000,
+								"currency": "INR",
+								"notes": {
+									"name": "'. $name.'",
+									"roll_no": "'. $mobile.'"
+								},
+								"linked_account_notes": [
+									"roll_no"
+								]
+								
+							}
+						]
+					}',
+					CURLOPT_HTTPHEADER => array(
+						'content-type: application/json',
+						'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
+					),
+					));
+
+					$response = curl_exec($curl);
+
+					curl_close($curl);
+				 }
 			   } 
 			}
 

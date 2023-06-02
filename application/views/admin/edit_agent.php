@@ -232,6 +232,20 @@ legend.scheduler-border {
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-2">
+                                                    <label for="lastName" class="form-label">Account Id</label>
+                                                    <input type="text" class="form-control" id="account_id" name="account_id"
+                                                        placeholder="Account Id" value="<?php echo $report->account_id; ?>"
+                                                        >
+                                                    <div class="invalid-feedback">
+                                                        Valid Account Id is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                             <input type="text" class="form-control" id="id" name="id"
                                                         placeholder="Address" value="<?php echo $report->id; ?>"
                                                          hidden>

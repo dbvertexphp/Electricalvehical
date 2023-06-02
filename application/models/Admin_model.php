@@ -256,5 +256,16 @@ public function agent_list_get(){
     return $query->result();
 }
 
+public function getAgentDataByPayment($paymentLinkId) {
+  $this->db->select('*');
+  $this->db->from('db_mobile_report');
+  $this->db->join('agent', 'db_mobile_report.agent_code = agent.agent_code');
+  $this->db->where('db_mobile_report.payment_link', $paymentLinkId);
+  $this->db->order_by('db_mobile_report.id', 'desc');
+  $query = $this->db->get();
+  return  $query->row();
+ 
+}
+
 
 }

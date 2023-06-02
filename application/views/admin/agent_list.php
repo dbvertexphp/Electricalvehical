@@ -187,6 +187,7 @@ legend.scheduler-border {
                                             <th>cerated</th>
                                             <th>Shop</th>
                                             <th>Shop View</th>
+                                            <th>Account Id</th>
                                             <th>Action</th>
 
                                         </tr>
@@ -212,7 +213,7 @@ legend.scheduler-border {
                                                    View
                                                     </a>
                                             </td>
-                                          
+                                            <td><?php echo $row->account_id;?></td>
                                             <td>
                                                 <a href="javascript:void(0)" id="b" class="delete_product btn"
                                                     data-pid="<?php echo $row->id; ?>"><span style="color:#4e73df"> <i

@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH."libraries/vendor/razorpay/razorpay/Razorpay.php");
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
+
 class Welcome extends CI_Controller {
 
 	/**
@@ -1402,9 +1403,13 @@ class Welcome extends CI_Controller {
 				$responseArray = json_decode($response, true);
 				
 			   if ($responseArray) {
-				// Access the desired data from the array
-				 $status = $responseArray['status'];
-				
+		 		// Access the desired data from the array
+                	if (isset($responseArray['payments']) && count($responseArray['payments']) > 0) {
+                
+                  
+		         
+		     $status = $responseArray['status'];
+		 		 
 				 if($status == "paid"){
 					$paymentId = $responseArray['payments'][0]['payment_id'];
 					$paylink_Id = $responseArray['id'];
@@ -1456,6 +1461,10 @@ class Welcome extends CI_Controller {
 
 					curl_close($curl);
 				 }
+				 
+				 
+                	}
+				 
 			   } 
 			}
 

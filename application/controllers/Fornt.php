@@ -50,10 +50,108 @@ class Fornt extends CI_Controller {
 
 	}
 	public function index(){
-	  $this->load->view('front/header'); 
-	  $this->load->view('front/insurance');  
-	  $this->load->view('front/footer');	 
+		$data = $this->admin_model->payment_status();   
+		
+		foreach($data as $payment_check){
+			$pay_link = $payment_check->payment_link;
+			
+			  $curl = curl_init();
+
+				curl_setopt_array($curl, array(
+					CURLOPT_URL => 'https://api.razorpay.com/v1/payment_links/'.$pay_link,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+				CURLOPT_HTTPHEADER => array(
+					'Content-Type: application/json',
+					'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
+				),
+				));
+
+				$response = curl_exec($curl);
+
+				curl_close($curl);
+			
+
+				$responseArray = json_decode($response, true);
+				
+			   if ($responseArray) {
+		 		// Access the desired data from the array
+                	if (isset($responseArray['payments']) && count($responseArray['payments']) > 0) {
+                
+                  
+		         
+		     $status = $responseArray['status'];
+		 		 
+				 if($status == "paid"){
+					$paymentId = $responseArray['payments'][0]['payment_id'];
+					$paylink_Id = $responseArray['id'];
+
+
+				      	$data = $this->admin_model->getAgentDataByPayment($paylink_Id); 
+						
+						$accountId = $data->account_id;
+						$name = $data->name;
+						$mobile = $data->mobile;
+					
+					$this->db->where('id', $payment_check->id)->update('db_mobile_report', ['payment_status' => 1, 'pay_type' =>1]);
+                  
+					$curl = curl_init();
+
+					curl_setopt_array($curl, array(
+					CURLOPT_URL => 'https://api.razorpay.com/v1/payments/'.$paymentId.'/transfers',
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_ENCODING => '',
+					CURLOPT_MAXREDIRS => 10,
+					CURLOPT_TIMEOUT => 0,
+					CURLOPT_FOLLOWLOCATION => true,
+					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					CURLOPT_CUSTOMREQUEST => 'POST',
+					CURLOPT_POSTFIELDS =>'{
+						"transfers": [
+							{
+								"account": "'. $accountId.'",
+								"amount": 5000,
+								"currency": "INR",
+								"notes": {
+									"name": "'. $name.'",
+									"roll_no": "'. $mobile.'"
+								},
+								"linked_account_notes": [
+									"roll_no"
+								]
+								
+							}
+						]
+					}',
+					CURLOPT_HTTPHEADER => array(
+						'content-type: application/json',
+						'Authorization: Basic cnpwX3Rlc3RfZGZ3R1lndXF4Y21lMTY6ZDlXUU94YWpGVnFvanRXWnpWUEtnc1JF'
+					),
+					));
+
+					$response = curl_exec($curl);
+
+					curl_close($curl);
+				 }
+				 
+				 
+                	}
+				 
+			   } 
+			}
+
 	}
+
+	public function newhome(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/insurance');  
+		$this->load->view('front/footer');	 
+	  }
 	
 	
 	public function login(){

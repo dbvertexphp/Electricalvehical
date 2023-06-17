@@ -935,7 +935,7 @@ class Fornt extends CI_Controller {
 		
 		
 		$insert = $this->Website_user->vehicle_insert($data);
-		print_r($insert);die();
+	
 	}
 
 }

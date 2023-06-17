@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo base_url();?>image/MOBI PROTECT (4).png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -60,73 +60,90 @@
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
     }
-    .pulse {
-  animation: pulse 2s infinite ease-in-out alternate;
-}
-@keyframes pulse {
-  from { transform: scale(1.0); }
-  to { transform: scale(1.1); }
-}
-.cardItem {
-  
-  margin-top: 100px;
-  margin-right: 20px;
-  padding: 20px;
-  text-align: center;
-  transition: all 500ms ease-in-out;
-  background-color: #eee;
-  background: var(--white-color);
-  border-radius: 5%;
-}
-.cardItem:hover {
-  margin-top: 92px;
-  cursor: pointer;
-  background: var(--white-color);
-  border-radius: 5%;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-}
 
-.cardItem:hover .icon_images {
-  width: 60px;
-  height: 60px;
-}
-.cardLabel {
-  
-  width: 100%;
-  font-size: 20px;
-  display: block;
-}
-.material-icons {
-  font-size: 64px;
-  margin-top: 24px;
-  color: #1ab5ad;
-}
-.text_card{
-    color: var(--p-color);
-    font-size: var(--p-font-size);
-    font-weight: var(--font-weight-light);
-}
-.cardLabel{
-    color: #FFB600;
-    margin-top: 20px;
-    transition: all 0.5s;
-}
-.icon_images{
-    width:70px;
-    height:70px;
-}
-.Comprehensive_Cover{
-    font-size: max(1.5vw, 10px);
-}
-.cardItem:hover .icon_images_screen {
-  width: 60px;
-  height: 60px;
-}
-.icon_images_screen{
-    width:82px;
-    height:82px;
-}
+    .pulse {
+        animation: pulse 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(1.0);
+        }
+
+        to {
+            transform: scale(1.1);
+        }
+    }
+
+    .cardItem {
+
+        margin-top: 100px;
+        margin-right: 20px;
+        padding: 20px;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        background-color: #eee;
+        background: var(--white-color);
+        border-radius: 5%;
+    }
+
+    .cardItem:hover {
+        margin-top: 92px;
+        cursor: pointer;
+        background: var(--white-color);
+        border-radius: 5%;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .cardItem:hover .icon_images {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cardLabel {
+
+        width: 100%;
+        font-size: 20px;
+        display: block;
+    }
+
+    .material-icons {
+        font-size: 64px;
+        margin-top: 24px;
+        color: #1ab5ad;
+    }
+
+    .text_card {
+        color: var(--p-color);
+        font-size: var(--p-font-size);
+        font-weight: var(--font-weight-light);
+    }
+
+    .cardLabel {
+        color: #FFB600;
+        margin-top: 20px;
+        transition: all 0.5s;
+    }
+
+    .icon_images {
+        width: 70px;
+        height: 70px;
+    }
+
+    .Comprehensive_Cover {
+        font-size: max(1.5vw, 10px);
+    }
+
+    .cardItem:hover .icon_images_screen {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon_images_screen {
+        width: 82px;
+        height: 82px;
+    }
     </style>
 </head>
 
@@ -206,16 +223,17 @@
         <div class="container">
 
             <div class="row " style="padding-top:10%; padding-bottom:10%">
-                <div class="col-md-6" style="color: white;  place-self: center;">
-                    <h1><b>Who Are We ?</b></h1><br>
-                    <p class="fs-4">We are a team of dedicated professionals who understand the importance of protecting your
+                <div class="col-md-6 why_choose" style="color: #313131;  place-self: center;">
+                    <h1  style="color: #313131;"><b>Who Are We ?</b></h1><br>
+                    <p class="fs-4 why_choose">We are a team of dedicated professionals who understand the importance of
+                        protecting your
                         valuable mobile devices. Our mission is to provide you with the best mobile protection plan
                         coverage possible, giving you peace of mind and protection against any unexpected events like
                         accidental damages, water damaged and theft.</p>
                 </div>
                 <div class="col-md-6 text-center">
 
-                <img src="<?php echo base_url();?>image/video.png" alt="video" class="img-fluid pulse">
+                    <img src="<?php echo base_url();?>image/video.png" alt="video" class="img-fluid pulse">
 
                 </div>
 
@@ -240,8 +258,8 @@
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
                                         <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>image/mobile_project.png" width="260" height="562"
-                                            alt="pahadiuncle_layout">
+                                            src="<?php echo base_url();?>image/mobile_project.png" width="260"
+                                            height="562" alt="pahadiuncle_layout">
                                     </div>
                                     <div class="appdevcol col-md-6">
                                         <div class="appdetaildivider">
@@ -250,7 +268,8 @@
                                                     <div class="row ">
 
                                                         <div class=" col-10">
-                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose us?</h2>
+                                                            <h2 class="appnameh1" style=" font-weight:900;">Why choose
+                                                                us?</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -281,8 +300,8 @@
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
                                         <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>image/mobile project_easy.png"  width="260" height="562"
-                                            alt="h1bq_layout.png">
+                                            src="<?php echo base_url();?>image/mobile project_easy.png" width="260"
+                                            height="562" alt="h1bq_layout.png">
                                     </div>
                                     <div class="appdevcol col-md-6">
                                         <div class="appdetaildivider">
@@ -291,7 +310,8 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy</h2>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Easy to buy
+                                                            </h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -321,8 +341,8 @@
                                 <div class="row finxed_row">
                                     <div class="appdevcol col-md-4">
                                         <img class="img-fluid" style="filter: drop-shadow(7px 0px 10px #ccc);"
-                                            src="<?php echo base_url();?>image/mobile project_claim.png" width="260" height="562"
-                                            alt="mobile_phototribe">
+                                            src="<?php echo base_url();?>image/mobile project_claim.png" width="260"
+                                            height="562" alt="mobile_phototribe">
                                     </div>
                                     <div class="appdevcol col-md-6 applogodivx">
                                         <div class="appdetaildivider">
@@ -331,7 +351,8 @@
                                                     <div class="row ">
 
                                                         <div class="appnaeh1 col-10">
-                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free claims</h2>
+                                                            <h2 class="appnameh1" style="font-weight:900;">Hassle Free
+                                                                claims</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -341,7 +362,8 @@
                                                     <div class="row ">
 
                                                         <div class="appnameh1 col-10">
-                                                            <p class="why_choose "> Claim settlement is just a call away.
+                                                            <p class="why_choose "> Claim settlement is just a call
+                                                                away.
                                                                 Just call on our toll-free number or drop a mail that’s
                                                                 it.</p>
                                                         </div>
@@ -362,39 +384,58 @@
 
     <br>
     <div class="container text-center my-3">
-        <h1 class="" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px; color:#313131"><b>Repair and Replacement guarantee for </b></h1>
+        <h1 class="" style="font-weight: var(--font-weight-semibold);letter-spacing: -1px; color:#313131"><b>Repair and
+                Replacement guarantee for </b></h1>
     </div><br>
 
     <div class="container text-center ">
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images_screen" src="<?php echo base_url();?>image/Artboard 12.png" alt="cardItem"><span class="cardLabel"><strong>Screen Damages</strong></span>
-            <p class="mt-3 text_card">Our guarantee covers screen damages. We will repair or replace the subject's screen at no additional cost during the guarantee period.</p>
-            </div> 
+                <div class="cardItem"><img class="mb-3 icon_images_screen"
+                        src="<?php echo base_url();?>image/Artboard 12.png" alt="cardItem"><span
+                        class="cardLabel"><strong>Screen Damages</strong></span>
+                    <p class="mt-3 text_card">Our guarantee covers screen damages. We will repair or replace the
+                        subject's screen at no additional cost during the guarantee period.</p>
+                </div>
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy.png" alt="cardItem"><span class="cardLabel"><strong>Water/Liquid Damages</strong></span>
-            <p class="mt-3 text_card">Our repair and replacement guarantee covers water/liquid damages for the specified subject. If your device sustains water/liquid damage during the guarantee period, we will repair or replace it at no additional cost.</p>
-            </div> 
+                <div class="cardItem"><img class="mb-3 icon_images"
+                        src="<?php echo base_url();?>image/Artboard 12 copy.png" alt="cardItem"><span
+                        class="cardLabel"><strong>Water/Liquid Damages</strong></span>
+                    <p class="mt-3 text_card">Our repair and replacement guarantee covers water/liquid damages for the
+                        specified subject. If your device sustains water/liquid damage during the guarantee period, we
+                        will repair or replace it at no additional cost.</p>
+                </div>
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 2.png" alt="cardItem"><span class="cardLabel"><strong>Hardware / Software Damages</strong></span>
-            <p class="mt-3 text_card">Our guarantee covers hardware and software damages. We offer repair or replacement services for the subject at no additional cost during the guarantee period.</p>
-            </div> 
-              
+                <div class="cardItem"><img class="mb-3 icon_images"
+                        src="<?php echo base_url();?>image/Artboard 12 copy 2.png" alt="cardItem"><span
+                        class="cardLabel"><strong>Hardware / Software Damages</strong></span>
+                    <p class="mt-3 text_card">Our guarantee covers hardware and software damages. We offer repair or
+                        replacement services for the subject at no additional cost during the guarantee period.</p>
+                </div>
+
             </div>
 
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 3.png" alt="cardItem"><span class="cardLabel"><strong>Free Pick-up and Drop</strong></span>
-            <p class="mt-3 text_card">Our repair and replacement guarantee includes free pick-up and drop-off services for the specified subject, ensuring a convenient and hassle-free experience during the guarantee period.</p>
-            </div> 
-              
+                <div class="cardItem"><img class="mb-3 icon_images"
+                        src="<?php echo base_url();?>image/Artboard 12 copy 3.png" alt="cardItem"><span
+                        class="cardLabel"><strong>Free Pick-up and Drop</strong></span>
+                    <p class="mt-3 text_card">Our repair and replacement guarantee includes free pick-up and drop-off
+                        services for the specified subject, ensuring a convenient and hassle-free experience during the
+                        guarantee period.</p>
+                </div>
+
             </div>
             <div class="col-sm-6 col-md-4">
-            <div class="cardItem"><img class="mb-3 icon_images" src="<?php echo base_url();?>image/Artboard 12 copy 4.png" alt="cardItem"><span class="cardLabel"><strong>Brand Authorized Repairs</strong></span>
-            <p class="mt-3 text_card">Our repair and replacement guarantee ensures that all repairs for the specified subject are conducted by authorized technicians, maintaining the brand's standards and quality during the guarantee period.</p>
-            </div> 
-            
+                <div class="cardItem"><img class="mb-3 icon_images"
+                        src="<?php echo base_url();?>image/Artboard 12 copy 4.png" alt="cardItem"><span
+                        class="cardLabel"><strong>Brand Authorized Repairs</strong></span>
+                    <p class="mt-3 text_card">Our repair and replacement guarantee ensures that all repairs for the
+                        specified subject are conducted by authorized technicians, maintaining the brand's standards and
+                        quality during the guarantee period.</p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -425,48 +466,62 @@
                                 <h3><b class="Comprehensive_Cover" style="">Under Mobi Protect</b></h3>
                             </div>
                             <div class="col-3">
-                                <h3><b  class="Comprehensive_Cover" style="">Under Brand</b></h3>
+                                <h3><b class="Comprehensive_Cover" style="">Under Brand</b></h3>
                             </div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair/Replace Broken Screen</div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair / Replace Water Damage</div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Repair for Hardware/Software Issues</div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Replace/Recover for Theft </div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
 
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Cash Payout option for Self-Repairs</div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                         <div class="row">
                             <div class="col-6" style="color: #707070;">Free Doorstep Pick-up and Drop</div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                         <div class="row">
                             <div class="col-6" style="color: #707070;">User Friendly Support </div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid" width="20" height="20"></div>
-                            <div class="col-3"><img  src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid" width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (2).png" class="img-fluid"
+                                    width="20" height="20"></div>
+                            <div class="col-3"><img src="<?php echo base_url();?>image/Vector (3).png" class="img-fluid"
+                                    width="20" height="20"></div>
                         </div><br>
                     </div>
 

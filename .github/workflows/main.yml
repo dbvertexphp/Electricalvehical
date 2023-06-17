@@ -11,6 +11,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
+        # server: ftp.dbvertex.com
+        # username: Electricalvehical@dbvertex.com
+        # password: ${{ secrets.vehical_ftp_password }}
         server: ftp.dbvertex.com
         username: Electricalvehical@dbvertex.com
         password: ${{ secrets.vehical_ftp_password }}
+

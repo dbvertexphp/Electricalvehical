@@ -642,7 +642,7 @@
 
                                 <li class="pt-3"><a class="header_option_droup pt-3"
 
-                                        href="<?php echo base_url();?>">Vehicle</a></li>
+                                        href="<?php echo base_url();?>Fornt/vehicle_view">Vehicle</a></li>
 
                             </ul>
 

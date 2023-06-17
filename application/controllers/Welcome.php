@@ -178,7 +178,7 @@ class Welcome extends CI_Controller {
 		
 	}
 
-	function user(){
+	public function user(){
 		$this->form_validation->set_error_delimiters('', '');
 		$this->form_validation->set_rules('Salutation', 'Salutation', 'required');
 		$this->form_validation->set_rules('Policy_Holder','Policy_Holder','required');

@@ -208,8 +208,9 @@ class Fornt extends CI_Controller {
 		  $this->load->view('front/vehicle_Products'); 
 		  $this->load->view('front/footer');	
 		}
-	  }
-	public function forgot(){
+	}
+	
+	  public function forgot(){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/forgot'); 
 	  $this->load->view('front/footer');	
@@ -263,7 +264,7 @@ class Fornt extends CI_Controller {
 					$this->email->from($config['smtp_user'], $config['smtp_from_name']);
 					$this->email->to($emails);
 					$this->email->subject('	Verify your OTP - Mobi Protect');
-					$this->email->message("Verify your OTP - Mobi Protect Hello ".$emails.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+					$this->email->message("Verify your OTP - Mobi Protect Hello ".$emails.", This is your OTP $randCode.  Do not share this OTP with anyone.");
 					$e = $this->email->send();
 					$this->session->set_userdata('randCode', $randCode);  
 						$insert = $this->User_model->resand_otp($randCode,$mobile);  
@@ -305,7 +306,7 @@ class Fornt extends CI_Controller {
 							   $this->email->from($config['smtp_user'], $config['smtp_from_name']);
 							   $this->email->to($email);
 							   $this->email->subject('	Verify your OTP - Mobi Protect');
-							   $this->email->message("Verify your OTP - Mobi Protect Hello ".$name.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+							   $this->email->message("Verify your OTP - Mobi Protect Hello ".$name.", This is your OTP $randCode.  Do not share this OTP with anyone.");
 								$this->email->send();
 	     $this->session->set_userdata('randCode', $randCode);  
 	    $data = array(
@@ -351,8 +352,8 @@ class Fornt extends CI_Controller {
 		 $this->email->initialize($config);
 		 $this->email->from($config['smtp_user'], $config['smtp_from_name']);
 		 $this->email->to($email);
-		 $this->email->subject('	Verify your OTP - Mobi Protect');
-		 $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+		 $this->email->subject('Verify your OTP - Mobi Protect');
+		 $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. Do not share this OTP with anyone.");
 		  $e = $this->email->send();
 	     $this->session->set_userdata('randCode', $randCode);  
 	    //	$this->session->set_userdata('otp', $mobile);
@@ -412,7 +413,7 @@ class Fornt extends CI_Controller {
 		  $this->email->from($config['smtp_user'], $config['smtp_from_name']);
 		  $this->email->to($email);
 		  $this->email->subject('	Verify your OTP - Mobi Protect');
-		  $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode. <br> Do not share this OTP with anyone.");
+		  $this->email->message("Verify your OTP - Mobi Protect Hello ".$email.", This is your OTP $randCode.Do not share this OTP with anyone.");
 		   $e = $this->email->send();
 	    $this->session->set_userdata('randCode', $randCode);   
 	   //	$this->session->set_userdata('otp', $mobile);

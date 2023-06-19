@@ -301,7 +301,7 @@
     <div class="container my-5">
         <div class="row ">
             <div class="col-lg-6">
-                <h1><b>PROTECT THE MOBILE</b></h1><br>
+                <h2><b>PROTECT THE MOBILE AND LOW SPEED ELECTRIC VEHICLE</b></h2><br>
                 <p style="color: #707070;">We're here to help you protect your mobile and keep you connected to what
                     matters most.</p><br>
                 <p>

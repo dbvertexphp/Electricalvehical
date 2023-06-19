@@ -127,7 +127,7 @@ class Fornt extends CI_Controller {
 	   if(isset($id) == ''){
 	    $this->load->view('front/header'); 
 	      $this->load->view('front/login'); 
-		  $this->load->view('front/footer');	   
+		  $this->load->view('front/footer');	    
 	   }
 	   else{
 		$redirectUri = $this->session->userdata('pade_redirect'); 
@@ -135,8 +135,12 @@ class Fornt extends CI_Controller {
             return redirect('Fornt/products'); 
 			$this->session->unset_userdata('pade_redirect');
 		  }
-		  else if($redirectUri == 'buy_Premium' ){
+		  else if($redirectUri == 'buy_Premium' ){ 
 			return redirect('Fornt/buy_Premium');
+			$this->session->unset_userdata('pade_redirect');
+		  }
+		  else if($redirectUri == 'Vehicle_buy_Premium' ){ 
+			return redirect('Fornt/Vehicle_buy_Premium');
 			$this->session->unset_userdata('pade_redirect');
 		  }
 		  else{
@@ -165,12 +169,18 @@ class Fornt extends CI_Controller {
 	  $this->load->view('front/otp'); 
 	  $this->load->view('front/footer');	
 	}
-	public function Calculator(){
+	public function Calculator($id=0){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/Calculator'); 
 	  $this->load->view('front/footer');	
 	}
-	public function products(){
+	public function vehicle_Calculator($id=0){
+		$this->load->view('front/header');   
+		$this->load->view('front/vehicle_Calculator'); 
+		$this->load->view('front/footer');	
+	}
+	
+	  public function products(){
 	  $id = $this->session->userdata('vehical'); 
 	  $this->session->set_userdata('pade_redirect','products');
 	  if(isset($id) == ''){
@@ -184,6 +194,21 @@ class Fornt extends CI_Controller {
 		$this->load->view('front/footer');	
 	  }
 	}
+
+	public function vehical_products(){
+		$id = $this->session->userdata('vehical'); 
+		$this->session->set_userdata('pade_redirect','products');
+		if(isset($id) == ''){
+			$this->load->view('front/header'); 
+		   $this->load->view('front/login'); 
+		   $this->load->view('front/footer');	   
+		}
+		else{
+		  $this->load->view('front/header'); 
+		  $this->load->view('front/vehicle_Products'); 
+		  $this->load->view('front/footer');	
+		}
+	  }
 	public function forgot(){
 	  $this->load->view('front/header');   
 	  $this->load->view('front/forgot'); 
@@ -594,6 +619,17 @@ class Fornt extends CI_Controller {
 		$mpdf->WriteHTML($hmt);
 		$mpdf->Output('Policy.pdf','D');
     }
+
+	function website_vehicle_pdf($id=0){
+		$data['report'] = $this->Website_user->website_vehicle_selectquery($id); 
+		foreach($data as $inv);
+		require_once BASEPATH.'../vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp']);
+		$this->load->view('admin/pdf',$data);
+		$hmt =  $this->output->get_output();
+		$mpdf->WriteHTML($hmt);
+		$mpdf->Output('Policy.pdf','D');
+    }
 	function clam(){
 		$this->load->view('front/header'); 
 		$this->load->view('front/clam'); 
@@ -722,6 +758,7 @@ class Fornt extends CI_Controller {
 	  $data = $this->prepareData($amount,$razorpayOrderId);
 	  $this->load->view('rezorpay',array('data' => $data));
 	}
+
 	public function verify()
 	{
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
@@ -788,6 +825,7 @@ class Fornt extends CI_Controller {
 	  );
 	  return $data;
 	}
+
 	public function setRegistrationData(){
 	  $name = $this->input->post('name');
 	  $email = $this->input->post('email');
@@ -847,12 +885,20 @@ class Fornt extends CI_Controller {
 		$Financer_Type = $this->input->post('Financer_Type');
 		$Battery_kw = $this->input->post('Battery_kw');
 		$user_id= $this->session->userdata('vehical'); 
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+              $randomString = '';
+		$n = 30;
+         for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+         $randomString .= $characters[$index];
+        }
+		$Tokan = $randomString;
 
 		$SumInsured = $this->input->post('SumInsured');
 		$Business = $this->input->post('Business');
 		$date = $this->input->post('date');
 		$Business_Type = $this->input->post('Business_Type');
-		$bank_name = 'Shop name';
+		$bank_name =  $this->input->post('bank_name');
 		
 		$ODAmount = round($SumInsured*$Business/100);
 		$GST = round($ODAmount*18/100);
@@ -930,13 +976,115 @@ class Fornt extends CI_Controller {
 			'bank_name'  =>$bank_name,
 			'Battery_kw'  =>$Battery_kw, 
 			'user_id'  =>$user_id, 
+			'token'  =>$Tokan
 		); 
 
-		
-		
 		$insert = $this->Website_user->vehicle_insert($data);
+		$insertId = $this->db->insert_id();
+		$this->session->set_flashdata('policy_form', 'Thank you! Your policy form has been successfully submitted.'); 
+		$this->session->set_flashdata('msg_class','alert-success');
+		 $redirectUrl = 'Fornt/Vehicle_pay/' . $insertId;
+          return redirect($redirectUrl);
 	
 	}
+
+	public function Vehicle_pay($id)
+	{
+		$this->session->set_userdata('checked_teg', "Vehicle");  
+		$_SESSION['report_id'] = $id;
+		$result = $this->db->where('id', $id)->get('website_vehicle_report')->result();
+		foreach($result as $dataji)
+		$_SESSION['premium_amount'] = $dataji->premium;
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  /**
+	   * You can calculate payment amount as per your logic
+	   * Always set the amount from backend for security reasons
+	   */
+	  $razorpayOrder = $api->order->create(array(
+		'receipt'         => rand(),
+		'amount'          => $_SESSION['premium_amount'] * 100, // 2000 rupees in paise
+		'currency'        => 'INR',
+		'payment_capture' => 1 // auto capture
+	  ));
+	  $amount = $razorpayOrder['amount'];
+	  $razorpayOrderId = $razorpayOrder['id'];
+	  $_SESSION['amount'] = isset($_SESSION['amount']);
+	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
+	  $data = $this->Vehicle_prepareData($amount,$razorpayOrderId);
+	  $this->load->view('vehicle_rezorpay',array('data' => $data));
+	}
+
+	public function Vehicle_prepareData($amount,$razorpayOrderId){
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $data = array(
+		"key" => "rzp_test_dfwGYguqxcme16",
+		"amount" => $amount,
+		"name" => "Mobi Protect Pvt Ltd",
+		"description" => "You will be able to see all the details of the payment in the policy pdf after the payment is successful.",
+		"image" => base_url() . "image/MOBI PROTECT (4).png",
+		"prefill" => array(
+		  "name"  => $this->input->post('name'),
+		  "email"  => $this->input->post('email'),
+		  "contact" => $this->input->post('contact'),
+		),
+		"notes"  => array(
+		  "address"  => "Payment Policy",
+		  "merchant_order_id" => rand(),
+		),
+		"theme"  => array(
+		  "color"  => "#FFB600"
+		),
+		"order_id" => $razorpayOrderId,
+		
+	
+	  );
+	  return $data;
+	}
+
+	public function Vehicle_verify()
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $success = true;
+	  $error = "payment_failed";
+	  if (empty($_POST['razorpay_payment_id']) === false) {
+		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  try {
+		  $attributes = array(
+			'razorpay_order_id' => $_SESSION['razorpay_order_id'],
+			'razorpay_payment_id' => $_POST['razorpay_payment_id'],
+			'razorpay_signature' => $_POST['razorpay_signature'],
+			'amount' => $_SESSION['amount'],
+			'report_id' => $_SESSION['report_id'],
+			'user_id' => $this->session->userdata('vehical')
+		  );
+		  $api->utility->verifyPaymentSignature($attributes);
+          $this->db->where('id', $_SESSION['report_id'])->update('website_vehicle_report', ['pay_type' => 1]);
+		  $insert = $this->Website_user->payment($attributes);
+		} catch(SignatureVerificationError $e) {
+		  $success = false;
+		  $error = 'Razorpay_Error : ' . $e->getMessage();
+		}
+	  }
+	  if ($success === true) {
+		/**
+		 * Call this function from where ever you want
+		 * to save save data before of after the payment
+		 */
+		unset($_SESSION['premium_amount']); 
+		unset($_SESSION['razorpay_order_id']);
+		unset($_SESSION['amount']);
+		$this->setRegistrationData();
+		redirect(base_url().'Fornt/vehical_products');
+	  }
+	  else {
+		redirect(base_url().'Fornt/vehical_products');
+	  }
+	}
+
 
 }
 	?>

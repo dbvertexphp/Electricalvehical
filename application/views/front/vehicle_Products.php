@@ -270,8 +270,8 @@
 
     <?php if($datas !== NULL){?>
     <div class="switches-container mb-3">
-        <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile" checked="checked" />
-        <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan" value="Vehicle" />
+        <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile" />
+        <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan" value="Vehicle"  checked="checked" />
         <label for="switchMonthly"><img class="pe-1"src="<?php echo base_url();?>image/motorcycle _white.png" alt="">Mobile</label>
                     <label for="switchYearly"><img class="pe-1" src="<?php echo base_url();?>image/car_white.png" alt="">Vehicle</label>
         <div class="switch-wrapper">
@@ -280,96 +280,6 @@
                             </div>
                             <div><img class="pe-1" src="<?php echo base_url();?>image/car.png" alt="">Vehicle</div>
             </div>
-        </div>
-    </div>
-
-    <div class="Mobile_policy_input_hide">
-        <div class="container" style="height:700px;">
-            <div class="my-policy_div">
-                <div class="my-policy">Mobile Policy</div>
-            </div>
-            <?php
-            $mobile_policy =  get_user_policy_count(  $user_id);
-                if($mobile_policy !== NULL){?>
-            <div class="container container_pocliy">
-                <div class="row tablehead">
-                    <div class="col-1">
-                        <p class="tablehead_text">S. No</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="tablehead_text">Policy No.</p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text">Start Date</p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text">End Date</p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text">Download Pdf</p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text">Status</p>
-                    </div>
-                </div>
-                <div class="mt-4"></div>
-                <?php
-                $user_id = $this->session->userdata('vehical'); 
-                    $data = get_user_policy($user_id); 
-                $counter = 1;
-                foreach($data as $user){
-                ?>
-                <div class="row bodyhead ">
-                    <div class="col-1">
-                        <p class="tablehead_text_content"><?php echo $counter ?></p>
-                    </div>
-                    <div class="col-3">
-                        <p class="tablehead_text_content"><?php echo $user->policy_numbers ?></p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text_content"><?php 
-                    $start = $user->policy_start;
-                    $date=date_create($start);
-                    echo date_format($date,"d-m-Y");
-                    ?></p>
-                    </div>
-                    <div class="col-2">
-                        <p class="tablehead_text_content"><?php
-                     $exprie = $user->exprie_date;
-                     $date=date_create($exprie);
-                     echo date_format($date,"d-m-Y");
-                 ?></p>
-                    </div>
-                    <div class="col-2">
-                        <?php if($user->pay_type == 0){ ?>
-                        <p class="mt-2">NAN</p>
-                        <?php  }  else {?>
-                        <p class="tablehead_text_content" style="place-content: center;">
-                            <a href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->token);?>">
-                                <img src="<?php echo base_url();?>/image/download-pdf.png" class="img-fluid" alt=""
-                                    width="20" height="20">
-                        </p>
-                        </a>
-                        <?php } ?>
-                    </div>
-                    <div class="col-2">
-                        <?php if($user->pay_type == 0){ ?>
-                        <a href="<?php echo site_url("Fornt/pay/".$user->id) ?>"><button type="button"
-                                class="btn btn-danger"
-                                style="padding-top: 1px; padding-bottom: 1px; margin-top: 5px">Unpaid</button></a>
-                        <?php  }  else {?>
-                        <p class="mt-2 text-success font-weight-bold">Paid</p>
-                        <?php } ?>
-                    </div>
-                </div>
-                <?php   $counter++; } ?>
-            </div>
-            <?php } 
-            else { ?>
-            <div class="container no_found">
-                <img src="<?php echo base_url();?>/image/no-product-found.jpg" class="img-fluid" alt="">
-            </div>
-            <?php } ?>
         </div>
     </div>
     <div class="Vehicle_policy_input_hide">
@@ -462,6 +372,97 @@
             <?php } ?>
         </div>
     </div>
+    
+    <div class="Mobile_policy_input_hide" >
+        <div class="container" style="height:700px;">
+            <div class="my-policy_div">
+                <div class="my-policy">Mobile Policy</div>
+            </div>
+            <?php
+            $mobile_policy =  get_user_policy_count(  $user_id);
+                if($mobile_policy !== NULL){?>
+            <div class="container container_pocliy">
+                <div class="row tablehead">
+                    <div class="col-1">
+                        <p class="tablehead_text">S. No</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="tablehead_text">Policy No.</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text">Start Date</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text">End Date</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text">Download Pdf</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text">Status</p>
+                    </div>
+                </div>
+                <div class="mt-4"></div>
+                <?php
+                $user_id = $this->session->userdata('vehical'); 
+                    $data = get_user_policy($user_id); 
+                $counter = 1;
+                foreach($data as $user){
+                ?>
+                <div class="row bodyhead ">
+                    <div class="col-1">
+                        <p class="tablehead_text_content"><?php echo $counter ?></p>
+                    </div>
+                    <div class="col-3">
+                        <p class="tablehead_text_content"><?php echo $user->policy_numbers ?></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text_content"><?php 
+                    $start = $user->policy_start;
+                    $date=date_create($start);
+                    echo date_format($date,"d-m-Y");
+                    ?></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="tablehead_text_content"><?php
+                     $exprie = $user->exprie_date;
+                     $date=date_create($exprie);
+                     echo date_format($date,"d-m-Y");
+                 ?></p>
+                    </div>
+                    <div class="col-2">
+                        <?php if($user->pay_type == 0){ ?>
+                        <p class="mt-2">NAN</p>
+                        <?php  }  else {?>
+                        <p class="tablehead_text_content" style="place-content: center;">
+                            <a href="<?php echo site_url("Fornt/website_mobile_pdf/".$user->token);?>">
+                                <img src="<?php echo base_url();?>/image/download-pdf.png" class="img-fluid" alt=""
+                                    width="20" height="20">
+                        </p>
+                        </a>
+                        <?php } ?>
+                    </div>
+                    <div class="col-2">
+                        <?php if($user->pay_type == 0){ ?>
+                        <a href="<?php echo site_url("Fornt/pay/".$user->id) ?>"><button type="button"
+                                class="btn btn-danger"
+                                style="padding-top: 1px; padding-bottom: 1px; margin-top: 5px">Unpaid</button></a>
+                        <?php  }  else {?>
+                        <p class="mt-2 text-success font-weight-bold">Paid</p>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php   $counter++; } ?>
+            </div>
+            <?php } 
+            else { ?>
+            <div class="container no_found">
+                <img src="<?php echo base_url();?>/image/no-product-found.jpg" class="img-fluid" alt="">
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+   
 
     <?php } 
     else { ?>
@@ -474,7 +475,7 @@
     <?php } ?>
     <!-- footer -->
     <script>
-    $(function() {
+      $(function() {
         $('.logout').click(function(e) {
             e.preventDefault();
             Swal.fire({
@@ -501,18 +502,18 @@
 
     <script>
     $(document).ready(function() {
-        $('.switchPlan').change(function() {
-            var selectedValue = $(this).val();
+    $('.switchPlan').change(function() {
+        var selectedValue = $(this).val();
 
-            if (selectedValue === 'Mobile') {
-                $('.Mobile_policy_input_hide').show();
-                $('.Vehicle_policy_input_hide').hide();
-            } else if (selectedValue === 'Vehicle') {
-                $('.Mobile_policy_input_hide').hide();
-                $('.Vehicle_policy_input_hide').show();
-            }
-        });
+        if (selectedValue === 'Mobile') {
+            $('.Mobile_policy_input_hide').show();
+            $('.Vehicle_policy_input_hide').hide();
+        } else if (selectedValue === 'Vehicle') {
+            $('.Mobile_policy_input_hide').hide();
+            $('.Vehicle_policy_input_hide').show();
+        }
     });
+});
     </script>
 
 

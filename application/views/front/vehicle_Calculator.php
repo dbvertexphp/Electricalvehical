@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,76 +23,39 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>MOBILE</title>
     <style>
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+    .post_input_lable {
+        font-weight: bolder;
     }
-    .col-3 {
-        text-align: center;
+
+    #final_amount {
+        visibility: hidden;
     }
-    #one {
-        max-width: 80%;
-        height: auto;
+
+    #Vehicle_final_amount {
+        visibility: hidden;
     }
-    </style>
-    <style>
-    #contain {
-        position: relative;
-        text-align: center;
-        color: white;
-        padding: 0%;
+
+    .Calculator {
+        color: #FFB600;
+        border-bottom: 6px solid #FFB600;
+        padding-bottom: 3px;
     }
-    .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+    .culculetter_page {
+        align-self: center;
     }
-    </style>
-    <style>
-    @media screen and (min-width: 280px) {
-        #tex.text {
-            font-size: 2px;
-        }
+
+    .appnameh1 {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: Bold;
+        font-size: 40.0801px;
+        letter-spacing: 0px;
+        color: #313131;
     }
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        padding: 12px 16px;
-        z-index: 1;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    .embed-responsive-item {
-        width: 576px;
-        height: 337px;
-        border-radius: 28px;
-    }
-    @media screen and (max-width: 1200px) {
-        .embed-responsive-item {
-            width: 420px;
-            height: 237px;
-            border-radius: 10px;
-        }
-    }
-    @media screen and (max-width: 500px) {
-        .embed-responsive-item {
-            width: 250px;
-            height: 137px;
-            border-radius: 10px;
-        }
-    }
+
     .why_choose {
         line-height: 23px;
         font-weight: 600;
@@ -99,47 +63,21 @@
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
     }
-    .scroll-then-fix {
-        position: relative;
-    }
-    .scroll-then-fix img {
-        width: 100%;
-        height: auto;
-    }
-    .scroll-then-fix.fixed {
-        position: fixed;
-        top: 50px;
-        /* Adjust the desired position based on your needs */
-        width: 200px;
-        /* Adjust the width of the fixed image */
-        height: auto;
-    }
-    .appnameh1 {
-        font-family: 'Roboto', sans-serif;
-        font-style: normal;
-        font-weight: Bold;
-        font-size: 40.0801px;
-        letter-spacing: 0px;
-        color: #313131;
-    }
+
     .pulse {
         animation: pulse 2s infinite ease-in-out alternate;
     }
+
     @keyframes pulse {
         from {
             transform: scale(1.0);
         }
+
         to {
-            transform: scale(1.1);
+            transform: scale(0.9);
         }
     }
-    .Comprehensive_Cover {
-        font-size: max(1.5vw, 10px);
-    }
-    .css-1yzzujv {
-        margin-right: 14px;
-        margin-bottom: 15px;
-    }
+
     .cardItem {
         margin-top: 100px;
         margin-right: 20px;
@@ -150,6 +88,7 @@
         background: var(--white-color);
         border-radius: 5%;
     }
+
     .cardItem:hover {
         margin-top: 92px;
         cursor: pointer;
@@ -158,51 +97,62 @@
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
         transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
     }
+
     .cardItem:hover .icon_images {
         width: 60px;
         height: 60px;
     }
-    .cardItem:hover .icon_images_screen {
-        width: 60px;
-        height: 60px;
-    }
+
     .cardLabel {
         width: 100%;
         font-size: 20px;
         display: block;
     }
+
     .material-icons {
         font-size: 64px;
         margin-top: 24px;
         color: #1ab5ad;
     }
+
     .text_card {
         color: var(--p-color);
         font-size: var(--p-font-size);
         font-weight: var(--font-weight-light);
     }
+
     .cardLabel {
         color: #FFB600;
         margin-top: 20px;
         transition: all 0.5s;
     }
+
     .icon_images {
         width: 70px;
         height: 70px;
     }
+
+    .Comprehensive_Cover {
+        font-size: max(1.5vw, 10px);
+    }
+
+    .cardItem:hover .icon_images_screen {
+        width: 60px;
+        height: 60px;
+    }
+
     .icon_images_screen {
         width: 82px;
         height: 82px;
     }
-    .Comprehensive_Cover {
-        font-size: max(1.5vw, 10px);
-    }
+
     :root {
         --switches-bg-color: goldenrod;
         --switches-label-color: white;
         --switch-bg-color: white;
         --switch-text-color: goldenrod;
     }
+
     .switches-container {
         width: 16rem;
         position: relative;
@@ -212,13 +162,17 @@
         background: #ffb600;
         line-height: 2.5rem;
         border-radius: 3rem;
+        margin-left: auto;
+        margin-right: auto;
     }
+
     /* input (radio) for toggling. hidden - use labels for clicking on */
     .switches-container input {
         visibility: hidden;
         position: absolute;
         top: 0;
     }
+
     /* labels for the input (radio) boxes - something to click on */
     .switches-container label {
         width: 50%;
@@ -228,6 +182,7 @@
         cursor: pointer;
         color: var(--switches-label-color);
     }
+
     /* switch highlighters wrapper (sliding left / right) 
     - need wrapper to enable the even margins around the highlight box
 */
@@ -241,12 +196,14 @@
         transition: transform .5s cubic-bezier(.77, 0, .175, 1);
         /* transition: transform 1s; */
     }
+
     /* switch box highlighter */
     .switch {
         border-radius: 3rem;
         background: var(--switch-bg-color);
         height: 100%;
     }
+
     /* switch box labels
     - default setup
     - toggle afterwards based on radio:checked status 
@@ -263,121 +220,186 @@
         top: 0;
         left: 0;
     }
+
     /* slide the switch box from right to left */
     .switches-container input:nth-of-type(1):checked~.switch-wrapper {
         transform: translateX(0%);
     }
+
     /* slide the switch box from left to right */
     .switches-container input:nth-of-type(2):checked~.switch-wrapper {
         transform: translateX(100%);
     }
+
     /* toggle the switch box labels - first checkbox:checked - show first switch div */
     .switches-container input:nth-of-type(1):checked~.switch-wrapper .switch div:nth-of-type(1) {
         opacity: 1;
     }
+
     /* toggle the switch box labels - second checkbox:checked - show second switch div */
     .switches-container input:nth-of-type(2):checked~.switch-wrapper .switch div:nth-of-type(2) {
         opacity: 1;
     }
-    .home_button {
-        background-color: #ffb600;
-        color: white;
-        font-size: 19px;
-        font-weight: bold;
-        width: 50%;
-        border-radius: 22px;
-        border: 2px solid white;
-    }
-    .home_button:hover {
-        background-color: #ffb600;
-        color: white;
-        border-radius: 22px;
-        border: 2px solid white;
-    }
     </style>
 </head>
+
 <body>
-    <br>
-    <div class="container my-5">
-        <div class="row ">
-            <div class="col-lg-6">
-                <h1><b>PROTECT THE MOBILE</b></h1><br>
-                <p style="color: #707070;">We're here to help you protect your mobile and keep you connected to what
-                    matters most.</p><br>
-                <p>
-                <div class="switches-container mb-4">
-                    <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile"
-                        checked="checked" />
-                    <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan" value="Vehicle" />
-                    <label for="switchMonthly"><img class="pe-1"src="<?php echo base_url();?>image/motorcycle _white.png" alt="">Mobile</label>
-                    <label for="switchYearly"><img class="pe-1" src="<?php echo base_url();?>image/car_white.png" alt="">Vehicle</label>
-                    <div class="switch-wrapper">
-                        <div class="switch">
-                            <div><img class="pe-1" src="<?php echo base_url();?>image/motorcycle.png" alt="">Mobile
+    <?php $url = $this->uri->segment(3);?> 
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6 culculetter_page">
+                <div class="row">
+                    <div class="col-12 mb-5">
+
+                         <div class="switches-container">
+                            <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile" >
+                               
+                            <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan" value="Vehicle" checked="checked" />
+                            <label for="switchMonthly"><img class="pe-1"
+                                    src="<?php echo base_url();?>image/motorcycle _white.png" alt="">Mobile</label>
+                            <label for="switchYearly"><img class="pe-1"
+                                    src="<?php echo base_url();?>image/car_white.png" alt="">Vehicle</label>
+                            <div class="switch-wrapper">
+                                <div class="switch">
+                                    <div><img class="pe-1" src="<?php echo base_url();?>image/motorcycle.png"
+                                            alt="">Mobile
+                                    </div>
+                                    <div><img class="pe-1" src="<?php echo base_url();?>image/car.png" alt="">Vehicle
+                                    </div>
+                                </div>
                             </div>
-                            <div><img class="pe-1" src="<?php echo base_url();?>image/car.png" alt="">Vehicle</div>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="Mobile_calculetor_input_hide">
-                    <form class="needs-validation"  action="<?php echo base_url();?>Fornt/Calculator" novalidate autocomplete="off">
-                    <div class="row">
-                  
-                        <div class="col-md-4">
-                           
-                            <input type="text" class="form-control" value="" id="Make" name="Make"
-                                placeholder="Make" value="" required>
-                            <div class="invalid-feedback">
-                                Make is required.
+           
+                <div class="Mobile_calculetor_input_hide" style="display:none;">
+                    <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Mobile_Type" class="form-label post_input_lable">Mobile Type</label>
+                                <select class="form-select post_input_fild" id="mobile_type" name="mobile_type"
+                                    required>
+                                    <option value="">select</option>
+                                    <option value="New">New</option>
+                                    <option value="New + Theft">New + Theft</option>
+                                    <option value="Old">Old</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Mobile Type.
+                                </div>
+                            </div>
+                            <div class=" col-md-6">
+                                <label for="inputPassword4" class="form-label post_input_lable"><b>Model</b></label>
+                                <input type="text" class="form-control" id="inputPassword4"
+                                    placeholder="Enter Model NO.">
                             </div>
                         </div>
-                        <div class="col-md-4">
-                           
-                            <input type="text" class="form-control" value="" id="Model" name="Model"
-                                placeholder="Model" value="" required>
-                            <div class="invalid-feedback">
-                                Model is required.
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label for="inputEmail4"><b>Make</b></label>
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Make">
+                            </div>
+                            <div class=" col-md-6 mt-0">
+                                <label for="Price" class=" post_input_lable"><b>Price</b></label>
+                                <input type="number" class="form-control no-spinners" id="Price" name="Price"
+                                    placeholder="Enter Price" maxlength="6"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please Enter Price.
+                                </div>
+                            </div>
                         </div>
+
+
+                        <br>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button class="btn rounded-5" type="submit" id="submit"
+                                style="background-color: #ffb600;color:white">View Price</button>
                         </div>
-                       
-                        <div class="col-md-4" >
-                            <button class=" p-1 home_button  btn-lg" id="submit" type="submit">Price</button>
-                        </div>
-                    </div>
                     </form>
+                    <div class="d-grid gap-2 col-6 mx-auto" style="justify-items: center; " id="final_amount">
+                        <p class="mt-3 post_input_lable" style="font-size: 15px; color:black; text-align-last: center;">
+                            Final Premium: - <span id="Final_Premium"></span> /- Rs</p>
+                        <a href="<?php echo base_url();?>Fornt/buy_Premium"><button class="btn rounded-5" type="submit"
+                                id="submit" style="background-color: #ffb600;color:white">Buy Premium</button></a>
+                    </div>
+
                 </div>
-                <div class="Vehicle_calculetor_input_hide" style="display:none;">
-                      <form class="needs-validation" action="<?php echo base_url();?>Fornt/vehicle_Calculator/2" novalidate autocomplete="off">
-                    <div class="row">
-                  
-                        <div class="col-md-4">
-                          
-                            <input type="text" class="form-control" value="" id="Vehicle_Make" name="Vehicle_Make"
-                                placeholder="Make" value="" required>
-                            <div class="invalid-feedback">
-                                Make is required.
+          
+                <div class="Vehicle_calculetor_input_hide"  >
+                    <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Vehicle_type" class="form-label post_input_lable">Vehicle Type</label>
+                                <select class="form-select post_input_fild" id="Vehicle_type" name="Vehicle_type"
+                                    required>
+                                    <option value="">select</option>
+                                    <option value="1.75" name="ALLRISK">ALL RISK</option>
+                                    <option value="2.25" name="BATTERY">ALL RISK PLUS BATTERY</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Mobile Type.
+                                </div>
+                            </div>
+                            <div class=" col-md-6">
+                                <label for="inputPassword4" class="form-label post_input_lable"><b>Model</b></label>
+                                <input type="text" class="form-control" id="inputPassword4" value="<?php
+                                            if (isset($_GET['Vehicle_Model'])) {
+                                            $Model = $_GET['Vehicle_Model'];
+                                            echo $Model;
+                                            }
+                                            ?>"
+                                    placeholder="Enter Model NO.">
                             </div>
                         </div>
-                        <div class="col-md-4">
-                         
-                            <input type="text" class="form-control" value="" id="Vehicle_Model" name="Vehicle_Model"
-                                placeholder="Model" value="" required>
-                            <div class="invalid-feedback">
-                                Model is required.
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label for="inputEmail4"><b>Make</b></label>
+                                <input type="text" class="form-control" id="inputEmail4"
+                                value="<?php
+                                            if (isset($_GET['Vehicle_Make'])) {
+                                            $Make = $_GET['Vehicle_Make'];
+                                            echo $Make;
+                                            }
+                                            ?>"
+                                 placeholder=" Enter  Make">
+                            </div>
+                            <div class=" col-md-6 mt-0">
+                                <label for="Price" class=" post_input_lable"><b>Price</b></label>
+                                <input type="number" class="form-control no-spinners" id="Vehicle_Price" name="Vehicle_Price"
+                                    placeholder="Enter Price" maxlength="6"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please Enter Price.
+                                </div>
+                            </div>
                         </div>
+
+
+                        <br>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button class="btn rounded-5" type="submit" id="Vehicle_submit"
+                                style="background-color: #ffb600;color:white">View Price</button>
                         </div>
-                    
-                        <div class="col-md-4" >
-                            <button class=" p-1  home_button  btn-lg" id="submit" type="submit">Price</button>
-                        </div>
-                    </div>
                     </form>
-                  </div>
+                    <div class="d-grid gap-2 col-6 mx-auto" style="justify-items: center; " id="Vehicle_final_amount">
+                        <p class="mt-3 post_input_lable" style="font-size: 15px; color:black; text-align-last: center;">
+                            Final Premium: - <span id="Vehicle_Final_Premium"></span> /- Rs</p>
+                        <a href="<?php echo base_url();?>Fornt/Vehicle_buy_Premium"><button class="btn rounded-5"
+                                type="submit" id="submit" style="background-color: #ffb600;color:white">Buy
+                                Premium</button></a>
+                    </div>
+
                 </div>
-            <br>
-            <div class="col-lg-6 text-center">
-                <img src="<?php echo base_url();?>image/home_hading.png" class="mx-auto d-block pulse" alt="home_hading"
-                    id="one">
+          
+
+
+            </div>
+            <div class="col-md-5">
+                <img src="<?php echo base_url();?>image/culculeter.png" class="img-fluid pulse" alt="">
             </div>
         </div>
     </div>
@@ -580,7 +602,9 @@
     <div class="container-fluid" id="contain">
         <img src="<?php echo base_url();?>image/limg.png" alt="Snow" style="width:100%;">
         <div class="centered">
-            <h1 style="font-size:4vw;">Hassel Free Service – Convenience + Peace of Mind</h1>
+            <h1 style="font-size:4vw;">Hassel Free Service Get <br>
+                your mobile Repaired <br>
+                in just a few clicks</h1>
         </div>
     </div><br>
     <div class="container">
@@ -654,59 +678,67 @@
         </div>
     </div> <br><br>
     <script>
-    $(document).ready(function() {
-        $('.switchPlan').change(function() {
-            var selectedValue = $(this).val();
-            if (selectedValue === 'Mobile') {
-                $('.Mobile_calculetor_input_hide').show();
-                $('.Vehicle_calculetor_input_hide').hide();
-            } else if (selectedValue === 'Vehicle') {
-                $('.Mobile_calculetor_input_hide').hide();
-                $('.Vehicle_calculetor_input_hide').show();
-            }
-        });
-    });
-    </script>
-    <script>
-    $(function() {
-        $('.logout').click(function(e) {
-            e.preventDefault();
-            Swal.fire({
-                icon: 'warning',
-                title: 'Logout!',
-                text: 'Are you sure you want to logout?',
-                showCloseButton: true,
-                showCancelButton: true,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "<?php echo base_url();?>Fornt/logout";
-                } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+       $("#submit").click(function(e) {
+        num1 = document.getElementById("Price").value;
+        num2 = document.getElementById("mobile_type").value;
+        if (num1 !== '' && num2 !== '') {
+            if (num2 == 'New' || num2 == 'Old') {
+                if (num1 <= 10000) {
+                    num3 = 1000;
+                    num4 = 1000;
+                } else if (num1 >= 10001 && num1 <= 20000) {
+                    num3 = 1500;
+                    num4 = 1500;
+                } else if (num1 >= 20001 && num1 <= 30000) {
+                    num3 = 2000;
+                    num4 = 2000;
+                } else if (num1 >= 30001 && num1 <= 50000) {
+                    num3 = 2500;
+                    num4 = 2500;
+                } else if (num1 >= 50001 && num1 <= 100000) {
+                    num3 = 3000;
+                    num4 = 3000;
+                } else if (num1 >= 100001 && num1 <= 200000) {
+                    num3 = 5000;
+                    num4 = 5000;
+                } else if (num1 >= 200000) {
+                    num3 = 5000;
+                    num4 = 5000;
                 }
-            });
-        });
-        $(document).on('click', '#some-action', function(e) {
-            e.preventDefault();
-            console.log('Some action triggered.');
-        });
-    });
-    </script>
-    <script>
-    window.addEventListener('scroll', function() {
-        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        var elements = document.querySelectorAll('.scroll-then-fix');
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            if (scrollPosition >= 200) { // Adjust the scroll position as needed
-                element.classList.add('fixed');
+                document.getElementById("Final_Premium").innerHTML = Math.round(num3);
+                document.getElementById('final_amount').style.visibility = "visible";
             } else {
-                element.classList.remove('fixed');
+                if (num1 <= 10000) {
+                    num3 = 1000 + 300;
+                    num4 = 1000 + 300;
+                } else if (num1 >= 10001 && num1 <= 20000) {
+                    num3 = 1500 + 500;
+                    num4 = 1500 + 500;
+                } else if (num1 >= 20001 && num1 <= 30000) {
+                    num3 = 2000 + 500;
+                    num4 = 2000 + 500;
+                } else if (num1 >= 30001 && num1 <= 50000) {
+                    num3 = 2500 + 700;
+                    num4 = 2500 + 700;
+                } else if (num1 >= 50001 && num1 <= 100000) {
+                    num3 = 3000 + 700;
+                    num4 = 3000 + 700;
+                } else if (num1 >= 100001 && num1 <= 200000) {
+                    num3 = 5000 + 1000;
+                    num4 = 5000 + 1000;
+                } else if (num1 >= 200000) {
+                    num3 = 5000 + 1000;
+                    num4 = 5000 + 1000;
+                }
+                document.getElementById("Final_Premium").innerHTML = Math.round(num3);
+                document.getElementById('final_amount').style.visibility = "visible";
             }
         }
     });
     </script>
-     <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
+
+    <script>
+    // hello #6528e0 Example starter JavaScript for disabling form submissions if there are invalid fields
     (() => {
         'use strict'
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -718,10 +750,47 @@
                     event.preventDefault()
                     event.stopPropagation()
                 }
+                event.preventDefault()
+                event.stopPropagation()
                 form.classList.add('was-validated')
             }, false)
         })
     })()
     </script>
+    <script>
+    $(document).ready(function() {
+        $('.switchPlan').change(function() {
+            var selectedValue = $(this).val();
+            var base_url = '<?php echo base_url(); ?>';
+            if (selectedValue === 'Mobile') {
+                $('.Mobile_calculetor_input_hide').show();
+                $('.Vehicle_calculetor_input_hide').hide();
+                              
+            } else if (selectedValue === 'Vehicle') {
+                $('.Mobile_calculetor_input_hide').hide();
+                $('.Vehicle_calculetor_input_hide').show();
+             
+                
+            }
+        });
+    });
+    </script>
+
+    <script>
+    $("#Vehicle_submit").click(function(e) {
+        num1 = document.getElementById("Vehicle_Price").value;
+        num2 = document.getElementById("Vehicle_type").value;
+        if (num2 == '1.75' || num2 == '2.25') {
+            num3 = num1 * num2 / 100;
+            num4 = num3 * 18 / 100;
+            num5 = num3 + num4;
+            document.getElementById("Vehicle_Final_Premium").innerHTML = Math.round(num5);
+            document.getElementById('Vehicle_final_amount').style.visibility = "visible";
+        }
+
+    });
+    </script>
+
 </body>
+
 </html>

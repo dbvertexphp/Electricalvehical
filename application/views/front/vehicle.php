@@ -438,7 +438,7 @@
 
                 <a class=" header_option products active" aria-current="page"
 
-                    href="<?php echo base_url();?>Fornt/buy_Premium">
+                    href="<?php echo base_url();?>Fornt/Vehicle_buy_Premium">
 
                     <div class="input-group-append w-100">
 
@@ -458,7 +458,7 @@
 
                 <a class=" header_option products active mt-5" aria-current="page"
 
-                    href="<?php echo base_url();?>Fornt/Calculator">
+                    href="<?php echo base_url();?>Fornt/vehicle_Calculator/2">
 
                     <div class="input-group-append w-50">
 

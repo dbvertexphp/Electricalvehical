@@ -153,39 +153,6 @@
         --switch-text-color: goldenrod;
     }
 
-
-    /* resize font-size on html and body level. html is required for widths based on rem */
-    /* @media screen and (min-width: 1024px) {
-
-    html,
-    body {
-        font-size: 24px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-
-    html,
-    body {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    html,
-    body {
-        font-size: 12px;
-    }
-} */
-
-    /* a container - decorative, not required */
-
-    /* p - decorative, not required */
-
-    /* container for all of the switch elements 
-    - adjust "width" to fit the content accordingly 
-*/
     .switches-container {
         width: 16rem;
         position: relative;
@@ -277,27 +244,34 @@
 </head>
 
 <body>
+    <?php $url = $this->uri->segment(3);?> 
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 culculetter_page">
                 <div class="row">
                     <div class="col-12 mb-5">
-                        <div class="switches-container">
-                            <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile"
-                                checked="checked" />
-                            <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan"
-                                value="Vehicle" />
-                            <label for="switchMonthly">Mobile</label>
-                            <label for="switchYearly">Vehicle</label>
+
+                         <div class="switches-container">
+                            <input class="switchPlan" type="radio" id="switchMonthly" name="switchPlan" value="Mobile" checked="checked" />
+                            <input class="switchPlan" type="radio" id="switchYearly" name="switchPlan" value="Vehicle"  />
+                            <label for="switchMonthly"><img class="pe-1"
+                                    src="<?php echo base_url();?>image/motorcycle _white.png" alt="">Mobile</label>
+                            <label for="switchYearly"><img class="pe-1"
+                                    src="<?php echo base_url();?>image/car_white.png" alt="">Vehicle</label>
                             <div class="switch-wrapper">
                                 <div class="switch">
-                                    <div>Mobile</div>
-                                    <div>Vehicle</div>
+                                    <div><img class="pe-1" src="<?php echo base_url();?>image/motorcycle.png"
+                                            alt="">Mobile
+                                    </div>
+                                    <div><img class="pe-1" src="<?php echo base_url();?>image/car.png" alt="">Vehicle
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
+           
                 <div class="Mobile_calculetor_input_hide">
                     <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
                         <div class="row">
@@ -316,14 +290,26 @@
                             </div>
                             <div class=" col-md-6">
                                 <label for="inputPassword4" class="form-label post_input_lable"><b>Model</b></label>
-                                <input type="text" class="form-control" id="inputPassword4"
+                                <input type="text" class="form-control" id="inputPassword4" value="<?php
+                                            if (isset($_GET['Model'])) {
+                                            $Model = $_GET['Model'];
+                                            echo $Model;
+                                            }
+                                            ?>"
                                     placeholder="Enter Model NO.">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <label for="inputEmail4"><b>Make</b></label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="New">
+                                <input type="text" class="form-control" id="inputEmail4"
+                                value="<?php
+                                            if (isset($_GET['Make'])) {
+                                            $Make = $_GET['Make'];
+                                            echo $Make;
+                                            }
+                                            ?>"
+                                 placeholder=" Enter  Make">
                             </div>
                             <div class=" col-md-6 mt-0">
                                 <label for="Price" class=" post_input_lable"><b>Price</b></label>
@@ -352,7 +338,8 @@
                     </div>
 
                 </div>
-                <div class="Vehicle_calculetor_input_hide" style="display:none;">
+          
+                <div class="Vehicle_calculetor_input_hide" style="display:none;" >
                     <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
                         <div class="row">
                             <div class="col-md-6">
@@ -406,7 +393,7 @@
                     </div>
 
                 </div>
-
+          
 
 
             </div>
@@ -690,7 +677,7 @@
         </div>
     </div> <br><br>
     <script>
-    $("#submit").click(function(e) {
+       $("#submit").click(function(e) {
         num1 = document.getElementById("Price").value;
         num2 = document.getElementById("mobile_type").value;
         if (num1 !== '' && num2 !== '') {
@@ -773,13 +760,17 @@
     $(document).ready(function() {
         $('.switchPlan').change(function() {
             var selectedValue = $(this).val();
-
+            var base_url = '<?php echo base_url(); ?>';
             if (selectedValue === 'Mobile') {
                 $('.Mobile_calculetor_input_hide').show();
                 $('.Vehicle_calculetor_input_hide').hide();
+              
+              
             } else if (selectedValue === 'Vehicle') {
                 $('.Mobile_calculetor_input_hide').hide();
                 $('.Vehicle_calculetor_input_hide').show();
+             
+                
             }
         });
     });

@@ -4,7 +4,7 @@
 
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
-<form name='razorpayform' action="<?php echo base_url().'Fornt/verify';?>" method="POST">
+<form name='razorpayform' action="<?php echo base_url().'Fornt/Vehicle_verify';?>" method="POST">
 
     <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
 
@@ -46,7 +46,7 @@ options.modal = {
 
         console.log("This code runs when the popup is closed");
 
-        window.location = "<?php  echo base_url();?>Fornt/products";
+        window.location = "<?php  echo base_url();?>Fornt/vehical_products";
 
     },
 

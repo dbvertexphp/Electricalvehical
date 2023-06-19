@@ -33,6 +33,15 @@ public function website_Mobile_selectquery($id){
       ->get();
       return $q->row();
       }
+      public function website_vehicle_selectquery($id){
+        $q=$this->db->select('*')
+        ->from('website_vehicle_report')
+        ->where('token',$id)
+        ->get();
+        return $q->row();
+        }
+  
+      
       function Contact_us($data){
             $this->db->insert('Contact_us',$data);
             return true;

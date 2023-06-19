@@ -162,7 +162,7 @@ legend.scheduler-border {
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-12 col-lg-12 ">
-                    <h4 class="mb-3 text-center Policy_Form mt-3">Policy Form</h4>
+                    <h4 class="mb-3 text-center Policy_Form mt-3">Vehicle Policy Form</h4>
                     <form class="needs-validation" method="post" action="<?php echo base_url();?>Fornt/Vehicle_policy_form"
                         novalidate autocomplete="off">
                         <div class=" g-3">

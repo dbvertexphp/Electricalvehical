@@ -127,7 +127,7 @@ legend.scheduler-border {
     <!-- Begin Page Content -->
     <div class="container-fluid">
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">User Report</h1>
+<h1 class="h3 mb-2 text-gray-800">Vehicle User Report</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -152,8 +152,8 @@ legend.scheduler-border {
                                     <td><?php echo  $i;?></td>             
                                     <td><?php echo $row->policy_numbers;?></td>
                                     <td><?php echo $row->name_policy_holder;?></td>
-                                    <td><a  href="<?php echo site_url("Welcome/website_pdf/".$row->id);?>">Downlod</a></td>
-                                    <td><a  href="<?php echo site_url("Welcome/website_viewpdf/".$row->id);?>">View</a></td>
+                                    <td><a  href="<?php echo site_url("Welcome/website_vehicle_pdf/".$row->id);?>">Downlod</a></td>
+                                    <td><a  href="<?php echo site_url("Welcome/website_vehicle_viewpdf/".$row->id);?>">View</a></td>
                                     <td ><?php echo $row->policy_start;?></td>
                                 </tr>
                                 <?php } ?>

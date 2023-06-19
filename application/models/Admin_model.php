@@ -100,6 +100,12 @@ public function Website_get_user_data(){
     $query = $this->db->order_by('id', 'desc')->where('pay_type', 1)->get('website_mobile_report');
     return $query->result();
     } 
+
+    public function Website_get_vehicle_user_report(){
+      $query = $this->db->order_by('id', 'desc')->where('pay_type', 1)->get('website_vehicle_report');
+      return $query->result();
+      } 
+
     public function website_selectquery($id){
       $q=$this->db->select('*')
       ->from('website_mobile_report')
@@ -107,6 +113,16 @@ public function Website_get_user_data(){
       ->get();
       return $q->row();
       }
+      public function website_vehicle_selectquery($id){
+        $q=$this->db->select('*')
+        ->from('website_vehicle_report')
+        ->where('id',$id)
+        ->get();
+        return $q->row();
+        }
+  
+
+
 public function agent_code(){
   $q=$this->db->select('*')
         ->from('agent')

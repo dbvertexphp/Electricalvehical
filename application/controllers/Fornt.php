@@ -655,10 +655,15 @@ class Fornt extends CI_Controller {
 		$this->load->view('front/header'); 
 		$this->load->view('front/Cancellation'); 
 		$this->load->view('front/footer');	 
-	}
+	} 
 	function Terms_conditions(){
 		$this->load->view('front/header'); 
 		$this->load->view('front/Terms_&_conditions'); 
+		$this->load->view('front/footer');	
+	}
+	function Terms_conditions_vehicle(){
+		$this->load->view('front/header'); 
+		$this->load->view('front/Terms_&_conditions_vehicle'); 
 		$this->load->view('front/footer');	
 	}
 	function Contact_us(){
